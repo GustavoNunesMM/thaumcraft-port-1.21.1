@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "BASEALCHEMY",
+  "group": "thaumcraft:viscrystalgroup",
+  "catalyst": {
+    "tag": "c:nuggets/quartz"
+  },
+  "aspects": {
+    "spiritus": 2
+  },
+  "result": {
+    "id": "thaumcraft:crystal_essence",
+    "components": {
+      "thaumcraft:essentia": {
+        "spiritus": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:pedestal_eldritch"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:slab_eldritch"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stone_eldritch_tile"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "INFUSIONELDRITCH",
+  "vis": 150,
+  "pattern": [
+    "SSS",
+    " B ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "thaumcraft:slab_eldritch"
+    },
+    "B": {
+      "item": "thaumcraft:stone_eldritch_tile"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:pedestal_eldritch"
+  }
+}

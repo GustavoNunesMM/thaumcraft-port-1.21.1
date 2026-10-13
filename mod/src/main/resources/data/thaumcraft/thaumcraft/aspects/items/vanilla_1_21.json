@@ -1,0 +1,1501 @@
+{
+ "entries": [
+  {
+   "item": "minecraft:deepslate",
+   "aspects": {
+    "terra": 5,
+    "tenebrae": 1
+   }
+  },
+  {
+   "item": "minecraft:cobbled_deepslate",
+   "aspects": {
+    "terra": 5,
+    "perditio": 1,
+    "tenebrae": 1
+   }
+  },
+  {
+   "item": "minecraft:tuff",
+   "aspects": {
+    "terra": 5,
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:calcite",
+   "aspects": {
+    "terra": 5,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:smooth_basalt",
+   "aspects": {
+    "terra": 5,
+    "ignis": 1
+   }
+  },
+  {
+   "item": "minecraft:basalt",
+   "aspects": {
+    "terra": 5,
+    "ignis": 1
+   }
+  },
+  {
+   "item": "minecraft:blackstone",
+   "aspects": {
+    "terra": 5,
+    "tenebrae": 1,
+    "ignis": 1
+   }
+  },
+  {
+   "item": "minecraft:gilded_blackstone",
+   "aspects": {
+    "terra": 5,
+    "tenebrae": 1,
+    "desiderium": 5,
+    "metallum": 3
+   }
+  },
+  {
+   "item": "minecraft:dripstone_block",
+   "aspects": {
+    "terra": 5,
+    "aqua": 1
+   }
+  },
+  {
+   "item": "minecraft:pointed_dripstone",
+   "aspects": {
+    "terra": 2,
+    "aqua": 1,
+    "aversio": 1
+   }
+  },
+  {
+   "item": "minecraft:reinforced_deepslate",
+   "aspects": {
+    "terra": 15,
+    "praemunio": 15,
+    "tenebrae": 5
+   }
+  },
+  {
+   "item": "minecraft:mud",
+   "aspects": {
+    "terra": 3,
+    "aqua": 3
+   }
+  },
+  {
+   "item": "minecraft:rooted_dirt",
+   "aspects": {
+    "terra": 5,
+    "herba": 1
+   }
+  },
+  {
+   "item": "minecraft:soul_soil",
+   "aspects": {
+    "terra": 3,
+    "spiritus": 3,
+    "tenebrae": 1
+   }
+  },
+  {
+   "item": "minecraft:crimson_nylium",
+   "aspects": {
+    "terra": 5,
+    "herba": 1,
+    "ignis": 1
+   }
+  },
+  {
+   "item": "minecraft:warped_nylium",
+   "aspects": {
+    "terra": 5,
+    "herba": 1,
+    "alienis": 1
+   }
+  },
+  {
+   "item": "minecraft:moss_block",
+   "aspects": {
+    "terra": 3,
+    "herba": 3
+   }
+  },
+  {
+   "item": "minecraft:moss_carpet",
+   "aspects": {
+    "herba": 2
+   }
+  },
+  {
+   "item": "minecraft:infested_stone",
+   "aspects": {
+    "terra": 5,
+    "bestia": 3,
+    "vinculum": 1
+   }
+  },
+  {
+   "item": "minecraft:infested_cobblestone",
+   "aspects": {
+    "terra": 5,
+    "bestia": 3,
+    "vinculum": 1
+   }
+  },
+  {
+   "item": "minecraft:infested_stone_bricks",
+   "aspects": {
+    "terra": 5,
+    "bestia": 3,
+    "vinculum": 1
+   }
+  },
+  {
+   "item": "minecraft:infested_mossy_stone_bricks",
+   "aspects": {
+    "terra": 5,
+    "bestia": 3,
+    "vinculum": 1
+   }
+  },
+  {
+   "item": "minecraft:infested_cracked_stone_bricks",
+   "aspects": {
+    "terra": 5,
+    "bestia": 3,
+    "vinculum": 1
+   }
+  },
+  {
+   "item": "minecraft:infested_chiseled_stone_bricks",
+   "aspects": {
+    "terra": 5,
+    "bestia": 3,
+    "vinculum": 1
+   }
+  },
+  {
+   "item": "minecraft:infested_deepslate",
+   "aspects": {
+    "terra": 5,
+    "bestia": 3,
+    "vinculum": 1
+   }
+  },
+  {
+   "item": "minecraft:raw_iron",
+   "aspects": {
+    "metallum": 15,
+    "terra": 2
+   }
+  },
+  {
+   "item": "minecraft:raw_gold",
+   "aspects": {
+    "metallum": 10,
+    "desiderium": 10,
+    "terra": 2
+   }
+  },
+  {
+   "item": "minecraft:raw_copper",
+   "aspects": {
+    "metallum": 10,
+    "permutatio": 5,
+    "terra": 2
+   }
+  },
+  {
+   "item": "minecraft:ancient_debris",
+   "aspects": {
+    "terra": 5,
+    "metallum": 15,
+    "desiderium": 15,
+    "ignis": 5
+   }
+  },
+  {
+   "item": "minecraft:netherite_scrap",
+   "aspects": {
+    "metallum": 15,
+    "desiderium": 15,
+    "ignis": 2
+   }
+  },
+  {
+   "tag": "c:ores/coal",
+   "aspects": {
+    "terra": 5,
+    "potentia": 15,
+    "ignis": 15
+   }
+  },
+  {
+   "item": "minecraft:amethyst_shard",
+   "aspects": {
+    "vitreus": 5,
+    "sensus": 2
+   }
+  },
+  {
+   "item": "minecraft:amethyst_block",
+   "aspects": {
+    "vitreus": 15,
+    "sensus": 5
+   }
+  },
+  {
+   "item": "minecraft:budding_amethyst",
+   "aspects": {
+    "vitreus": 15,
+    "sensus": 5,
+    "victus": 5,
+    "praecantatio": 5
+   }
+  },
+  {
+   "item": "minecraft:small_amethyst_bud",
+   "aspects": {
+    "vitreus": 2
+   }
+  },
+  {
+   "item": "minecraft:medium_amethyst_bud",
+   "aspects": {
+    "vitreus": 3
+   }
+  },
+  {
+   "item": "minecraft:large_amethyst_bud",
+   "aspects": {
+    "vitreus": 4
+   }
+  },
+  {
+   "item": "minecraft:amethyst_cluster",
+   "aspects": {
+    "vitreus": 5,
+    "sensus": 2
+   }
+  },
+  {
+   "item": "minecraft:echo_shard",
+   "aspects": {
+    "sensus": 10,
+    "tenebrae": 5,
+    "alienis": 5
+   }
+  },
+  {
+   "item": "minecraft:heart_of_the_sea",
+   "aspects": {
+    "aqua": 20,
+    "praecantatio": 10,
+    "desiderium": 10
+   }
+  },
+  {
+   "item": "minecraft:exposed_copper",
+   "copy": "minecraft:copper_block",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_copper",
+   "copy": "minecraft:copper_block",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:exposed_cut_copper",
+   "copy": "minecraft:cut_copper",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_cut_copper",
+   "copy": "minecraft:cut_copper",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:exposed_chiseled_copper",
+   "copy": "minecraft:chiseled_copper",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_chiseled_copper",
+   "copy": "minecraft:chiseled_copper",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:exposed_copper_grate",
+   "copy": "minecraft:copper_grate",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_copper_grate",
+   "copy": "minecraft:copper_grate",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:exposed_copper_door",
+   "copy": "minecraft:copper_door",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_copper_door",
+   "copy": "minecraft:copper_door",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:exposed_copper_trapdoor",
+   "copy": "minecraft:copper_trapdoor",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_copper_trapdoor",
+   "copy": "minecraft:copper_trapdoor",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:exposed_cut_copper_slab",
+   "copy": "minecraft:cut_copper_slab",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_cut_copper_slab",
+   "copy": "minecraft:cut_copper_slab",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:exposed_cut_copper_stairs",
+   "copy": "minecraft:cut_copper_stairs",
+   "aspects": {
+    "perditio": 1
+   }
+  },
+  {
+   "item": "minecraft:waxed_exposed_cut_copper_stairs",
+   "copy": "minecraft:cut_copper_stairs",
+   "aspects": {
+    "perditio": 1,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_copper",
+   "copy": "minecraft:copper_block",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_copper",
+   "copy": "minecraft:copper_block",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_cut_copper",
+   "copy": "minecraft:cut_copper",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_cut_copper",
+   "copy": "minecraft:cut_copper",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_chiseled_copper",
+   "copy": "minecraft:chiseled_copper",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_chiseled_copper",
+   "copy": "minecraft:chiseled_copper",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_copper_grate",
+   "copy": "minecraft:copper_grate",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_copper_grate",
+   "copy": "minecraft:copper_grate",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_copper_door",
+   "copy": "minecraft:copper_door",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_copper_door",
+   "copy": "minecraft:copper_door",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_copper_trapdoor",
+   "copy": "minecraft:copper_trapdoor",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_copper_trapdoor",
+   "copy": "minecraft:copper_trapdoor",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_cut_copper_slab",
+   "copy": "minecraft:cut_copper_slab",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_cut_copper_slab",
+   "copy": "minecraft:cut_copper_slab",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:weathered_cut_copper_stairs",
+   "copy": "minecraft:cut_copper_stairs",
+   "aspects": {
+    "perditio": 2
+   }
+  },
+  {
+   "item": "minecraft:waxed_weathered_cut_copper_stairs",
+   "copy": "minecraft:cut_copper_stairs",
+   "aspects": {
+    "perditio": 2,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_copper",
+   "copy": "minecraft:copper_block",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_copper",
+   "copy": "minecraft:copper_block",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_cut_copper",
+   "copy": "minecraft:cut_copper",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_cut_copper",
+   "copy": "minecraft:cut_copper",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_chiseled_copper",
+   "copy": "minecraft:chiseled_copper",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_chiseled_copper",
+   "copy": "minecraft:chiseled_copper",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_copper_grate",
+   "copy": "minecraft:copper_grate",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_copper_grate",
+   "copy": "minecraft:copper_grate",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_copper_door",
+   "copy": "minecraft:copper_door",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_copper_door",
+   "copy": "minecraft:copper_door",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_copper_trapdoor",
+   "copy": "minecraft:copper_trapdoor",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_copper_trapdoor",
+   "copy": "minecraft:copper_trapdoor",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_cut_copper_slab",
+   "copy": "minecraft:cut_copper_slab",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_cut_copper_slab",
+   "copy": "minecraft:cut_copper_slab",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:oxidized_cut_copper_stairs",
+   "copy": "minecraft:cut_copper_stairs",
+   "aspects": {
+    "perditio": 3
+   }
+  },
+  {
+   "item": "minecraft:waxed_oxidized_cut_copper_stairs",
+   "copy": "minecraft:cut_copper_stairs",
+   "aspects": {
+    "perditio": 3,
+    "ordo": 1
+   }
+  },
+  {
+   "item": "minecraft:bamboo",
+   "aspects": {
+    "herba": 3,
+    "aer": 1
+   }
+  },
+  {
+   "item": "minecraft:kelp",
+   "aspects": {
+    "herba": 3,
+    "aqua": 2
+   }
+  },
+  {
+   "item": "minecraft:seagrass",
+   "aspects": {
+    "herba": 1,
+    "aqua": 1
+   }
+  },
+  {
+   "item": "minecraft:sea_pickle",
+   "aspects": {
+    "herba": 2,
+    "aqua": 2,
+    "lux": 3
+   }
+  },
+  {
+   "item": "minecraft:sweet_berries",
+   "aspects": {
+    "herba": 2,
+    "victus": 2
+   }
+  },
+  {
+   "item": "minecraft:glow_berries",
+   "aspects": {
+    "herba": 2,
+    "victus": 2,
+    "lux": 2
+   }
+  },
+  {
+   "item": "minecraft:glow_lichen",
+   "aspects": {
+    "herba": 1,
+    "lux": 2
+   }
+  },
+  {
+   "item": "minecraft:hanging_roots",
+   "aspects": {
+    "herba": 1,
+    "terra": 1
+   }
+  },
+  {
+   "item": "minecraft:mangrove_roots",
+   "aspects": {
+    "herba": 3,
+    "aqua": 1
+   }
+  },
+  {
+   "item": "minecraft:muddy_mangrove_roots",
+   "copy": "minecraft:mangrove_roots",
+   "aspects": {
+    "terra": 2
+   }
+  },
+  {
+   "item": "minecraft:big_dripleaf",
+   "aspects": {
+    "herba": 5,
+    "aqua": 1
+   }
+  },
+  {
+   "item": "minecraft:small_dripleaf",
+   "aspects": {
+    "herba": 3,
+    "aqua": 1
+   }
+  },
+  {
+   "item": "minecraft:spore_blossom",
+   "aspects": {
+    "herba": 5,
+    "sensus": 3
+   }
+  },
+  {
+   "item": "minecraft:pink_petals",
+   "aspects": {
+    "herba": 1,
+    "sensus": 1
+   }
+  },
+  {
+   "item": "minecraft:pitcher_plant",
+   "aspects": {
+    "herba": 5,
+    "sensus": 5
+   }
+  },
+  {
+   "item": "minecraft:pitcher_pod",
+   "aspects": {
+    "herba": 3,
+    "victus": 1
+   }
+  },
+  {
+   "item": "minecraft:torchflower_seeds",
+   "aspects": {
+    "herba": 2,
+    "lux": 1
+   }
+  },
+  {
+   "item": "minecraft:crimson_fungus",
+   "aspects": {
+    "herba": 5,
+    "ignis": 2
+   }
+  },
+  {
+   "item": "minecraft:warped_fungus",
+   "aspects": {
+    "herba": 5,
+    "alienis": 2
+   }
+  },
+  {
+   "item": "minecraft:crimson_roots",
+   "aspects": {
+    "herba": 2,
+    "ignis": 1
+   }
+  },
+  {
+   "item": "minecraft:warped_roots",
+   "aspects": {
+    "herba": 2,
+    "alienis": 1
+   }
+  },
+  {
+   "item": "minecraft:nether_sprouts",
+   "aspects": {
+    "herba": 1,
+    "ignis": 1
+   }
+  },
+  {
+   "item": "minecraft:weeping_vines",
+   "aspects": {
+    "herba": 2,
+    "ignis": 1,
+    "motus": 1
+   }
+  },
+  {
+   "item": "minecraft:twisting_vines",
+   "aspects": {
+    "herba": 2,
+    "alienis": 1,
+    "motus": 1
+   }
+  },
+  {
+   "item": "minecraft:warped_wart_block",
+   "aspects": {
+    "herba": 5,
+    "alienis": 3
+   }
+  },
+  {
+   "item": "minecraft:shroomlight",
+   "aspects": {
+    "herba": 5,
+    "lux": 10
+   }
+  },
+  {
+   "item": "minecraft:mushroom_stem",
+   "aspects": {
+    "herba": 5
+   }
+  },
+  {
+   "item": "minecraft:carved_pumpkin",
+   "aspects": {
+    "herba": 10,
+    "sensus": 1
+   }
+  },
+  {
+   "item": "minecraft:tube_coral",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2,
+    "bestia": 1
+   }
+  },
+  {
+   "item": "minecraft:tube_coral_fan",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2
+   }
+  },
+  {
+   "item": "minecraft:tube_coral_block",
+   "aspects": {
+    "aqua": 5,
+    "victus": 3,
+    "terra": 3
+   }
+  },
+  {
+   "item": "minecraft:dead_tube_coral",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_tube_coral_fan",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_tube_coral_block",
+   "aspects": {
+    "terra": 5,
+    "mortuus": 3
+   }
+  },
+  {
+   "item": "minecraft:brain_coral",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2,
+    "bestia": 1
+   }
+  },
+  {
+   "item": "minecraft:brain_coral_fan",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2
+   }
+  },
+  {
+   "item": "minecraft:brain_coral_block",
+   "aspects": {
+    "aqua": 5,
+    "victus": 3,
+    "terra": 3
+   }
+  },
+  {
+   "item": "minecraft:dead_brain_coral",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_brain_coral_fan",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_brain_coral_block",
+   "aspects": {
+    "terra": 5,
+    "mortuus": 3
+   }
+  },
+  {
+   "item": "minecraft:bubble_coral",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2,
+    "bestia": 1
+   }
+  },
+  {
+   "item": "minecraft:bubble_coral_fan",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2
+   }
+  },
+  {
+   "item": "minecraft:bubble_coral_block",
+   "aspects": {
+    "aqua": 5,
+    "victus": 3,
+    "terra": 3
+   }
+  },
+  {
+   "item": "minecraft:dead_bubble_coral",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_bubble_coral_fan",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_bubble_coral_block",
+   "aspects": {
+    "terra": 5,
+    "mortuus": 3
+   }
+  },
+  {
+   "item": "minecraft:fire_coral",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2,
+    "bestia": 1
+   }
+  },
+  {
+   "item": "minecraft:fire_coral_fan",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2
+   }
+  },
+  {
+   "item": "minecraft:fire_coral_block",
+   "aspects": {
+    "aqua": 5,
+    "victus": 3,
+    "terra": 3
+   }
+  },
+  {
+   "item": "minecraft:dead_fire_coral",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_fire_coral_fan",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_fire_coral_block",
+   "aspects": {
+    "terra": 5,
+    "mortuus": 3
+   }
+  },
+  {
+   "item": "minecraft:horn_coral",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2,
+    "bestia": 1
+   }
+  },
+  {
+   "item": "minecraft:horn_coral_fan",
+   "aspects": {
+    "aqua": 3,
+    "victus": 2
+   }
+  },
+  {
+   "item": "minecraft:horn_coral_block",
+   "aspects": {
+    "aqua": 5,
+    "victus": 3,
+    "terra": 3
+   }
+  },
+  {
+   "item": "minecraft:dead_horn_coral",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_horn_coral_fan",
+   "aspects": {
+    "terra": 2,
+    "mortuus": 2
+   }
+  },
+  {
+   "item": "minecraft:dead_horn_coral_block",
+   "aspects": {
+    "terra": 5,
+    "mortuus": 3
+   }
+  },
+  {
+   "item": "minecraft:ochre_froglight",
+   "aspects": {
+    "lux": 10,
+    "bestia": 2,
+    "ignis": 2
+   }
+  },
+  {
+   "item": "minecraft:verdant_froglight",
+   "aspects": {
+    "lux": 10,
+    "bestia": 2,
+    "herba": 2
+   }
+  },
+  {
+   "item": "minecraft:pearlescent_froglight",
+   "aspects": {
+    "lux": 10,
+    "bestia": 2,
+    "alienis": 2
+   }
+  },
+  {
+   "item": "minecraft:honeycomb",
+   "aspects": {
+    "herba": 2,
+    "bestia": 2,
+    "ordo": 2
+   }
+  },
+  {
+   "item": "minecraft:bee_nest",
+   "aspects": {
+    "herba": 5,
+    "bestia": 5,
+    "desiderium": 5
+   }
+  },
+  {
+   "item": "minecraft:turtle_scute",
+   "aspects": {
+    "praemunio": 5,
+    "bestia": 3,
+    "aqua": 2
+   }
+  },
+  {
+   "item": "minecraft:armadillo_scute",
+   "aspects": {
+    "praemunio": 5,
+    "bestia": 3,
+    "terra": 2
+   }
+  },
+  {
+   "item": "minecraft:phantom_membrane",
+   "aspects": {
+    "volatus": 5,
+    "exanimis": 5,
+    "aer": 3
+   }
+  },
+  {
+   "item": "minecraft:nautilus_shell",
+   "aspects": {
+    "aqua": 5,
+    "praemunio": 5,
+    "bestia": 3
+   }
+  },
+  {
+   "item": "minecraft:glow_ink_sac",
+   "aspects": {
+    "aqua": 2,
+    "lux": 5,
+    "bestia": 1
+   }
+  },
+  {
+   "item": "minecraft:goat_horn",
+   "aspects": {
+    "bestia": 5,
+    "sensus": 5,
+    "aer": 3
+   }
+  },
+  {
+   "item": "minecraft:turtle_egg",
+   "aspects": {
+    "bestia": 5,
+    "victus": 5,
+    "aqua": 2
+   }
+  },
+  {
+   "item": "minecraft:sniffer_egg",
+   "aspects": {
+    "bestia": 5,
+    "victus": 5,
+    "herba": 3
+   }
+  },
+  {
+   "item": "minecraft:frogspawn",
+   "aspects": {
+    "bestia": 3,
+    "victus": 3,
+    "aqua": 3
+   }
+  },
+  {
+   "item": "minecraft:piglin_head",
+   "aspects": {
+    "humanus": 10,
+    "mortuus": 10,
+    "ignis": 5
+   }
+  },
+  {
+   "item": "minecraft:sculk",
+   "aspects": {
+    "spiritus": 3,
+    "tenebrae": 3,
+    "sensus": 2
+   }
+  },
+  {
+   "item": "minecraft:sculk_vein",
+   "aspects": {
+    "spiritus": 1,
+    "tenebrae": 1
+   }
+  },
+  {
+   "item": "minecraft:sculk_catalyst",
+   "aspects": {
+    "spiritus": 10,
+    "tenebrae": 5,
+    "mortuus": 5
+   }
+  },
+  {
+   "item": "minecraft:sculk_sensor",
+   "aspects": {
+    "sensus": 10,
+    "tenebrae": 3,
+    "potentia": 3
+   }
+  },
+  {
+   "item": "minecraft:sculk_shrieker",
+   "aspects": {
+    "sensus": 10,
+    "tenebrae": 5,
+    "aversio": 5
+   }
+  },
+  {
+   "item": "minecraft:breeze_rod",
+   "aspects": {
+    "aer": 10,
+    "motus": 5,
+    "praecantatio": 2
+   }
+  },
+  {
+   "item": "minecraft:heavy_core",
+   "aspects": {
+    "terra": 15,
+    "metallum": 15,
+    "aversio": 10
+   }
+  },
+  {
+   "item": "minecraft:trial_key",
+   "aspects": {
+    "instrumentum": 5,
+    "metallum": 5,
+    "cognitio": 2
+   }
+  },
+  {
+   "item": "minecraft:ominous_trial_key",
+   "aspects": {
+    "instrumentum": 5,
+    "metallum": 5,
+    "cognitio": 2,
+    "alienis": 3
+   }
+  },
+  {
+   "item": "minecraft:ominous_bottle",
+   "aspects": {
+    "alkimia": 5,
+    "alienis": 5,
+    "vacuos": 2
+   }
+  },
+  {
+   "item": "minecraft:trident",
+   "aspects": {
+    "aqua": 15,
+    "aversio": 20,
+    "metallum": 10,
+    "praecantatio": 5
+   }
+  },
+  {
+   "item": "minecraft:bell",
+   "aspects": {
+    "metallum": 15,
+    "sensus": 10,
+    "desiderium": 5
+   }
+  },
+  {
+   "item": "minecraft:conduit",
+   "aspects": {
+    "aqua": 20,
+    "praecantatio": 15,
+    "praemunio": 10
+   }
+  },
+  {
+   "item": "minecraft:suspicious_sand",
+   "aspects": {
+    "terra": 5,
+    "perditio": 5,
+    "desiderium": 1
+   }
+  },
+  {
+   "item": "minecraft:suspicious_gravel",
+   "aspects": {
+    "terra": 5,
+    "perditio": 5,
+    "desiderium": 1
+   }
+  },
+  {
+   "tag": "minecraft:decorated_pot_sherds",
+   "aspects": {
+    "terra": 3,
+    "ignis": 1,
+    "sensus": 1,
+    "cognitio": 1
+   }
+  },
+  {
+   "item": "minecraft:disc_fragment_5",
+   "aspects": {
+    "sensus": 3,
+    "aer": 1
+   }
+  },
+  {
+   "item": "minecraft:powder_snow_bucket",
+   "aspects": {
+    "gelum": 10,
+    "metallum": 15
+   }
+  },
+  {
+   "item": "minecraft:dried_kelp",
+   "aspects": {
+    "herba": 2,
+    "aqua": 1,
+    "ignis": 1
+   }
+  },
+  {
+   "item": "minecraft:cod_bucket",
+   "copy": "minecraft:water_bucket",
+   "aspects": {
+    "bestia": 5
+   }
+  },
+  {
+   "item": "minecraft:salmon_bucket",
+   "copy": "minecraft:water_bucket",
+   "aspects": {
+    "bestia": 5
+   }
+  },
+  {
+   "item": "minecraft:pufferfish_bucket",
+   "copy": "minecraft:water_bucket",
+   "aspects": {
+    "bestia": 5
+   }
+  },
+  {
+   "item": "minecraft:tropical_fish_bucket",
+   "copy": "minecraft:water_bucket",
+   "aspects": {
+    "bestia": 5
+   }
+  },
+  {
+   "item": "minecraft:axolotl_bucket",
+   "copy": "minecraft:water_bucket",
+   "aspects": {
+    "bestia": 5
+   }
+  },
+  {
+   "item": "minecraft:tadpole_bucket",
+   "copy": "minecraft:water_bucket",
+   "aspects": {
+    "bestia": 5
+   }
+  },
+  {
+   "item": "minecraft:music_disc_pigstep",
+   "aspects": {
+    "sensus": 15,
+    "aer": 5,
+    "desiderium": 10,
+    "ignis": 5
+   }
+  },
+  {
+   "item": "minecraft:music_disc_otherside",
+   "aspects": {
+    "sensus": 15,
+    "aer": 5,
+    "desiderium": 10,
+    "alienis": 5
+   }
+  },
+  {
+   "item": "minecraft:music_disc_relic",
+   "aspects": {
+    "sensus": 15,
+    "aer": 5,
+    "desiderium": 10,
+    "cognitio": 5
+   }
+  },
+  {
+   "item": "minecraft:music_disc_creator",
+   "aspects": {
+    "sensus": 15,
+    "aer": 5,
+    "desiderium": 10,
+    "praecantatio": 5
+   }
+  },
+  {
+   "item": "minecraft:music_disc_creator_music_box",
+   "aspects": {
+    "sensus": 15,
+    "aer": 5,
+    "desiderium": 10,
+    "machina": 5
+   }
+  },
+  {
+   "item": "minecraft:music_disc_precipice",
+   "aspects": {
+    "sensus": 15,
+    "aer": 5,
+    "desiderium": 10
+   }
+  },
+  {
+   "item": "minecraft:music_disc_5",
+   "aspects": {
+    "sensus": 15,
+    "aer": 5,
+    "desiderium": 10,
+    "tenebrae": 5
+   }
+  },
+  {
+   "item": "minecraft:chipped_anvil",
+   "copy": "minecraft:anvil",
+   "aspects": {
+    "perditio": 5
+   }
+  },
+  {
+   "item": "minecraft:damaged_anvil",
+   "copy": "minecraft:anvil",
+   "aspects": {
+    "perditio": 10
+   }
+  },
+  {
+   "item": "minecraft:suspicious_stew",
+   "copy": "minecraft:mushroom_stew",
+   "aspects": {
+    "praecantatio": 2
+   }
+  },
+  {
+   "item": "minecraft:stripped_bamboo_block",
+   "copy": "minecraft:bamboo_block"
+  },
+  {
+   "item": "minecraft:petrified_oak_slab",
+   "copy": "minecraft:oak_slab",
+   "aspects": {
+    "terra": 1
+   }
+  },
+  {
+   "item": "minecraft:bundle",
+   "aspects": {
+    "bestia": 5,
+    "vacuos": 5,
+    "desiderium": 2
+   }
+  }
+ ]
+}

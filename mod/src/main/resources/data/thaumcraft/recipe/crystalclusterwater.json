@@ -1,0 +1,45 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_aqua"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:salis_mundus"
+    }
+  ],
+  "type": "thaumcraft:infusion",
+  "research": "CRYSTALFARMER",
+  "instability": 0,
+  "aspects": {
+    "aqua": 10,
+    "vitreus": 10,
+    "vinculum": 5
+  },
+  "central": {
+    "type": "neoforge:components",
+    "items": "thaumcraft:crystal_essence",
+    "components": {
+      "thaumcraft:essentia": {
+        "aqua": 1
+      }
+    },
+    "strict": false
+  },
+  "components": [
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "thaumcraft:salis_mundus"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:crystal_aqua"
+  }
+}

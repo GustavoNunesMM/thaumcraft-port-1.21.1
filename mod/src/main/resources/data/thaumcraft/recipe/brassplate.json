@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:plate_brass"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:ingots/brass"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:plate_brass",
+    "count": 3
+  }
+}

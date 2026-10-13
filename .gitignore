@@ -1,0 +1,9 @@
+mod/build/
+mod/.gradle/
+mod/run/
+mod/run-survey/
+mod/run-*/
+mod/.idea/
+*.log
+tools/__pycache__/
+tools/shots/

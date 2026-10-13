@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "thaumcraft:deepslate_ore_quartz"
+  },
+  "result": {
+    "id": "minecraft:quartz",
+    "count": 1
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

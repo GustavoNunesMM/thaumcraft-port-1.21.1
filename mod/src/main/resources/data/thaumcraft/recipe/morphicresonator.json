@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:morphic_resonator"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:rare_earth"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "BASEALCHEMY",
+  "vis": 50,
+  "crystals": {
+    "aer": 1,
+    "ignis": 1
+  },
+  "pattern": [
+    " G ",
+    "BSB",
+    " G "
+  ],
+  "key": {
+    "G": {
+      "tag": "c:glass_panes"
+    },
+    "B": {
+      "tag": "c:plates/brass"
+    },
+    "S": {
+      "item": "thaumcraft:rare_earth"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:morphic_resonator"
+  }
+}

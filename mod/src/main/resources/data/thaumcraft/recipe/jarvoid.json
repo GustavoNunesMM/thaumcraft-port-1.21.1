@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:jar_normal"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:jar_void"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "WARDEDJARS",
+  "vis": 50,
+  "crystals": {
+    "perditio": 1
+  },
+  "pattern": [
+    "J"
+  ],
+  "key": {
+    "J": {
+      "item": "thaumcraft:jar_normal"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:jar_void"
+  }
+}

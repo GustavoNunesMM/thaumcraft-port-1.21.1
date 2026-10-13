@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mind_biothaumic"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:turret_advanced"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:turret_basic"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "ADVANCEDTURRET",
+  "vis": 150,
+  "crystals": {
+    "aer": 2
+  },
+  "pattern": [
+    "PMP",
+    "PTP",
+    "   "
+  ],
+  "key": {
+    "T": {
+      "item": "thaumcraft:turret_basic"
+    },
+    "P": {
+      "tag": "c:plates/iron"
+    },
+    "M": {
+      "item": "thaumcraft:mind_biothaumic"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:turret_advanced"
+  }
+}

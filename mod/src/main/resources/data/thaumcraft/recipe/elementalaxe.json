@@ -1,0 +1,65 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:elemental_axe"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:plank_greatwood"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:rare_earth"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:thaumium_axe"
+    }
+  ],
+  "type": "thaumcraft:infusion",
+  "research": "ELEMENTALTOOLS",
+  "instability": 1,
+  "aspects": {
+    "aqua": 60,
+    "herba": 30
+  },
+  "central": {
+    "item": "thaumcraft:thaumium_axe"
+  },
+  "components": [
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "aqua": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "aqua": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "item": "thaumcraft:rare_earth"
+    },
+    {
+      "item": "thaumcraft:plank_greatwood"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:elemental_axe"
+  }
+}

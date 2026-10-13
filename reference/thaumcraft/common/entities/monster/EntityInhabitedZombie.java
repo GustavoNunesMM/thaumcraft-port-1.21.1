@@ -1,0 +1,124 @@
+package thaumcraft.common.entities.monster;
+
+import java.util.List;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.EnumDifficulty;
+import net.minecraft.world.World;
+import thaumcraft.api.entities.IEldritchMob;
+import thaumcraft.api.items.ItemsTC;
+import thaumcraft.common.entities.monster.cult.EntityCultist;
+import thaumcraft.common.lib.SoundsTC;
+
+public class EntityInhabitedZombie extends EntityZombie implements IEldritchMob {
+   protected void applyEntityAttributes() {
+      super.applyEntityAttributes();
+      this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0);
+      this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0);
+      this.getEntityAttribute(SPAWN_REINFORCEMENTS_CHANCE).setBaseValue(0.0);
+   }
+
+   public EntityInhabitedZombie(World world) {
+      super(world);
+      this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[0]));
+      this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityCultist.class, true));
+   }
+
+   public void onKillEntity(EntityLivingBase par1EntityLivingBase) {
+   }
+
+   public IEntityLivingData onInitialSpawn(DifficultyInstance diff, IEntityLivingData data) {
+      float d = this.world.getDifficulty() == EnumDifficulty.HARD ? 0.9F : 0.6F;
+      this.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(ItemsTC.crimsonPlateHelm));
+      if (this.rand.nextFloat() <= d) {
+         this.setItemStackToSlot(EntityEquipmentSlot.CHEST, new ItemStack(ItemsTC.crimsonPlateChest));
+      }
+
+      if (this.rand.nextFloat() <= d) {
+         this.setItemStackToSlot(EntityEquipmentSlot.LEGS, new ItemStack(ItemsTC.crimsonPlateLegs));
+      }
+
+      return super.onInitialSpawn(diff, data);
+   }
+
+   protected Item getDropItem() {
+      return Item.getItemById(0);
+   }
+
+   protected void dropFewItems(boolean wasRecentlyHit, int lootingModifier) {
+   }
+
+   protected void onDeathUpdate() {
+      if (!this.world.isRemote) {
+         EntityEldritchCrab crab = new EntityEldritchCrab(this.world);
+         crab.setPositionAndRotation(this.posX, this.posY + this.getEyeHeight(), this.posZ, this.rotationYaw, this.rotationPitch);
+         crab.setHelm(true);
+         this.world.spawnEntity(crab);
+         if ((this.recentlyHit > 0 || this.isPlayer()) && this.canDropLoot() && this.world.getGameRules().getBoolean("doMobLoot")) {
+            int i = this.getExperiencePoints(this.attackingPlayer);
+
+            while (i > 0) {
+               int j = EntityXPOrb.getXPSplit(i);
+               i -= j;
+               this.world.spawnEntity(new EntityXPOrb(this.world, this.posX, this.posY, this.posZ, j));
+            }
+         }
+      }
+
+      for (int i = 0; i < 20; i++) {
+         double d2 = this.rand.nextGaussian() * 0.02;
+         double d0 = this.rand.nextGaussian() * 0.02;
+         double d1 = this.rand.nextGaussian() * 0.02;
+         this.world
+            .spawnParticle(
+               EnumParticleTypes.EXPLOSION_NORMAL,
+               this.posX + this.rand.nextFloat() * this.width * 2.0F - this.width,
+               this.posY + this.rand.nextFloat() * this.height,
+               this.posZ + this.rand.nextFloat() * this.width * 2.0F - this.width,
+               d2,
+               d0,
+               d1,
+               new int[0]
+            );
+      }
+
+      this.setDead();
+   }
+
+   public void onDeath(DamageSource cause) {
+   }
+
+   protected SoundEvent getAmbientSound() {
+      return SoundsTC.crabtalk;
+   }
+
+   protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+      return SoundEvents.ENTITY_GENERIC_HURT;
+   }
+
+   public boolean getCanSpawnHere() {
+      List ents = this.world
+         .getEntitiesWithinAABB(
+            EntityInhabitedZombie.class,
+            new AxisAlignedBB(
+                  this.posX, this.posY, this.posZ, this.posX + 1.0, this.posY + 1.0, this.posZ + 1.0
+               )
+               .grow(32.0, 16.0, 32.0)
+         );
+      return ents.size() > 0 ? false : super.getCanSpawnHere();
+   }
+}

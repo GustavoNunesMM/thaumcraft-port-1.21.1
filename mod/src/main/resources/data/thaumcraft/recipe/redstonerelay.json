@@ -1,0 +1,37 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mechanism_simple"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:redstone_relay"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "REDSTONERELAY",
+  "vis": 10,
+  "crystals": {
+    "ordo": 1
+  },
+  "pattern": [
+    "   ",
+    "TGT",
+    "SSS"
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:redstone_torch"
+    },
+    "G": {
+      "item": "thaumcraft:mechanism_simple"
+    },
+    "S": {
+      "item": "minecraft:stone_slab"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:redstone_relay"
+  }
+}

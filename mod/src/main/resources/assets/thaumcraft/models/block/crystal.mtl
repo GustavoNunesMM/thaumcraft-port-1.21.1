@@ -1,0 +1,4 @@
+newmtl Material__25
+Kd 1.0 1.0 1.0
+map_Kd #crystal
+neoforge_TintIndex 0

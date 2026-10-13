@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_blank"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_use"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "SEALUSE",
+  "catalyst": {
+    "item": "thaumcraft:seal_blank"
+  },
+  "aspects": {
+    "fabrico": 20,
+    "sensus": 10,
+    "cognitio": 20
+  },
+  "result": {
+    "id": "thaumcraft:seal_use"
+  }
+}

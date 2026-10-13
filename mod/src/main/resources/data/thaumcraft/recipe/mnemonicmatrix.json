@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:brain_box"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mind_clockwork"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "THAUMATORIUM",
+  "vis": 50,
+  "crystals": {
+    "terra": 1,
+    "ordo": 1
+  },
+  "pattern": [
+    "IAI",
+    "ABA",
+    "IAI"
+  ],
+  "key": {
+    "B": {
+      "item": "thaumcraft:mind_clockwork"
+    },
+    "A": {
+      "tag": "c:gems/amber"
+    },
+    "I": {
+      "tag": "c:plates/iron"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:brain_box"
+  }
+}

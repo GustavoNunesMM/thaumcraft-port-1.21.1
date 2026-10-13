@@ -1,0 +1,65 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:candle_light_gray"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "c:dyes/light_gray"
+    },
+    [
+      {
+        "item": "thaumcraft:candle_white"
+      },
+      {
+        "item": "thaumcraft:candle_orange"
+      },
+      {
+        "item": "thaumcraft:candle_magenta"
+      },
+      {
+        "item": "thaumcraft:candle_light_blue"
+      },
+      {
+        "item": "thaumcraft:candle_yellow"
+      },
+      {
+        "item": "thaumcraft:candle_lime"
+      },
+      {
+        "item": "thaumcraft:candle_pink"
+      },
+      {
+        "item": "thaumcraft:candle_gray"
+      },
+      {
+        "item": "thaumcraft:candle_cyan"
+      },
+      {
+        "item": "thaumcraft:candle_purple"
+      },
+      {
+        "item": "thaumcraft:candle_blue"
+      },
+      {
+        "item": "thaumcraft:candle_brown"
+      },
+      {
+        "item": "thaumcraft:candle_green"
+      },
+      {
+        "item": "thaumcraft:candle_red"
+      },
+      {
+        "item": "thaumcraft:candle_black"
+      }
+    ]
+  ],
+  "result": {
+    "id": "thaumcraft:candle_light_gray"
+  }
+}

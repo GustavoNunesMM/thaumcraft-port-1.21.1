@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:ingot_brass"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "METALLURGY@1",
+  "catalyst": {
+    "tag": "c:ingots/iron"
+  },
+  "aspects": {
+    "instrumentum": 5
+  },
+  "result": {
+    "id": "thaumcraft:ingot_brass"
+  }
+}

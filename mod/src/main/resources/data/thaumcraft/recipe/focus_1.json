@@ -1,0 +1,32 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:focus_1"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "UNLOCKAUROMANCY",
+  "catalyst": {
+    "type": "neoforge:components",
+    "items": "thaumcraft:crystal_essence",
+    "components": {
+      "thaumcraft:essentia": {
+        "ordo": 1
+      }
+    },
+    "strict": false
+  },
+  "aspects": {
+    "vitreus": 20,
+    "praecantatio": 10,
+    "auram": 5
+  },
+  "result": {
+    "id": "thaumcraft:focus_1"
+  }
+}

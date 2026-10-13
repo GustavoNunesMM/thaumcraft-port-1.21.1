@@ -1,0 +1,412 @@
+{
+ "entries": [
+  {
+   "entity": "minecraft:zombie",
+   "aspects": {
+    "exanimis": 20,
+    "humanus": 10,
+    "terra": 5
+   }
+  },
+  {
+   "entity": "minecraft:husk",
+   "aspects": {
+    "exanimis": 20,
+    "humanus": 10,
+    "ignis": 5
+   }
+  },
+  {
+   "entity": "minecraft:giant",
+   "aspects": {
+    "exanimis": 25,
+    "humanus": 15,
+    "terra": 10
+   }
+  },
+  {
+   "entity": "minecraft:skeleton",
+   "aspects": {
+    "exanimis": 20,
+    "humanus": 5,
+    "terra": 5
+   }
+  },
+  {
+   "entity": "minecraft:wither_skeleton",
+   "aspects": {
+    "exanimis": 25,
+    "humanus": 5,
+    "perditio": 10
+   }
+  },
+  {
+   "entity": "minecraft:creeper",
+   "aspects": {
+    "herba": 15,
+    "ignis": 15
+   }
+  },
+  {
+   "entity": "minecraft:horse",
+   "aspects": {
+    "bestia": 15,
+    "terra": 5,
+    "aer": 5
+   }
+  },
+  {
+   "entity": "minecraft:donkey",
+   "aspects": {
+    "bestia": 15,
+    "terra": 5,
+    "aer": 5
+   }
+  },
+  {
+   "entity": "minecraft:mule",
+   "aspects": {
+    "bestia": 15,
+    "terra": 5,
+    "aer": 5
+   }
+  },
+  {
+   "entity": "minecraft:skeleton_horse",
+   "aspects": {
+    "bestia": 5,
+    "exanimis": 10,
+    "terra": 5,
+    "aer": 5
+   }
+  },
+  {
+   "entity": "minecraft:zombie_horse",
+   "aspects": {
+    "bestia": 10,
+    "exanimis": 5,
+    "terra": 5,
+    "aer": 5
+   }
+  },
+  {
+   "entity": "minecraft:pig",
+   "aspects": {
+    "bestia": 10,
+    "terra": 10,
+    "desiderium": 5
+   }
+  },
+  {
+   "entity": "minecraft:experience_orb",
+   "aspects": {
+    "cognitio": 10
+   }
+  },
+  {
+   "entity": "minecraft:sheep",
+   "aspects": {
+    "bestia": 10,
+    "terra": 10
+   }
+  },
+  {
+   "entity": "minecraft:cow",
+   "aspects": {
+    "bestia": 15,
+    "terra": 15
+   }
+  },
+  {
+   "entity": "minecraft:mooshroom",
+   "aspects": {
+    "bestia": 15,
+    "herba": 15,
+    "terra": 15
+   }
+  },
+  {
+   "entity": "minecraft:snow_golem",
+   "aspects": {
+    "gelum": 10,
+    "humanus": 5,
+    "machina": 5,
+    "praecantatio": 5
+   }
+  },
+  {
+   "entity": "minecraft:ocelot",
+   "aspects": {
+    "bestia": 10,
+    "perditio": 10
+   }
+  },
+  {
+   "entity": "minecraft:chicken",
+   "aspects": {
+    "bestia": 5,
+    "volatus": 5,
+    "aer": 5
+   }
+  },
+  {
+   "entity": "minecraft:squid",
+   "aspects": {
+    "bestia": 5,
+    "aqua": 10
+   }
+  },
+  {
+   "entity": "minecraft:wolf",
+   "aspects": {
+    "bestia": 15,
+    "terra": 10,
+    "aversio": 5
+   }
+  },
+  {
+   "entity": "minecraft:bat",
+   "aspects": {
+    "bestia": 5,
+    "volatus": 5,
+    "tenebrae": 5
+   }
+  },
+  {
+   "entity": "minecraft:spider",
+   "aspects": {
+    "bestia": 10,
+    "perditio": 10,
+    "vinculum": 10
+   }
+  },
+  {
+   "entity": "minecraft:slime",
+   "aspects": {
+    "victus": 10,
+    "aqua": 10,
+    "alkimia": 5
+   }
+  },
+  {
+   "entity": "minecraft:ghast",
+   "aspects": {
+    "exanimis": 15,
+    "ignis": 15
+   }
+  },
+  {
+   "entity": "minecraft:zombified_piglin",
+   "aspects": {
+    "exanimis": 15,
+    "ignis": 15,
+    "bestia": 10
+   }
+  },
+  {
+   "entity": "minecraft:enderman",
+   "aspects": {
+    "alienis": 10,
+    "motus": 15,
+    "desiderium": 5
+   }
+  },
+  {
+   "entity": "minecraft:cave_spider",
+   "aspects": {
+    "bestia": 5,
+    "mortuus": 10,
+    "vinculum": 10
+   }
+  },
+  {
+   "entity": "minecraft:silverfish",
+   "aspects": {
+    "bestia": 5,
+    "terra": 10
+   }
+  },
+  {
+   "entity": "minecraft:blaze",
+   "aspects": {
+    "alienis": 5,
+    "ignis": 15,
+    "volatus": 5
+   }
+  },
+  {
+   "entity": "minecraft:magma_cube",
+   "aspects": {
+    "aqua": 5,
+    "ignis": 10,
+    "alkimia": 5
+   }
+  },
+  {
+   "entity": "minecraft:ender_dragon",
+   "aspects": {
+    "alienis": 50,
+    "bestia": 30,
+    "perditio": 50,
+    "volatus": 10
+   }
+  },
+  {
+   "entity": "minecraft:wither",
+   "aspects": {
+    "exanimis": 50,
+    "perditio": 25,
+    "ignis": 25
+   }
+  },
+  {
+   "entity": "minecraft:witch",
+   "aspects": {
+    "humanus": 15,
+    "praecantatio": 5,
+    "alkimia": 10
+   }
+  },
+  {
+   "entity": "minecraft:villager",
+   "aspects": {
+    "humanus": 15
+   }
+  },
+  {
+   "entity": "minecraft:iron_golem",
+   "aspects": {
+    "metallum": 15,
+    "humanus": 5,
+    "machina": 5,
+    "praecantatio": 5
+   }
+  },
+  {
+   "entity": "minecraft:end_crystal",
+   "aspects": {
+    "alienis": 15,
+    "auram": 15,
+    "victus": 15
+   }
+  },
+  {
+   "entity": "minecraft:item_frame",
+   "aspects": {
+    "sensus": 5,
+    "fabrico": 5
+   }
+  },
+  {
+   "entity": "minecraft:painting",
+   "aspects": {
+    "sensus": 10,
+    "fabrico": 5
+   }
+  },
+  {
+   "entity": "minecraft:guardian",
+   "aspects": {
+    "bestia": 10,
+    "alienis": 10,
+    "aqua": 10
+   }
+  },
+  {
+   "entity": "minecraft:rabbit",
+   "aspects": {
+    "bestia": 5,
+    "terra": 5,
+    "motus": 5
+   }
+  },
+  {
+   "entity": "minecraft:endermite",
+   "aspects": {
+    "bestia": 5,
+    "alienis": 5,
+    "motus": 5
+   }
+  },
+  {
+   "entity": "minecraft:polar_bear",
+   "aspects": {
+    "bestia": 15,
+    "gelum": 10
+   }
+  },
+  {
+   "entity": "minecraft:shulker",
+   "aspects": {
+    "alienis": 10,
+    "vinculum": 5,
+    "volatus": 5,
+    "praemunio": 5
+   }
+  },
+  {
+   "entity": "minecraft:evoker",
+   "aspects": {
+    "alienis": 5,
+    "praecantatio": 5,
+    "humanus": 10
+   }
+  },
+  {
+   "entity": "minecraft:vindicator",
+   "aspects": {
+    "aversio": 5,
+    "praecantatio": 5,
+    "humanus": 10
+   }
+  },
+  {
+   "entity": "minecraft:illusioner",
+   "aspects": {
+    "sensus": 5,
+    "praecantatio": 5,
+    "humanus": 10
+   }
+  },
+  {
+   "entity": "minecraft:llama",
+   "aspects": {
+    "bestia": 15,
+    "aqua": 5
+   }
+  },
+  {
+   "entity": "minecraft:parrot",
+   "aspects": {
+    "bestia": 5,
+    "volatus": 5,
+    "sensus": 5
+   }
+  },
+  {
+   "entity": "minecraft:stray",
+   "aspects": {
+    "exanimis": 20,
+    "humanus": 5,
+    "vinculum": 5
+   }
+  },
+  {
+   "entity": "minecraft:vex",
+   "aspects": {
+    "alienis": 5,
+    "volatus": 5,
+    "praecantatio": 5,
+    "humanus": 5
+   }
+  },
+  {
+   "entity": "minecraft:stray",
+   "aspects": {
+    "exanimis": 20,
+    "humanus": 5,
+    "vinculum": 5
+   }
+  }
+ ]
+}

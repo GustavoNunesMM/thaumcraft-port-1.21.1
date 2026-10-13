@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:thaumometer"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "FIRSTSTEPS@2",
+  "vis": 20,
+  "crystals": {
+    "aer": 1,
+    "terra": 1,
+    "aqua": 1,
+    "ignis": 1,
+    "ordo": 1,
+    "perditio": 1
+  },
+  "pattern": [
+    " I ",
+    "IGI",
+    " I "
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/gold"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:thaumometer"
+  }
+}

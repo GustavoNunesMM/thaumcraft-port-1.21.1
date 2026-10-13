@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stone_ancient"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stairs_ancient"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "K  ",
+    "KK ",
+    "KKK"
+  ],
+  "key": {
+    "K": {
+      "item": "thaumcraft:stone_ancient"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:stairs_ancient",
+    "count": 4
+  }
+}

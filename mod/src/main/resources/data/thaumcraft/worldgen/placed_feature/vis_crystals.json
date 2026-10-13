@@ -1,0 +1,8 @@
+{
+  "feature": "thaumcraft:vis_crystals",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

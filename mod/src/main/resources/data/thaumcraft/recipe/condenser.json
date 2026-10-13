@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:condenser"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mechanism_complex"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:morphic_resonator"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:tube"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "FLUXCLEANUP",
+  "vis": 500,
+  "crystals": {
+    "aer": 5,
+    "aqua": 5,
+    "perditio": 5
+  },
+  "pattern": [
+    "BCB",
+    "WMW",
+    "BTB"
+  ],
+  "key": {
+    "T": {
+      "item": "thaumcraft:tube"
+    },
+    "C": {
+      "item": "thaumcraft:morphic_resonator"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "M": {
+      "item": "thaumcraft:mechanism_complex"
+    },
+    "B": {
+      "tag": "c:plates/brass"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:condenser"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mechanism_simple"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "BASEARTIFICE",
+  "vis": 10,
+  "crystals": {
+    "ignis": 1,
+    "aqua": 1
+  },
+  "pattern": [
+    " B ",
+    "ISI",
+    " B "
+  ],
+  "key": {
+    "B": {
+      "tag": "c:plates/brass"
+    },
+    "I": {
+      "tag": "c:plates/iron"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:mechanism_simple"
+  }
+}

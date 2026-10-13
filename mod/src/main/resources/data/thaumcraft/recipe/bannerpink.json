@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:banner_pink"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "BASEINFUSION",
+  "vis": 10,
+  "group": "thaumcraft:banners",
+  "pattern": [
+    "WS",
+    "WS",
+    "WB"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:pink_wool"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    },
+    "B": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:banner_pink"
+  }
+}

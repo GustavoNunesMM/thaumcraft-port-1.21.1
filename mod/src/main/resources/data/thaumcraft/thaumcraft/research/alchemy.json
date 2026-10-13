@@ -1,0 +1,843 @@
+{
+ "entries": [
+  {
+   "key": "BASEALCHEMY",
+   "name": "research.BASEALCHEMY.title",
+   "icons": [
+    "thaumcraft:textures/research/cat_alchemy.png"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    0,
+    0
+   ],
+   "parents": [
+    "UNLOCKALCHEMY"
+   ],
+   "meta": [
+    "ROUND",
+    "HIDDEN"
+   ],
+   "stages": [
+    {
+     "text": "research.BASEALCHEMY.stage.1",
+     "recipes": [
+      "thaumcraft:nitor",
+      "thaumcraft:nitorgroup",
+      "thaumcraft:viscrystalgroup",
+      "thaumcraft:phial",
+      "thaumcraft:filter",
+      "thaumcraft:morphicresonator"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "ALUMENTUM",
+   "name": "research.ALUMENTUM.title",
+   "icons": [
+    "thaumcraft:textures/items/alumentum.png"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    2,
+    -1
+   ],
+   "parents": [
+    "BASEALCHEMY"
+   ],
+   "stages": [
+    {
+     "text": "research.ALUMENTUM.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;BASICS;1"
+     ]
+    },
+    {
+     "text": "research.ALUMENTUM.stage.2",
+     "recipes": [
+      "thaumcraft:alumentum"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "METALLURGY",
+   "name": "research.METALLURGY.title",
+   "icons": [
+    "thaumcraft:textures/items/ingot_brass.png"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    2,
+    2
+   ],
+   "parents": [
+    "BASEALCHEMY"
+   ],
+   "stages": [
+    {
+     "text": "research.METALLURGY.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1"
+     ],
+     "recipes": [
+      "thaumcraft:brassingot"
+     ],
+     "required_craft": [
+      "thaumcraft:ingot_brass"
+     ]
+    },
+    {
+     "text": "research.METALLURGY.stage.2",
+     "required_knowledge": [
+      "THEORY;ALCHEMY;1"
+     ],
+     "recipes": [
+      "thaumcraft:brassingot",
+      "thaumcraft:brass_stuff",
+      "thaumcraft:thaumiumingot"
+     ],
+     "required_craft": [
+      "thaumcraft:ingot_thaumium"
+     ]
+    },
+    {
+     "text": "research.METALLURGY.stage.3",
+     "recipes": [
+      "thaumcraft:brassingot",
+      "thaumcraft:brass_stuff",
+      "thaumcraft:thaumiumingot",
+      "thaumcraft:thaumium_stuff"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "METALPURIFICATION",
+   "name": "research.METALPURIFICATION.title",
+   "icons": [
+    "thaumcraft:textures/items/cluster_iron.png"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    2,
+    4
+   ],
+   "parents": [
+    "METALLURGY@3"
+   ],
+   "stages": [
+    {
+     "text": "research.METALPURIFICATION.stage.1",
+     "required_knowledge": [
+      "THEORY;ALCHEMY;2"
+     ],
+     "recipes": [
+      "thaumcraft:metal_purification_iron",
+      "thaumcraft:metal_purification_gold",
+      "thaumcraft:metal_purification_cinnabar",
+      "thaumcraft:metal_purification_copper",
+      "thaumcraft:metal_purification_tin",
+      "thaumcraft:metal_purification_silver",
+      "thaumcraft:metal_purification_lead"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "HEDGEALCHEMY",
+   "name": "research.HEDGEALCHEMY.title",
+   "icons": [
+    "thaumcraft:textures/items/tallow.png"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -2,
+    0
+   ],
+   "parents": [
+    "BASEALCHEMY"
+   ],
+   "stages": [
+    {
+     "text": "research.HEDGEALCHEMY.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1"
+     ],
+     "required_craft": [
+      "thaumcraft:tallow",
+      "minecraft:leather"
+     ],
+     "recipes": [
+      "thaumcraft:hedge_tallow",
+      "thaumcraft:hedge_leather"
+     ]
+    },
+    {
+     "text": "research.HEDGEALCHEMY.stage.2",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1"
+     ],
+     "required_craft": [
+      "minecraft:gunpowder",
+      "minecraft:slime_ball",
+      "minecraft:ink_sac",
+      "minecraft:glowstone_dust"
+     ],
+     "recipes": [
+      "thaumcraft:hedge_tallow",
+      "thaumcraft:tallowcandles",
+      "thaumcraft:hedge_leather",
+      "thaumcraft:hedge_gunpowder",
+      "thaumcraft:hedge_slime",
+      "thaumcraft:hedge_dye",
+      "thaumcraft:hedge_glowstone"
+     ]
+    },
+    {
+     "text": "research.HEDGEALCHEMY.stage.3",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1"
+     ],
+     "required_craft": [
+      "minecraft:clay_ball",
+      "minecraft:string",
+      "minecraft:cobweb",
+      "minecraft:lava_bucket"
+     ],
+     "recipes": [
+      "thaumcraft:hedge_tallow",
+      "thaumcraft:tallowcandles",
+      "thaumcraft:hedge_leather",
+      "thaumcraft:hedge_gunpowder",
+      "thaumcraft:hedge_slime",
+      "thaumcraft:hedge_dye",
+      "thaumcraft:hedge_glowstone",
+      "thaumcraft:hedge_clay",
+      "thaumcraft:hedge_string",
+      "thaumcraft:hedge_web",
+      "thaumcraft:hedge_lava"
+     ]
+    },
+    {
+     "text": "research.HEDGEALCHEMY.stage.4",
+     "recipes": [
+      "thaumcraft:hedge_tallow",
+      "thaumcraft:tallowcandles",
+      "thaumcraft:hedge_leather",
+      "thaumcraft:hedge_gunpowder",
+      "thaumcraft:hedge_slime",
+      "thaumcraft:hedge_dye",
+      "thaumcraft:hedge_glowstone",
+      "thaumcraft:hedge_clay",
+      "thaumcraft:hedge_string",
+      "thaumcraft:hedge_web",
+      "thaumcraft:hedge_lava"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "LIQUIDDEATH",
+   "name": "research.LIQUIDDEATH.title",
+   "icons": [
+    "thaumcraft:textures/items/bucket_death.png"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -4,
+    2
+   ],
+   "parents": [
+    "HEDGEALCHEMY"
+   ],
+   "stages": [
+    {
+     "text": "research.LIQUIDDEATH.stage.1",
+     "required_knowledge": [
+      "THEORY;ALCHEMY;1"
+     ],
+     "warp": 3
+    },
+    {
+     "text": "research.LIQUIDDEATH.stage.2",
+     "recipes": [
+      "thaumcraft:liquiddeath"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "BOTTLETAINT",
+   "name": "research.BOTTLETAINT.title",
+   "icons": [
+    "thaumcraft:bottle_taint"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -6,
+    0
+   ],
+   "parents": [
+    "HEDGEALCHEMY",
+    "f_toomuchflux"
+   ],
+   "stages": [
+    {
+     "text": "research.BOTTLETAINT.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1",
+      "THEORY;ALCHEMY;1"
+     ],
+     "recipes": [
+      "thaumcraft:bottletaint"
+     ],
+     "warp": 2
+    }
+   ]
+  },
+  {
+   "key": "BATHSALTS",
+   "name": "research.BATHSALTS.title",
+   "icons": [
+    "thaumcraft:bath_salts"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -4,
+    -2
+   ],
+   "parents": [
+    "HEDGEALCHEMY",
+    "!BATHSALTS"
+   ],
+   "meta": [
+    "HIDDEN"
+   ],
+   "stages": [
+    {
+     "text": "research.BATHSALTS.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ELDRITCH;1",
+      "THEORY;ALCHEMY;1"
+     ]
+    },
+    {
+     "text": "research.BATHSALTS.stage.2",
+     "recipes": [
+      "thaumcraft:bathsalts"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "SANESOAP",
+   "name": "research.SANESOAP.title",
+   "icons": [
+    "thaumcraft:sanity_soap"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -3,
+    -4
+   ],
+   "parents": [
+    "BATHSALTS"
+   ],
+   "stages": [
+    {
+     "text": "research.SANESOAP.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ELDRITCH;1",
+      "THEORY;ALCHEMY;1"
+     ]
+    },
+    {
+     "text": "research.SANESOAP.stage.2",
+     "recipes": [
+      "thaumcraft:sanesoap"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "ARCANESPA",
+   "name": "research.ARCANESPA.title",
+   "icons": [
+    "thaumcraft:spa"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -5,
+    -4
+   ],
+   "parents": [
+    "BATHSALTS"
+   ],
+   "stages": [
+    {
+     "text": "research.ARCANESPA.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ARTIFICE;1"
+     ]
+    },
+    {
+     "text": "research.ARCANESPA.stage.2",
+     "recipes": [
+      "thaumcraft:arcanespa"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "ESSENTIASMELTER",
+   "name": "research.ESSENTIASMELTER.title",
+   "icons": [
+    "thaumcraft:smelter_basic"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    4,
+    0
+   ],
+   "parents": [
+    "ALUMENTUM",
+    "METALLURGY@2"
+   ],
+   "siblings": [
+    "WARDEDJARS"
+   ],
+   "meta": [
+    "SPIKY"
+   ],
+   "stages": [
+    {
+     "text": "research.ESSENTIASMELTER.stage.1",
+     "required_item": [
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"aer\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"terra\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"ignis\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"aqua\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"ordo\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"perditio\":1}}"
+     ]
+    },
+    {
+     "text": "research.ESSENTIASMELTER.stage.2",
+     "required_item": [
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"vacuos\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"lux\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"motus\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"gelum\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"vitreus\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"metallum\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"victus\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"mortuus\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"potentia\":1}}",
+      "thaumcraft:crystal_essence;1;{\"thaumcraft:essentia\":{\"permutatio\":1}}"
+     ]
+    },
+    {
+     "text": "research.ESSENTIASMELTER.stage.3",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1",
+      "THEORY;ALCHEMY;1"
+     ],
+     "recipes": [
+      "thaumcraft:essentiasmelter"
+     ],
+     "required_craft": [
+      "thaumcraft:smelter_basic"
+     ]
+    },
+    {
+     "text": "research.ESSENTIASMELTER.stage.4",
+     "recipes": [
+      "thaumcraft:essentiasmelter",
+      "thaumcraft:alembic"
+     ]
+    }
+   ],
+   "addenda": [
+    {
+     "text": "research.ESSENTIASMELTER.bellows",
+     "required_research": [
+      "BELLOWS"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "WARDEDJARS",
+   "name": "research.WARDEDJARS.title",
+   "icons": [
+    "thaumcraft:jar_normal"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    4,
+    -2
+   ],
+   "parents": [
+    "ESSENTIASMELTER"
+   ],
+   "meta": [
+    "ROUND"
+   ],
+   "stages": [
+    {
+     "text": "research.WARDEDJARS.stage.1",
+     "recipes": [
+      "thaumcraft:wardedjar",
+      "thaumcraft:jarvoid",
+      "thaumcraft:brassbrace",
+      "thaumcraft:jarlabel",
+      "thaumcraft:jarlabelessence"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "TUBES",
+   "name": "research.TUBES.title",
+   "icons": [
+    "thaumcraft:tube"
+   ],
+   "parents": [
+    "WARDEDJARS"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    6,
+    -2
+   ],
+   "stages": [
+    {
+     "text": "research.TUBES.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1",
+      "OBSERVATION;ARTIFICE;1"
+     ],
+     "required_item": [
+      "thaumcraft:phial;1;{\"thaumcraft:essentia\":{\"vitium\":10}}",
+      "thaumcraft:phial;1;{\"thaumcraft:essentia\":{\"vinculum\":10}}",
+      "thaumcraft:phial;1;{\"thaumcraft:essentia\":{\"alienis\":10}}",
+      "thaumcraft:phial;1;{\"thaumcraft:essentia\":{\"alkimia\":10}}"
+     ]
+    },
+    {
+     "text": "research.TUBES.stage.2",
+     "recipes": [
+      "thaumcraft:resonator",
+      "thaumcraft:tube",
+      "thaumcraft:tubevalve",
+      "thaumcraft:tubefilter",
+      "thaumcraft:tuberestrict",
+      "thaumcraft:tubeoneway",
+      "thaumcraft:tubebuffer",
+      "thaumcraft:alchemicalconstruct"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "ESSENTIASMELTERTHAUMIUM",
+   "name": "research.ESSENTIASMELTERTHAUMIUM.title",
+   "icons": [
+    "thaumcraft:smelter_thaumium"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    8,
+    0
+   ],
+   "parents": [
+    "TUBES",
+    "METALLURGY@3"
+   ],
+   "stages": [
+    {
+     "text": "research.ESSENTIASMELTERTHAUMIUM.stage.1",
+     "required_knowledge": [
+      "THEORY;ALCHEMY;1"
+     ],
+     "required_item": [
+      "thaumcraft:plate_thaumium"
+     ],
+     "required_craft": [
+      "thaumcraft:metal_thaumium"
+     ]
+    },
+    {
+     "text": "research.ESSENTIASMELTERTHAUMIUM.stage.2",
+     "recipes": [
+      "thaumcraft:essentiasmelterthaumium"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "ESSENTIASMELTERVOID",
+   "name": "research.ESSENTIASMELTERVOID.title",
+   "icons": [
+    "thaumcraft:smelter_void"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    12,
+    0
+   ],
+   "parents": [
+    "ESSENTIASMELTERTHAUMIUM",
+    "BASEELDRITCH"
+   ],
+   "stages": [
+    {
+     "text": "research.ESSENTIASMELTERVOID.stage.1",
+     "required_knowledge": [
+      "THEORY;ALCHEMY;1",
+      "THEORY;ELDRITCH;1"
+     ],
+     "required_item": [
+      "thaumcraft:plate_void"
+     ],
+     "required_craft": [
+      "thaumcraft:metal_void"
+     ],
+     "recipes": [
+      "thaumcraft:advalchemyconstruct"
+     ]
+    },
+    {
+     "text": "research.ESSENTIASMELTERVOID.stage.2",
+     "recipes": [
+      "thaumcraft:advalchemyconstruct",
+      "thaumcraft:essentiasmeltervoid"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "IMPROVEDSMELTING",
+   "name": "research.IMPROVEDSMELTING.title",
+   "icons": [
+    "thaumcraft:smelter_aux"
+   ],
+   "parents": [
+    "TUBES",
+    "BELLOWS"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    5,
+    -4
+   ],
+   "stages": [
+    {
+     "text": "research.IMPROVEDSMELTING.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1",
+      "OBSERVATION;ARTIFICE;1"
+     ]
+    },
+    {
+     "text": "research.IMPROVEDSMELTING.stage.2",
+     "recipes": [
+      "thaumcraft:smelteraux"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "IMPROVEDSMELTING2",
+   "name": "research.IMPROVEDSMELTING2.title",
+   "icons": [
+    "thaumcraft:smelter_vent"
+   ],
+   "parents": [
+    "IMPROVEDSMELTING"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    3,
+    -4
+   ],
+   "stages": [
+    {
+     "text": "research.IMPROVEDSMELTING2.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1",
+      "OBSERVATION;ARTIFICE;1"
+     ]
+    },
+    {
+     "text": "research.IMPROVEDSMELTING2.stage.2",
+     "recipes": [
+      "thaumcraft:smeltervent"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "CENTRIFUGE",
+   "name": "research.CENTRIFUGE.title",
+   "icons": [
+    "thaumcraft:centrifuge"
+   ],
+   "parents": [
+    "TUBES"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    7,
+    -4
+   ],
+   "stages": [
+    {
+     "text": "research.CENTRIFUGE.stage.1",
+     "required_knowledge": [
+      "THEORY;ALCHEMY;1"
+     ]
+    },
+    {
+     "text": "research.CENTRIFUGE.stage.2",
+     "recipes": [
+      "thaumcraft:centrifuge"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "THAUMATORIUM",
+   "name": "research.THAUMATORIUM.title",
+   "icons": [
+    "thaumcraft:thaumatorium"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    10,
+    -2
+   ],
+   "parents": [
+    "CENTRIFUGE",
+    "ESSENTIASMELTERTHAUMIUM"
+   ],
+   "meta": [
+    "SPIKY"
+   ],
+   "stages": [
+    {
+     "text": "research.THAUMATORIUM.stage.1",
+     "required_knowledge": [
+      "THEORY;ALCHEMY;1",
+      "OBSERVATION;ARTIFICE;1"
+     ]
+    },
+    {
+     "text": "research.THAUMATORIUM.stage.2",
+     "recipes": [
+      "thaumcraft:thaumatorium",
+      "thaumcraft:mnemonicmatrix"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "ESSENTIATRANSPORT",
+   "name": "research.ESSENTIATRANSPORT.title",
+   "icons": [
+    "thaumcraft:essentia_input"
+   ],
+   "parents": [
+    "THAUMATORIUM",
+    "INFUSION"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    12,
+    -2
+   ],
+   "stages": [
+    {
+     "text": "research.ESSENTIATRANSPORT.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1",
+      "OBSERVATION;ARTIFICE;1"
+     ]
+    },
+    {
+     "text": "research.ESSENTIATRANSPORT.stage.2",
+     "recipes": [
+      "thaumcraft:essentiatransportin",
+      "thaumcraft:essentiatransportout"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "EVERFULLURN",
+   "name": "research.EVERFULLURN.title",
+   "icons": [
+    "thaumcraft:everfull_urn"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -2,
+    2
+   ],
+   "parents": [
+    "HEDGEALCHEMY"
+   ],
+   "stages": [
+    {
+     "text": "research.EVERFULLURN.stage.1",
+     "required_knowledge": [
+      "THEORY;BASICS;1",
+      "OBSERVATION;ALCHEMY;1"
+     ]
+    },
+    {
+     "text": "research.EVERFULLURN.stage.2",
+     "recipes": [
+      "thaumcraft:everfullurn"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "POTIONSPRAYER",
+   "name": "research.POTIONSPRAYER.title",
+   "icons": [
+    "thaumcraft:potion_sprayer"
+   ],
+   "category": "ALCHEMY",
+   "location": [
+    -1,
+    -2
+   ],
+   "parents": [
+    "HEDGEALCHEMY",
+    "~TUBES"
+   ],
+   "meta": [
+    "REVERSE"
+   ],
+   "stages": [
+    {
+     "text": "research.POTIONSPRAYER.stage.1",
+     "required_knowledge": [
+      "OBSERVATION;ALCHEMY;1",
+      "THEORY;ALCHEMY;1"
+     ]
+    },
+    {
+     "text": "research.POTIONSPRAYER.stage.2",
+     "recipes": [
+      "thaumcraft:potionsprayer"
+     ]
+    }
+   ]
+  }
+ ]
+}

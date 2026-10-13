@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:nitor_yellow"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "UNLOCKALCHEMY@3",
+  "catalyst": {
+    "tag": "c:dusts/glowstone"
+  },
+  "aspects": {
+    "potentia": 10,
+    "ignis": 10,
+    "lux": 10
+  },
+  "result": {
+    "id": "thaumcraft:nitor_yellow"
+  }
+}

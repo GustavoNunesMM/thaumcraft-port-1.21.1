@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "enabled=false,facing=down": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=true,facing=down": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=false,facing=up": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=true,facing=up": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=false,facing=north": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=true,facing=north": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=false,facing=south": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=true,facing=south": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=false,facing=west": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=true,facing=west": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=false,facing=east": {
+      "model": "thaumcraft:block/bellows_particle"
+    },
+    "enabled=true,facing=east": {
+      "model": "thaumcraft:block/bellows_particle"
+    }
+  }
+}

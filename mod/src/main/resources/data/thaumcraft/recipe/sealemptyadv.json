@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_empty"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_empty_advanced"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "SEALEMPTY&&MINDBIOTHAUMIC",
+  "catalyst": {
+    "item": "thaumcraft:seal_empty"
+  },
+  "aspects": {
+    "sensus": 10,
+    "cognitio": 10
+  },
+  "result": {
+    "id": "thaumcraft:seal_empty_advanced"
+  }
+}

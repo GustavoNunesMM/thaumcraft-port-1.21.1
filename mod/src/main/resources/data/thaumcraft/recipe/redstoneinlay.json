@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:inlay"
+    }
+  ],
+  "type": "thaumcraft:arcane_shapeless",
+  "research": "INFUSIONSTABLE",
+  "vis": 25,
+  "crystals": {
+    "aqua": 1
+  },
+  "ingredients": [
+    {
+      "tag": "c:dusts/redstone"
+    },
+    {
+      "tag": "c:ingots/gold"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:inlay",
+    "count": 2
+  }
+}

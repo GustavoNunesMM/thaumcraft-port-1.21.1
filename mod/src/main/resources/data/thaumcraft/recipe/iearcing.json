@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:infusion_matrix"
+    }
+  ],
+  "type": "thaumcraft:infusion_enchantment",
+  "enchantment": "arcing",
+  "aspects": {
+    "potentia": 40,
+    "aer": 60
+  },
+  "components": [
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "item": "minecraft:redstone_block"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_empty_advanced"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_provider"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "SEALPROVIDE",
+  "catalyst": {
+    "item": "thaumcraft:seal_empty_advanced"
+  },
+  "aspects": {
+    "permutatio": 10,
+    "desiderium": 10
+  },
+  "result": {
+    "id": "thaumcraft:seal_provider"
+  }
+}

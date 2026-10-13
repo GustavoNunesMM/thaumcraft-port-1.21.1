@@ -1,0 +1,89 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:amulet_mundane"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:amulet_vis_crafted"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:vis_resonator"
+    }
+  ],
+  "type": "thaumcraft:infusion",
+  "research": "VISAMULET",
+  "instability": 6,
+  "aspects": {
+    "auram": 50,
+    "potentia": 100,
+    "vacuos": 50
+  },
+  "central": {
+    "item": "thaumcraft:amulet_mundane"
+  },
+  "components": [
+    {
+      "item": "thaumcraft:vis_resonator"
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "aer": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "ignis": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "aqua": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "terra": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "ordo": 1
+        }
+      },
+      "strict": false
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:amulet_vis_crafted"
+  }
+}

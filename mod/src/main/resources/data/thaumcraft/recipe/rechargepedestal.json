@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:recharge_pedestal"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:vis_resonator"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "RECHARGEPEDESTAL",
+  "vis": 100,
+  "crystals": {
+    "aer": 1,
+    "ordo": 1
+  },
+  "pattern": [
+    " R ",
+    "DID",
+    "SSS"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/gold"
+    },
+    "D": {
+      "tag": "c:gems/diamond"
+    },
+    "R": {
+      "item": "thaumcraft:vis_resonator"
+    },
+    "S": {
+      "tag": "c:stones"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:recharge_pedestal"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:fabric"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:traveller_boots"
+    }
+  ],
+  "type": "thaumcraft:infusion",
+  "research": "BOOTSTRAVELLER",
+  "instability": 1,
+  "aspects": {
+    "volatus": 100,
+    "motus": 100
+  },
+  "central": {
+    "item": "minecraft:leather_boots"
+  },
+  "components": [
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "aer": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "aer": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "item": "thaumcraft:fabric"
+    },
+    {
+      "item": "thaumcraft:fabric"
+    },
+    {
+      "item": "minecraft:feather"
+    },
+    {
+      "tag": "minecraft:fishes"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:traveller_boots"
+  }
+}

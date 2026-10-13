@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:plate_iron"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:plate_iron",
+    "count": 3
+  }
+}

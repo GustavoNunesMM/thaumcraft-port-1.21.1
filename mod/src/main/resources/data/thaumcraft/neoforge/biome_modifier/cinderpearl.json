@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#thaumcraft:has_cinderpearl",
+  "features": [
+    "thaumcraft:cinderpearl"
+  ],
+  "step": "vegetal_decoration"
+}

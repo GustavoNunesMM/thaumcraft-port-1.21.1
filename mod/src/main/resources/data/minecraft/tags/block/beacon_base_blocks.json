@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:metal_thaumium",
+    "thaumcraft:metal_void",
+    "thaumcraft:metal_brass",
+    "thaumcraft:amber_block",
+    "thaumcraft:amber_brick",
+    "thaumcraft:stone_arcane",
+    "thaumcraft:stone_arcane_brick",
+    "thaumcraft:stone_ancient",
+    "thaumcraft:stone_ancient_tile",
+    "thaumcraft:stone_ancient_glyphed",
+    "thaumcraft:stone_eldritch_tile"
+  ]
+}

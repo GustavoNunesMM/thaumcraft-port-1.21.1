@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:stairs_arcane",
+    "thaumcraft:stairs_arcane_brick",
+    "thaumcraft:stairs_ancient"
+  ]
+}

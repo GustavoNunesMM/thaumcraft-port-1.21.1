@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:infusion_matrix"
+    }
+  ],
+  "type": "thaumcraft:infusion_enchantment",
+  "enchantment": "lamplight",
+  "aspects": {
+    "lux": 80,
+    "aer": 20
+  },
+  "components": [
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "tag": "thaumcraft:nitor"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:alumentum"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "ALUMENTUM",
+  "catalyst": {
+    "tag": "minecraft:coals"
+  },
+  "aspects": {
+    "potentia": 10,
+    "ignis": 10,
+    "perditio": 5
+  },
+  "result": {
+    "id": "thaumcraft:alumentum"
+  }
+}

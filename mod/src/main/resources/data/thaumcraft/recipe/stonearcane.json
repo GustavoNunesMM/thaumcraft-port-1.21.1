@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stone_arcane"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "KKK",
+    "KCK",
+    "KKK"
+  ],
+  "key": {
+    "K": {
+      "tag": "c:stones"
+    },
+    "C": {
+      "item": "thaumcraft:crystal_essence"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:stone_arcane",
+    "count": 9
+  }
+}

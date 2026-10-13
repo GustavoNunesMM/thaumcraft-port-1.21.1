@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:pedestal_ancient"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:slab_ancient"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stone_ancient"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "INFUSIONANCIENT",
+  "vis": 150,
+  "pattern": [
+    "SSS",
+    " B ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "thaumcraft:slab_ancient"
+    },
+    "B": {
+      "item": "thaumcraft:stone_ancient"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:pedestal_ancient"
+  }
+}

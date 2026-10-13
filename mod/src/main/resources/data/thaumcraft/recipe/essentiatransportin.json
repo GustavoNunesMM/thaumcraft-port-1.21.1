@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:essentia_input"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:metal_alchemical"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "ESSENTIATRANSPORT",
+  "vis": 100,
+  "crystals": {
+    "aer": 1,
+    "aqua": 1
+  },
+  "pattern": [
+    "   ",
+    "BQB",
+    "IGI"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:plates/iron"
+    },
+    "B": {
+      "tag": "c:plates/brass"
+    },
+    "Q": {
+      "item": "minecraft:dispenser"
+    },
+    "G": {
+      "item": "thaumcraft:metal_alchemical"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:essentia_input"
+  }
+}

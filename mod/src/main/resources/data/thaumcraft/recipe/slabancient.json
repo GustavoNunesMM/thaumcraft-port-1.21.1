@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stone_ancient"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:slab_ancient"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "KKK"
+  ],
+  "key": {
+    "K": {
+      "item": "thaumcraft:stone_ancient"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:slab_ancient",
+    "count": 6
+  }
+}

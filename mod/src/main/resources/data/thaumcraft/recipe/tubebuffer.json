@@ -1,0 +1,52 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:phial"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:tube"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:tube_buffer"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:tube_restrict"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:tube_valve"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "TUBES",
+  "vis": 25,
+  "pattern": [
+    "PVP",
+    "TWT",
+    "PRP"
+  ],
+  "key": {
+    "T": {
+      "item": "thaumcraft:tube"
+    },
+    "V": {
+      "item": "thaumcraft:tube_valve"
+    },
+    "W": {
+      "tag": "c:plates/iron"
+    },
+    "R": {
+      "item": "thaumcraft:tube_restrict"
+    },
+    "P": {
+      "item": "thaumcraft:phial"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:tube_buffer"
+  }
+}

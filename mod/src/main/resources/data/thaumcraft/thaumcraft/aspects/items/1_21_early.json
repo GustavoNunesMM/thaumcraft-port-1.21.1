@@ -1,0 +1,21 @@
+{
+ "entries": [
+  {
+   "item": "minecraft:shulker_box",
+   "aspects": {
+    "praemunio": 20,
+    "alienis": 10,
+    "bestia": 10,
+    "vacuos": 15,
+    "herba": 5
+   }
+  },
+  {
+   "item": "minecraft:purple_shulker_box",
+   "copy": "minecraft:shulker_box",
+   "aspects": {
+    "sensus": 1
+   }
+  }
+ ]
+}

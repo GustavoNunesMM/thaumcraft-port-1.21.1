@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:condenser_lattice_dirty"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:filter"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "FLUXCLEANUP",
+  "vis": 100,
+  "crystals": {
+    "terra": 3,
+    "aer": 3
+  },
+  "pattern": [
+    "QTQ",
+    "QFQ",
+    "QTQ"
+  ],
+  "key": {
+    "T": {
+      "tag": "c:plates/thaumium"
+    },
+    "F": {
+      "item": "thaumcraft:filter"
+    },
+    "Q": {
+      "tag": "c:gems/quartz"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:condenser_lattice_dirty"
+  }
+}

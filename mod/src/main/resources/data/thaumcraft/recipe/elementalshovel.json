@@ -1,0 +1,65 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:crystal_essence"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:elemental_shovel"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:plank_greatwood"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:rare_earth"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:thaumium_shovel"
+    }
+  ],
+  "type": "thaumcraft:infusion",
+  "research": "ELEMENTALTOOLS",
+  "instability": 1,
+  "aspects": {
+    "terra": 60,
+    "fabrico": 30
+  },
+  "central": {
+    "item": "thaumcraft:thaumium_shovel"
+  },
+  "components": [
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "terra": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "type": "neoforge:components",
+      "items": "thaumcraft:crystal_essence",
+      "components": {
+        "thaumcraft:essentia": {
+          "terra": 1
+        }
+      },
+      "strict": false
+    },
+    {
+      "item": "thaumcraft:rare_earth"
+    },
+    {
+      "item": "thaumcraft:plank_greatwood"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:elemental_shovel"
+  }
+}

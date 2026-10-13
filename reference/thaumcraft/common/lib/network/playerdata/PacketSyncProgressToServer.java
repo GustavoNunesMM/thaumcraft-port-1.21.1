@@ -1,0 +1,157 @@
+package thaumcraft.common.lib.network.playerdata;
+
+import io.netty.buffer.ByteBuf;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IThreadListener;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
+import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import net.minecraftforge.oredict.OreDictionary;
+import thaumcraft.api.capabilities.ThaumcraftCapabilities;
+import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchEntry;
+import thaumcraft.api.research.ResearchStage;
+import thaumcraft.common.lib.research.ResearchManager;
+import thaumcraft.common.lib.utils.InventoryUtils;
+
+public class PacketSyncProgressToServer implements IMessage, IMessageHandler<PacketSyncProgressToServer, IMessage> {
+   private String key;
+   private boolean first;
+   private boolean checks;
+   private boolean noFlags;
+
+   public PacketSyncProgressToServer() {
+   }
+
+   public PacketSyncProgressToServer(String key, boolean first, boolean checks, boolean noFlags) {
+      this.key = key;
+      this.first = first;
+      this.checks = checks;
+      this.noFlags = noFlags;
+   }
+
+   public PacketSyncProgressToServer(String key, boolean first) {
+      this(key, first, false, true);
+   }
+
+   public void toBytes(ByteBuf buffer) {
+      ByteBufUtils.writeUTF8String(buffer, this.key);
+      buffer.writeBoolean(this.first);
+      buffer.writeBoolean(this.checks);
+      buffer.writeBoolean(this.noFlags);
+   }
+
+   public void fromBytes(ByteBuf buffer) {
+      this.key = ByteBufUtils.readUTF8String(buffer);
+      this.first = buffer.readBoolean();
+      this.checks = buffer.readBoolean();
+      this.noFlags = buffer.readBoolean();
+   }
+
+   public IMessage onMessage(final PacketSyncProgressToServer message, final MessageContext ctx) {
+      IThreadListener mainThread = ctx.getServerHandler().player.getServerWorld();
+      mainThread.addScheduledTask(new Runnable() {
+         @Override
+         public void run() {
+            EntityPlayer player = ctx.getServerHandler().player;
+            if (player != null && message.first != ThaumcraftCapabilities.knowsResearch(player, message.key)) {
+               if (message.checks && !PacketSyncProgressToServer.this.checkRequisites(player, message.key)) {
+                  return;
+               }
+
+               if (message.noFlags) {
+                  ResearchManager.noFlags = true;
+               }
+
+               ResearchManager.progressResearch(player, message.key);
+            }
+         }
+      });
+      return null;
+   }
+
+   private boolean checkRequisites(EntityPlayer player, String key) {
+      ResearchEntry research = ResearchCategories.getResearch(key);
+      if (research.getStages() != null) {
+         int currentStage = ThaumcraftCapabilities.getKnowledge(player).getResearchStage(key) - 1;
+         if (currentStage < 0) {
+            return false;
+         }
+
+         if (currentStage >= research.getStages().length) {
+            return true;
+         }
+
+         ResearchStage stage = research.getStages()[currentStage];
+         Object[] o = stage.getObtain();
+         if (o != null) {
+            for (int a = 0; a < o.length; a++) {
+               ItemStack ts = ItemStack.EMPTY;
+               boolean ore = false;
+               if (o[a] instanceof ItemStack) {
+                  ts = (ItemStack)o[a];
+               } else {
+                  NonNullList<ItemStack> nnl = OreDictionary.getOres((String)o[a]);
+                  ts = (ItemStack)nnl.get(0);
+                  ore = true;
+               }
+
+               if (!InventoryUtils.isPlayerCarryingAmount(player, ts, ore)) {
+                  return false;
+               }
+            }
+
+            for (int a = 0; a < o.length; a++) {
+               boolean orex = false;
+               ItemStack tsx = ItemStack.EMPTY;
+               if (o[a] instanceof ItemStack) {
+                  tsx = (ItemStack)o[a];
+               } else {
+                  NonNullList<ItemStack> nnl = OreDictionary.getOres((String)o[a]);
+                  tsx = (ItemStack)nnl.get(0);
+                  orex = true;
+               }
+
+               InventoryUtils.consumePlayerItem(player, tsx, true, orex);
+            }
+         }
+
+         Object[] c = stage.getCraft();
+         if (c != null) {
+            for (int a = 0; a < c.length; a++) {
+               if (!ThaumcraftCapabilities.getKnowledge(player).isResearchKnown("[#]" + stage.getCraftReference()[a])) {
+                  return false;
+               }
+            }
+         }
+
+         String[] r = stage.getResearch();
+         if (r != null) {
+            for (int ax = 0; ax < r.length; ax++) {
+               if (!ThaumcraftCapabilities.knowsResearchStrict(player, r[ax])) {
+                  return false;
+               }
+            }
+         }
+
+         ResearchStage.Knowledge[] k = stage.getKnow();
+         if (k != null) {
+            for (int axx = 0; axx < k.length; axx++) {
+               int pk = ThaumcraftCapabilities.getKnowledge(player).getKnowledge(k[axx].type, k[axx].category);
+               if (pk < k[axx].amount) {
+                  return false;
+               }
+            }
+
+            for (int axxx = 0; axxx < k.length; axxx++) {
+               ResearchManager.addKnowledge(player, k[axxx].type, k[axxx].category, -k[axxx].amount * k[axxx].type.getProgression());
+            }
+         }
+      }
+
+      return true;
+   }
+}

@@ -1,0 +1,44 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:alembic"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:filter"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:plank_greatwood"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "ESSENTIASMELTER",
+  "vis": 50,
+  "crystals": {
+    "aqua": 1
+  },
+  "pattern": [
+    "WFW",
+    "SBS",
+    "WFW"
+  ],
+  "key": {
+    "W": {
+      "item": "thaumcraft:plank_greatwood"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    },
+    "F": {
+      "item": "thaumcraft:filter"
+    },
+    "S": {
+      "tag": "c:plates/brass"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:alembic"
+  }
+}

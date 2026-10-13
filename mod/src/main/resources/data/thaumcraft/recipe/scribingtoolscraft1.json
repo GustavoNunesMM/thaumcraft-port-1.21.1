@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:phial"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:scribing_tools"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "thaumcraft:phial"
+    },
+    {
+      "item": "minecraft:feather"
+    },
+    {
+      "tag": "c:dyes/black"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:scribing_tools",
+    "count": 1
+  }
+}

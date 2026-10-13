@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:infusion_matrix"
+    }
+  ],
+  "type": "thaumcraft:infusion_enchantment",
+  "enchantment": "destructive",
+  "aspects": {
+    "aversio": 200,
+    "perditio": 250
+  },
+  "components": [
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "item": "minecraft:tnt"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#c:nuggets/thaumium",
+    "#c:nuggets/void",
+    "#c:nuggets/brass",
+    "#c:nuggets/quicksilver",
+    "#c:nuggets/quartz",
+    "#c:nuggets/copper"
+  ]
+}

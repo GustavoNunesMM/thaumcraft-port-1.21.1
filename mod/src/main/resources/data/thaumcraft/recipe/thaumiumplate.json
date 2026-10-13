@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:plate_thaumium"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:ingots/thaumium"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:plate_thaumium",
+    "count": 3
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mechanism_simple"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mind_clockwork"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "MINDCLOCKWORK@2",
+  "vis": 25,
+  "crystals": {
+    "ignis": 1,
+    "ordo": 1
+  },
+  "pattern": [
+    " P ",
+    "PGP",
+    "BCB"
+  ],
+  "key": {
+    "G": {
+      "item": "thaumcraft:mechanism_simple"
+    },
+    "B": {
+      "tag": "c:plates/brass"
+    },
+    "P": {
+      "tag": "c:glass_panes"
+    },
+    "C": {
+      "item": "minecraft:comparator"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:mind_clockwork"
+  }
+}

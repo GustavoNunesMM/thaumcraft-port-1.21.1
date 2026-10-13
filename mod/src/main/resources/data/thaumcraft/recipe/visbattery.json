@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:slab_arcane_stone"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:vis_battery"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:vis_resonator"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "VISBATTERY",
+  "vis": 50,
+  "crystals": {
+    "aer": 2,
+    "terra": 2,
+    "aqua": 2,
+    "ignis": 2,
+    "ordo": 2,
+    "perditio": 2
+  },
+  "pattern": [
+    "SSS",
+    "SRS",
+    "SSS"
+  ],
+  "key": {
+    "R": {
+      "item": "thaumcraft:vis_resonator"
+    },
+    "S": {
+      "item": "thaumcraft:slab_arcane_stone"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:vis_battery"
+  }
+}

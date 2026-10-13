@@ -1,0 +1,10 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:label_filled"
+    }
+  ],
+  "type": "thaumcraft:jar_label",
+  "category": "misc"
+}

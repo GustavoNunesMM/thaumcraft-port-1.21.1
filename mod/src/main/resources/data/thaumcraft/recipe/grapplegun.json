@@ -1,0 +1,48 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:grapple_gun"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:grapple_gun_spool"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:grapple_gun_tip"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "GRAPPLEGUN",
+  "vis": 75,
+  "crystals": {
+    "aer": 1,
+    "ignis": 1
+  },
+  "pattern": [
+    "  S",
+    "TII",
+    " BW"
+  ],
+  "key": {
+    "B": {
+      "tag": "c:plates/brass"
+    },
+    "I": {
+      "tag": "c:plates/iron"
+    },
+    "T": {
+      "item": "thaumcraft:grapple_gun_tip"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "item": "thaumcraft:grapple_gun_spool"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:grapple_gun"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stone_arcane"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:stairs_arcane"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "K  ",
+    "KK ",
+    "KKK"
+  ],
+  "key": {
+    "K": {
+      "item": "thaumcraft:stone_arcane"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:stairs_arcane",
+    "count": 4
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_breaker"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:seal_lumber"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "SEALLUMBER",
+  "catalyst": {
+    "item": "thaumcraft:seal_breaker"
+  },
+  "aspects": {
+    "herba": 40,
+    "sensus": 20
+  },
+  "result": {
+    "id": "thaumcraft:seal_lumber"
+  }
+}

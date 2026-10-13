@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:mechanism_simple"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:pattern_crafter"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:plank_greatwood"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:vis_resonator"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "ARCANEPATTERNCRAFTER",
+  "vis": 50,
+  "crystals": {
+    "terra": 1,
+    "aqua": 1,
+    "ordo": 1
+  },
+  "pattern": [
+    "VH ",
+    "GCG",
+    " W "
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "W": {
+      "item": "thaumcraft:plank_greatwood"
+    },
+    "G": {
+      "item": "thaumcraft:mechanism_simple"
+    },
+    "V": {
+      "item": "thaumcraft:vis_resonator"
+    },
+    "C": {
+      "tag": "c:player_workstations/crafting_tables"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:pattern_crafter"
+  }
+}

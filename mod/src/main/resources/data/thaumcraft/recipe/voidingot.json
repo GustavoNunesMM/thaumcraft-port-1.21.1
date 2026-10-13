@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:ingot_void"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:void_seed"
+    }
+  ],
+  "type": "thaumcraft:crucible",
+  "research": "BASEELDRITCH",
+  "catalyst": {
+    "item": "thaumcraft:void_seed"
+  },
+  "aspects": {
+    "metallum": 10,
+    "vitium": 5
+  },
+  "result": {
+    "id": "thaumcraft:ingot_void"
+  }
+}

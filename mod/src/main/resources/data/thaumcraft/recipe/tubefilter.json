@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:filter"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:tube"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:tube_filter"
+    }
+  ],
+  "type": "thaumcraft:arcane_shapeless",
+  "research": "TUBES",
+  "vis": 10,
+  "ingredients": [
+    {
+      "item": "thaumcraft:tube"
+    },
+    {
+      "item": "thaumcraft:filter"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:tube_filter"
+  }
+}

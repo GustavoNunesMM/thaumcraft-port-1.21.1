@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:cloth_chest"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:fabric"
+    }
+  ],
+  "type": "thaumcraft:arcane_shaped",
+  "research": "UNLOCKINFUSION",
+  "vis": 100,
+  "pattern": [
+    "I I",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "thaumcraft:fabric"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:cloth_chest"
+  }
+}
