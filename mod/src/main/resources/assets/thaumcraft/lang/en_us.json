@@ -1840,5 +1840,12 @@
  "key.thaumcraft.change_focus": "Change Caster Focus",
  "key.thaumcraft.misc_toggle": "Misc Caster Toggle",
  "ROOT.name": "Root",
- "ROOT.text": "The caster: where you stand and where you are looking."
+ "ROOT.text": "The caster: where you stand and where you are looking.",
+ "block.thaumcraft.banner_light_blue": "Light Blue Banner",
+ "block.thaumcraft.banner_light_gray": "Light Gray Banner",
+ "item.thaumcraft.mirror": "Magic Mirror",
+ "item.thaumcraft.mirror_essentia": "Essentia Mirror",
+ "item.thaumcraft.jar_brain": "Brain in a Jar",
+ "thaumcraft.levitator.range": "Range set to %s blocks. (%s vis/minute)",
+ "thaumcraft.mirror.already_linked": "That mirror is already linked to a valid destination."
 }

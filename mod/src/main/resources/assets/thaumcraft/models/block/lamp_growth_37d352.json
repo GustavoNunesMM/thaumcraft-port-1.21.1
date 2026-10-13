@@ -1,0 +1,163 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "thaumcraft:blocks/lamp_grow_off",
+    "side": "thaumcraft:blocks/lamp_grow_off",
+    "s0_side": "thaumcraft:blocks/base_metal"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        2,
+        4
+      ],
+      "to": [
+        12,
+        14,
+        12
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            8,
+            0,
+            16,
+            8
+          ],
+          "texture": "#side"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            16,
+            8
+          ],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        },
+        "north": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            8,
+            12
+          ],
+          "texture": "#side"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        1,
+        10
+      ],
+      "faces": {
+        "up": {
+          "texture": "#s0_side"
+        },
+        "down": {
+          "texture": "#s0_side",
+          "cullface": "down"
+        },
+        "west": {
+          "texture": "#s0_side"
+        },
+        "east": {
+          "texture": "#s0_side"
+        },
+        "north": {
+          "texture": "#s0_side"
+        },
+        "south": {
+          "texture": "#s0_side"
+        }
+      }
+    },
+    {
+      "from": [
+        7,
+        1,
+        7
+      ],
+      "to": [
+        9,
+        4,
+        9
+      ],
+      "faces": {
+        "west": {
+          "uv": [
+            9,
+            13,
+            11,
+            16
+          ],
+          "texture": "#s0_side"
+        },
+        "east": {
+          "uv": [
+            5,
+            13,
+            7,
+            16
+          ],
+          "texture": "#s0_side"
+        },
+        "north": {
+          "uv": [
+            7,
+            13,
+            9,
+            16
+          ],
+          "texture": "#s0_side"
+        },
+        "south": {
+          "uv": [
+            3,
+            13,
+            5,
+            16
+          ],
+          "texture": "#s0_side"
+        }
+      }
+    }
+  ],
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout"
+}

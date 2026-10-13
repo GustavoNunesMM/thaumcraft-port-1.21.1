@@ -23,6 +23,7 @@ public final class ModDustTriggers {
       altar("INFUSION", ModBlocks.STONE_ARCANE.get(), ModBlocks.PILLAR_ARCANE.get(), ModBlocks.PEDESTAL_ARCANE.get());
       altar("INFUSIONANCIENT", ModBlocks.STONE_ANCIENT.get(), ModBlocks.PILLAR_ANCIENT.get(), ModBlocks.PEDESTAL_ANCIENT.get());
       altar("INFUSIONELDRITCH", ModBlocks.STONE_ELDRITCH_TILE.get(), ModBlocks.PILLAR_ELDRITCH.get(), ModBlocks.PEDESTAL_ELDRITCH.get());
+      DeviceDustTriggers.register();
    }
 
    /** The infusion altars: matrix on top, pedestal two below it, two-high stone columns at the corners that become pillars. */

@@ -1842,5 +1842,12 @@
  "key.thaumcraft.change_focus": "Trocar Foco do Conjurador",
  "key.thaumcraft.misc_toggle": "Alternância Diversa do Conjurador",
  "ROOT.name": "Raiz",
- "ROOT.text": "O conjurador: onde você está e para onde está olhando."
+ "ROOT.text": "O conjurador: onde você está e para onde está olhando.",
+ "block.thaumcraft.banner_light_blue": "Estandarte Azul-claro",
+ "block.thaumcraft.banner_light_gray": "Estandarte Cinza-claro",
+ "item.thaumcraft.mirror": "Espelho Mágico",
+ "item.thaumcraft.mirror_essentia": "Espelho de Essentia",
+ "item.thaumcraft.jar_brain": "Cérebro na Jarra",
+ "thaumcraft.levitator.range": "Alcance definido para %s blocos. (%s vis/minuto)",
+ "thaumcraft.mirror.already_linked": "Esse espelho já está ligado a um destino válido."
 }
