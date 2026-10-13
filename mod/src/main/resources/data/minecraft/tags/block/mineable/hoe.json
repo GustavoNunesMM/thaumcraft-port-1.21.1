@@ -3,6 +3,8 @@
   "values": [
     "thaumcraft:leaves_greatwood",
     "thaumcraft:leaves_silverwood",
-    "thaumcraft:flesh_block"
+    "thaumcraft:flesh_block",
+    "thaumcraft:taint_fibre",
+    "thaumcraft:taint_feature"
   ]
 }

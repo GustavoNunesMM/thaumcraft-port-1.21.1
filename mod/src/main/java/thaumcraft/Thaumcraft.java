@@ -30,6 +30,7 @@ public class Thaumcraft {
       thaumcraft.common.registers.ModCasters.init();
       thaumcraft.common.registers.ModGear.init(modBus);
       thaumcraft.common.registers.ModDevices.init(modBus);
+      thaumcraft.common.registers.ModFlux.init(modBus);
       ModBlocks.BLOCKS.register(modBus);
       ModItems.ITEMS.register(modBus);
       ModDataComponents.COMPONENTS.register(modBus);

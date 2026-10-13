@@ -351,9 +351,13 @@ public class InfusionMatrixBlockEntity extends TCBlockEntity implements IInterac
 
    private void inEvHarm(boolean all) {
       for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class, area(10.0))) {
-         // Flux taint and vis exhaustion come with the flux milestone; until then the matrix poisons and weakens.
-         if (level.random.nextBoolean()) target.addEffect(new MobEffectInstance(net.minecraft.world.effect.MobEffects.POISON, 120, 0, false, true));
-         else target.addEffect(new MobEffectInstance(net.minecraft.world.effect.MobEffects.WEAKNESS, 2400, 0, true, true));
+         if (level.random.nextBoolean()) {
+            target.addEffect(new MobEffectInstance(thaumcraft.common.registers.ModFlux.FLUX_TAINT, 120, 0, false, true));
+         } else {
+            MobEffectInstance pe = new MobEffectInstance(thaumcraft.common.registers.ModFlux.VIS_EXHAUST, 2400, 0, true, true);
+            pe.getCures().clear();
+            target.addEffect(pe);
+         }
          if (!all) break;
       }
    }
@@ -395,11 +399,10 @@ public class InfusionMatrixBlockEntity extends TCBlockEntity implements IInterac
             ped.sync();
          }
          if (type == 1 || type == 3) {
-            // Flux goo comes with the flux milestone: a puddle of flux in the aura instead.
-            AuraHandler.addFlux(level, cc, 3.0F);
+            level.setBlockAndUpdate(cc.above(), thaumcraft.common.registers.ModFlux.FLUX_GOO.get().defaultBlockState());
             level.playSound(null, cc, SoundEvents.BOTTLE_FILL, SoundSource.BLOCKS, 0.3F, 1.0F);
          } else if (type == 2 || type == 4) {
-            AuraHandler.addFlux(level, cc, 5 + level.random.nextInt(5));
+            thaumcraft.common.blocks.world.taint.FluxEffects.pollute(level, cc, 5 + level.random.nextInt(5), true);
          } else if (type == 5) {
             level.explode(null, cc.getX() + 0.5, cc.getY() + 0.5, cc.getZ() + 0.5, 1.0F, Level.ExplosionInteraction.NONE);
          }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:taint_fibre",
+    "thaumcraft:flux_goo",
+    "thaumcraft:liquid_death",
+    "thaumcraft:purifying_fluid"
+  ]
+}

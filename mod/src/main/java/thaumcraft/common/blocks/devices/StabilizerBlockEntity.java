@@ -12,7 +12,7 @@ import thaumcraft.common.world.aura.AuraHandler;
 
 /**
  * TileStabilizer: builds up to 15 energy (one a second, at the cost of a little flux) and spends it, through the
- * redstone inlay, to keep items on infusion pedestals. (Calming flux rifts comes with the flux milestone.)
+ * redstone inlay, to keep items on infusion pedestals. It also calms flux rifts nearby.
  */
 public class StabilizerBlockEntity extends TCBlockEntity {
    public static final int CAPACITY = 15;
@@ -37,9 +37,29 @@ public class StabilizerBlockEntity extends TCBlockEntity {
             be.sync();
             be.notifyInlay();
          }
+         // Milestone 12: calm the flux rifts within 8 blocks (TileStabilizer.tryAddStability).
+         if (be.energy > 0 && be.delay <= 0 && be.ticks % 5 == 0) {
+            int q = be.energy;
+            be.tryAddStability();
+            if (q != be.energy) be.sync();
+         }
+         if (be.delay > 0) be.delay--;
       } else if (be.energy != be.lastEnergy) {
          be.lastEnergy = be.energy;
          level.sendBlockUpdated(pos, state, state, 8);
+      }
+   }
+
+   private int delay;
+
+   private void tryAddStability() {
+      for (thaumcraft.common.entities.FluxRiftEntity e : level.getEntitiesOfClass(thaumcraft.common.entities.FluxRiftEntity.class,
+         new net.minecraft.world.phys.AABB(worldPosition).inflate(8.0))) {
+         if (e.isAlive() && e.getStability() != thaumcraft.common.entities.FluxRiftEntity.Stability.VERY_STABLE && mitigate(1)) {
+            e.addStability();
+            delay += 5;
+            if (energy <= 0) return;
+         }
       }
    }
 

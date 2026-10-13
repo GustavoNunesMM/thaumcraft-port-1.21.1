@@ -83,6 +83,12 @@
     "thaumcraft:mirror_essentia",
     "thaumcraft:loot_urn_common",
     "thaumcraft:loot_urn_uncommon",
-    "thaumcraft:loot_urn_rare"
+    "thaumcraft:loot_urn_rare",
+    "thaumcraft:condenser",
+    "thaumcraft:condenser_lattice",
+    "thaumcraft:condenser_lattice_dirty",
+    "thaumcraft:void_siphon",
+    "thaumcraft:taint_rock",
+    "thaumcraft:taint_crust"
   ]
 }

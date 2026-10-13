@@ -1,0 +1,56 @@
+{
+  "entries": [
+    {
+      "entity": "thaumcraft:flux_rift",
+      "aspects": {
+        "vitium": 20,
+        "alienis": 20,
+        "auram": 20
+      }
+    },
+    {
+      "entity": "thaumcraft:taintacle",
+      "aspects": {
+        "vitium": 15,
+        "bestia": 10
+      }
+    },
+    {
+      "entity": "thaumcraft:taint_seed",
+      "aspects": {
+        "vitium": 20,
+        "auram": 10,
+        "herba": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:taint_seed_prime",
+      "aspects": {
+        "vitium": 25,
+        "auram": 15,
+        "herba": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:taintacle_tiny",
+      "aspects": {
+        "vitium": 5,
+        "bestia": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:taint_swarm",
+      "aspects": {
+        "vitium": 15,
+        "aer": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:taint_crawler",
+      "aspects": {
+        "vitium": 5,
+        "bestia": 5
+      }
+    }
+  ]
+}
