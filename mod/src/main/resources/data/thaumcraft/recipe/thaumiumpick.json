@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:thaumium_pick"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "thaumcraft:thaumium_stuff",
+  "category": "equipment",
+  "pattern": [
+    "III",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/thaumium"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:thaumium_pick"
+  }
+}

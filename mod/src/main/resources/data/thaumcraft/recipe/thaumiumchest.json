@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:thaumium_chest"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "thaumcraft:thaumium_stuff",
+  "category": "equipment",
+  "pattern": [
+    "I I",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/thaumium"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:thaumium_chest"
+  }
+}

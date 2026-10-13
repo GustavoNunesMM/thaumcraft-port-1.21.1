@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:ring_mundane"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "thaumcraft:baubles_stuff",
+  "category": "equipment",
+  "pattern": [
+    "NNN",
+    "N N",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "tag": "c:nuggets/brass"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:ring_mundane"
+  }
+}

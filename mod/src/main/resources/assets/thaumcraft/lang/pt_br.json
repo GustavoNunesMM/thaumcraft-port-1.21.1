@@ -1825,5 +1825,14 @@
  "enchantment.infusion.refining": "Refinamento",
  "enchantment.infusion.arcing": "Arco Elétrico",
  "enchantment.infusion.essence": "Colhedor de Essência",
- "enchantment.infusion.lamplight": "Acendedor de Lampiões"
+ "enchantment.infusion.lamplight": "Acendedor de Lampiões",
+ "item.thaumcraft.amulet_mundane": "Amuleto Mundano",
+ "item.thaumcraft.ring_mundane": "Anel Mundano",
+ "item.thaumcraft.girdle_mundane": "Cinto Mundano",
+ "item.thaumcraft.ring_apprentice": "Anel do Aprendiz",
+ "item.thaumcraft.amulet_fancy": "Amuleto Requintado",
+ "item.thaumcraft.ring_fancy": "Anel Requintado",
+ "item.thaumcraft.girdle_fancy": "Cinto Requintado",
+ "item.thaumcraft.amulet_vis_found": "Pedra de Vis",
+ "item.thaumcraft.amulet_vis_crafted": "Amuleto de Vis"
 }

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:infusion_matrix"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:salis_mundus"
+    }
+  ],
+  "type": "thaumcraft:infusion_runic_augment",
+  "research": "RUNICSHIELDING"
+}

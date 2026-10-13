@@ -55,6 +55,12 @@
     }
   ],
   "result": {
-    "id": "thaumcraft:primal_crusher"
+    "id": "thaumcraft:primal_crusher",
+    "components": {
+      "thaumcraft:infusion_enchantments": {
+        "destructive": 1,
+        "refining": 1
+      }
+    }
   }
 }

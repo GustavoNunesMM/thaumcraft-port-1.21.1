@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:thaumium_helm"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "thaumcraft:thaumium_stuff",
+  "category": "equipment",
+  "pattern": [
+    "III",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/thaumium"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:thaumium_helm"
+  }
+}

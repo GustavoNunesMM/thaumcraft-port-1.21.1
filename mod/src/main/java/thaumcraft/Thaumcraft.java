@@ -27,6 +27,7 @@ public class Thaumcraft {
    public static final Logger LOGGER = LogUtils.getLogger();
 
    public Thaumcraft(IEventBus modBus, ModContainer container) {
+      thaumcraft.common.registers.ModGear.init(modBus);
       ModBlocks.BLOCKS.register(modBus);
       ModItems.ITEMS.register(modBus);
       ModDataComponents.COMPONENTS.register(modBus);

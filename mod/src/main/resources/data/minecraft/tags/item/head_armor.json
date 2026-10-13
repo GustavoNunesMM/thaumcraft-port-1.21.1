@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:goggles",
+    "thaumcraft:thaumium_helm",
+    "thaumcraft:fortress_helm",
+    "thaumcraft:void_helm",
+    "thaumcraft:void_robe_helm",
+    "thaumcraft:crimson_plate_helm",
+    "thaumcraft:crimson_robe_helm",
+    "thaumcraft:crimson_praetor_helm"
+  ]
+}
