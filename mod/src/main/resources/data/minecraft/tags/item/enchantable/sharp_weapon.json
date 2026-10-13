@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:thaumium_sword",
+    "thaumcraft:void_sword",
+    "thaumcraft:elemental_sword",
+    "thaumcraft:crimson_blade",
+    "thaumcraft:thaumium_axe",
+    "thaumcraft:void_axe",
+    "thaumcraft:elemental_axe"
+  ]
+}

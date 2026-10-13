@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:fortress_helm"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:infusion_matrix"
+    }
+  ],
+  "type": "thaumcraft:infusion_data",
+  "research": "FORTRESSMASK",
+  "instability": 8,
+  "aspects": {
+    "exanimis": 80,
+    "victus": 80,
+    "praemunio": 20
+  },
+  "central": {
+    "item": "thaumcraft:fortress_helm"
+  },
+  "components": [
+    {
+      "tag": "c:dyes/red"
+    },
+    {
+      "tag": "c:plates/iron"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "tag": "c:plates/iron"
+    }
+  ],
+  "patch": {
+    "thaumcraft:mask": 2
+  }
+}

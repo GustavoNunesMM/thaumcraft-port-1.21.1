@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:amulet_mundane"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "group": "thaumcraft:baubles_stuff",
+  "category": "equipment",
+  "pattern": [
+    " S ",
+    "S S",
+    " I "
+  ],
+  "key": {
+    "S": {
+      "tag": "c:strings"
+    },
+    "I": {
+      "tag": "c:ingots/brass"
+    }
+  },
+  "result": {
+    "id": "thaumcraft:amulet_mundane"
+  }
+}

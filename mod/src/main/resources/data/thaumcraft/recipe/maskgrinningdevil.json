@@ -1,0 +1,54 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:fortress_helm"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:shimmerleaf"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:brain"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:infusion_matrix"
+    }
+  ],
+  "type": "thaumcraft:infusion_data",
+  "research": "FORTRESSMASK",
+  "instability": 8,
+  "aspects": {
+    "cognitio": 80,
+    "victus": 80,
+    "praemunio": 20
+  },
+  "central": {
+    "item": "thaumcraft:fortress_helm"
+  },
+  "components": [
+    {
+      "tag": "c:dyes/black"
+    },
+    {
+      "tag": "c:plates/iron"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "thaumcraft:shimmerleaf"
+    },
+    {
+      "item": "thaumcraft:brain"
+    },
+    {
+      "tag": "c:plates/iron"
+    }
+  ],
+  "patch": {
+    "thaumcraft:mask": 0
+  }
+}

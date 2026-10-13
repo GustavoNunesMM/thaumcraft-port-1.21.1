@@ -61,9 +61,8 @@ add_tag("block", "minecraft", "mineable/pickaxe", [tc("wand_workbench")])
 model("effect_sap", {"textures": {"particle": "minecraft:block/purple_stained_glass"}})
 write(f"{A}/blockstates/effect_sap.json", {"variants": {"": {"model": tc("block/effect_sap")}}})
 
-# ====================================================================== curios: the pouch goes in the belt slot
+# ====================================================================== curios: the pouch goes in the belt slot (enabled for players by the gear milestone)
 add_tag("item", "curios", "belt", [tc("focus_pouch")])
-write(f"{D}/{NS}/curios/entities/focus_pouch.json", {"entities": ["player"], "slots": ["belt"]})
 
 # ====================================================================== lang
 L = f"{A}/lang/en_us.json"
