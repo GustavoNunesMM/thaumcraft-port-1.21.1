@@ -1825,5 +1825,13 @@
  "enchantment.infusion.refining": "Refinamento",
  "enchantment.infusion.arcing": "Arco Elétrico",
  "enchantment.infusion.essence": "Colhedor de Essência",
- "enchantment.infusion.lamplight": "Acendedor de Lampiões"
+ "enchantment.infusion.lamplight": "Acendedor de Lampiões",
+ "entity.thaumcraft.focus_projectile": "Projétil de Foco",
+ "entity.thaumcraft.focus_cloud": "Nuvem de Foco",
+ "entity.thaumcraft.focus_mine": "Mina de Foco",
+ "entity.thaumcraft.spell_bat": "Morcego Encantado",
+ "key.thaumcraft.change_focus": "Trocar Foco do Conjurador",
+ "key.thaumcraft.misc_toggle": "Alternância Diversa do Conjurador",
+ "ROOT.name": "Raiz",
+ "ROOT.text": "O conjurador: onde você está e para onde está olhando."
 }

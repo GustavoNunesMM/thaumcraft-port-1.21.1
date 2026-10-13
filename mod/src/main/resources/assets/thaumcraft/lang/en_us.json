@@ -1823,5 +1823,13 @@
  "enchantment.infusion.refining": "Refining",
  "enchantment.infusion.arcing": "Arcing",
  "enchantment.infusion.essence": "Essence Harvester",
- "enchantment.infusion.lamplight": "Lamplighter"
+ "enchantment.infusion.lamplight": "Lamplighter",
+ "entity.thaumcraft.focus_projectile": "Focus Projectile",
+ "entity.thaumcraft.focus_cloud": "Focus Cloud",
+ "entity.thaumcraft.focus_mine": "Focus Mine",
+ "entity.thaumcraft.spell_bat": "Spellbat",
+ "key.thaumcraft.change_focus": "Change Caster Focus",
+ "key.thaumcraft.misc_toggle": "Misc Caster Toggle",
+ "ROOT.name": "Root",
+ "ROOT.text": "The caster: where you stand and where you are looking."
 }

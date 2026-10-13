@@ -37,6 +37,7 @@ public final class ModNetwork {
 
    public static void register(RegisterPayloadHandlersEvent event) {
       PayloadRegistrar registrar = event.registrar("1");
+      CasterPayloads.register(registrar);
       registrar.playToClient(SyncAspectsPayload.TYPE, SyncAspectsPayload.STREAM_CODEC,
          (payload, ctx) -> {
             AspectManager.CLIENT.acceptSync(payload);
