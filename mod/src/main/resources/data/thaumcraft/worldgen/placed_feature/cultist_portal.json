@@ -1,0 +1,9 @@
+{
+  "feature": "thaumcraft:cultist_portal",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 500
+    }
+  ]
+}

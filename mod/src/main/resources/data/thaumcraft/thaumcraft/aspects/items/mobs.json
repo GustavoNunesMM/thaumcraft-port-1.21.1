@@ -1,0 +1,91 @@
+{
+  "priority": 1,
+  "entries": [
+    {
+      "item": "thaumcraft:triple_meat_treat",
+      "aspects": {
+        "victus": 10,
+        "desiderium": 10
+      }
+    },
+    {
+      "item": "thaumcraft:loot_bag_common",
+      "aspects": {
+        "desiderium": 10
+      }
+    },
+    {
+      "item": "thaumcraft:loot_bag_uncommon",
+      "aspects": {
+        "desiderium": 20
+      }
+    },
+    {
+      "item": "thaumcraft:loot_bag_rare",
+      "aspects": {
+        "desiderium": 30
+      }
+    },
+    {
+      "item": "thaumcraft:primordial_pearl",
+      "aspects": {
+        "aer": 10,
+        "ignis": 10,
+        "aqua": 10,
+        "terra": 10,
+        "ordo": 10,
+        "perditio": 10
+      }
+    },
+    {
+      "item": "thaumcraft:pech_wand",
+      "aspects": {
+        "praecantatio": 10,
+        "permutatio": 10,
+        "instrumentum": 5
+      }
+    },
+    {
+      "item": "thaumcraft:chunk_beef",
+      "aspects": {
+        "victus": 5,
+        "perditio": 1
+      }
+    },
+    {
+      "item": "thaumcraft:chunk_chicken",
+      "aspects": {
+        "victus": 5,
+        "perditio": 1
+      }
+    },
+    {
+      "item": "thaumcraft:chunk_pork",
+      "aspects": {
+        "victus": 5,
+        "perditio": 1
+      }
+    },
+    {
+      "item": "thaumcraft:chunk_fish",
+      "aspects": {
+        "victus": 5,
+        "perditio": 1
+      }
+    },
+    {
+      "item": "thaumcraft:chunk_rabbit",
+      "aspects": {
+        "victus": 5,
+        "perditio": 1
+      }
+    },
+    {
+      "item": "thaumcraft:chunk_mutton",
+      "aspects": {
+        "victus": 5,
+        "perditio": 1
+      }
+    }
+  ]
+}

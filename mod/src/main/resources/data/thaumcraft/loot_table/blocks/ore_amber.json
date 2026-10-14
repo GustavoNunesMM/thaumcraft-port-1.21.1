@@ -31,6 +31,16 @@
             },
             {
               "type": "minecraft:item",
+              "name": "thaumcraft:curio_preserved",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.066
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
               "name": "thaumcraft:amber",
               "functions": [
                 {

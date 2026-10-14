@@ -8,7 +8,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerLevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -32,7 +32,6 @@ import net.minecraft.world.phys.Vec3;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.items.VisCrystalItem;
 import thaumcraft.common.lib.MobFXBridge;
-import thaumcraft.common.network.MobNetwork;
 import thaumcraft.common.registers.ModSounds;
 
 /** EntityWisp: a floating mote of vis of a random aspect that zaps whoever annoys it and drops a crystal of its aspect. */
@@ -153,7 +152,11 @@ public class WispEntity extends FlyingMob implements Enemy {
             if (attackCounter == 20) {
                playSound(ModSounds.ZAP.get(), 1.0F, 1.1F);
                if (level() instanceof ServerLevel sl) {
-                  MobNetwork.sendNear(sl, getX(), getY(), getZ(), 32.0, new MobNetwork.WispZapPayload(getId(), target.getId()));
+                  // PacketFXWispZap: an arc bolt in the wisp's aspect colour (sent as the focus zap effect)
+                  Aspect wa = Aspect.getAspect(getWispType());
+                  thaumcraft.common.network.ModNetwork.sendNear(sl, getX(), getY(), getZ(), 32.0, new thaumcraft.common.network.FocusFXPayload(
+                     thaumcraft.common.network.FocusFXPayload.ZAP, position(), target.position(), java.util.List.of(),
+                     wa == null ? 0xFFFFFF : wa.getColor(), 0.6F));
                }
                float damage = (float) getAttributeValue(Attributes.ATTACK_DAMAGE);
                Vec3 tm = target.getDeltaMovement();

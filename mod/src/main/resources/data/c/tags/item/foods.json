@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:chunk_beef",
+    "thaumcraft:chunk_chicken",
+    "thaumcraft:chunk_pork",
+    "thaumcraft:chunk_fish",
+    "thaumcraft:chunk_rabbit",
+    "thaumcraft:chunk_mutton",
+    "thaumcraft:triple_meat_treat"
+  ]
+}

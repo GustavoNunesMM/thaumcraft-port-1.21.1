@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "thaumcraft:items/primordial_pearl"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "thaumcraft:type": 0.5
+      },
+      "model": "thaumcraft:item/primordial_pearl_nodule"
+    },
+    {
+      "predicate": {
+        "thaumcraft:type": 1.5
+      },
+      "model": "thaumcraft:item/primordial_pearl_mote"
+    }
+  ]
+}

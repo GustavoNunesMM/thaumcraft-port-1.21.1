@@ -193,10 +193,7 @@ public abstract class ThaumcraftBossEntity extends Monster {
       return super.isInvulnerableTo(source) || spawnTimer > 0;
    }
 
-   @Override
-   public boolean canBreatheUnderwater() {
-      return true;
-   }
+   // canBreatheUnderwater: the entity type tag minecraft:can_breathe_under_water (gen_marco13.py)
 
    @Override
    protected int decreaseAirSupply(int air) {

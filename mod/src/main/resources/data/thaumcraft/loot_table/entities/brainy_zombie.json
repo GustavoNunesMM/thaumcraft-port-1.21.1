@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:entity",
+  "random_sequence": "thaumcraft:entities/brainy_zombie",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:entities/zombie"
+        }
+      ]
+    }
+  ]
+}

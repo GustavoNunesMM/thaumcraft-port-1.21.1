@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "thaumcraft:cultist_leader",
+    "thaumcraft:turret_crossbow",
+    "thaumcraft:turret_crossbow_advanced",
+    "thaumcraft:arcane_bore"
+  ]
+}

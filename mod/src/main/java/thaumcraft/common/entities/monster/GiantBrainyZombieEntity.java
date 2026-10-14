@@ -79,11 +79,6 @@ public class GiantBrainyZombieEntity extends BrainyZombieEntity {
       return super.hurt(source, amount);
    }
 
-   @Override
-   protected void dropCustomDeathLoot(ServerLevel level, DamageSource source, boolean recentlyHit) {
-      super.dropCustomDeathLoot(level, source, recentlyHit);
-      for (int a = 0; a < 12; a++) {
-         if (random.nextBoolean()) spawnAtLocation(Items.ROTTEN_FLESH, 2);
-      }
-   }
+   // dropFewItems (12 rolls of rotten flesh) was dead code in 1.12: the zombie loot table took precedence, so the giant
+   // drops like a brainy zombie (a brain plus the zombie table, thaumcraft:entities/giant_brainy_zombie).
 }
