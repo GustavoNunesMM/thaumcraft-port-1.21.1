@@ -447,4 +447,14 @@ en.setdefault("thaumcraft.mirror.already_linked", "That mirror is already linked
 pt.setdefault("thaumcraft.mirror.already_linked", "Esse espelho já está ligado a um destino válido.")
 json.dump(en, open(L, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 json.dump(pt, open(L2, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+# The infernal furnace model has no particle texture; the hungry chest item model uses a texture outside the atlas folders.
+_p = f"{A}/models/block/infernal_furnace.json"
+_m = json.load(open(_p))
+_m.setdefault("textures", {}).setdefault("particle", "thaumcraft:blocks/infernal_furnace")
+write(_p, _m)
+_p = f"{RES}/assets/minecraft/atlases/blocks.json"
+_atlas = json.load(open(_p)) if os.path.exists(_p) else {"sources": []}
+if {"type": "single", "resource": "thaumcraft:models/chesthungry"} not in _atlas["sources"]:
+    _atlas["sources"].append({"type": "single", "resource": "thaumcraft:models/chesthungry"})
+write(_p, _atlas)
 print("ok")

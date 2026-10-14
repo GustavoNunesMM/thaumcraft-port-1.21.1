@@ -81,6 +81,8 @@ write(p, d)
 # Lang: the 1.12 nitor keys used lightblue/silver.
 L = f"{A}/lang/en_us.json"
 en = json.load(open(L, encoding="utf-8"), object_pairs_hook=collections.OrderedDict)
+en.setdefault("entity.thaumcraft.alumentum", "Alumentum")
+en.setdefault("entity.thaumcraft.special_item", "Item")
 for c in COLORS:
     old = en.get(f"block.thaumcraft.nitor_{OLD.get(c, c)}")
     if old:

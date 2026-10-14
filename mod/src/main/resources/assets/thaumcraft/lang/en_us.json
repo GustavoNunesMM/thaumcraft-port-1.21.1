@@ -1971,5 +1971,7 @@
  "item.eldritch_eye.text": "It stares back. Somewhere an altar waits for it.",
  "tc.eldritch.portal_open": "The obelisks blaze and a portal tears open above the altar.",
  "biome.thaumcraft.eldritch": "Outer Lands",
- "dimension.thaumcraft.outer_lands": "Outer Lands"
+ "dimension.thaumcraft.outer_lands": "Outer Lands",
+ "entity.thaumcraft.alumentum": "Alumentum",
+ "entity.thaumcraft.special_item": "Item"
 }

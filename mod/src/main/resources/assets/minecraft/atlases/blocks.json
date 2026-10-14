@@ -46,6 +46,10 @@
     {
       "type": "single",
       "resource": "thaumcraft:models/eldritch_lock"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/chesthungry"
     }
   ]
 }

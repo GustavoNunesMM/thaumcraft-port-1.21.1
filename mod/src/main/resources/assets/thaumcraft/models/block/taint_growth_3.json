@@ -1,7 +1,8 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "sde": "thaumcraft:blocks/taint_growth_3"
+    "sde": "thaumcraft:blocks/taint_growth_3",
+    "particle": "thaumcraft:blocks/taint_growth_3"
   },
   "elements": [
     {

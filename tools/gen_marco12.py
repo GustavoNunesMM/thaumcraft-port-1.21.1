@@ -162,7 +162,13 @@ for name, fluid in {"bucket_pure": "purifying_fluid", "bucket_goo": "flux_goo"}.
 # ====================================================================== taint
 for m in ["taint_fibre", "taint_growth_1", "taint_growth_2", "taint_growth_3", "taint_growth_4", "taint_orb_0", "taint_orb_1", "taint_orb_2",
           "log_taintwood"]:
-    copy_model(m, {"render_type": "minecraft:cutout"} if m != "log_taintwood" else None)
+    copy_model(m, {"render_type": "minecraft:cutout"} if m != "log_taintwood" else {"parent": "minecraft:block/cube"})
+    _p = f"{A}/models/block/{m}.json"
+    _m = json.load(open(_p))
+    if "particle" not in _m.get("textures", {}) and _m.get("textures"):
+        # the 1.12 models had no particle texture; use their own texture so break particles aren't the missing texture
+        _m["textures"]["particle"] = next(v for v in _m["textures"].values() if not v.startswith("#"))
+        model(m, _m)
 orig_fibre = json.load(open(f"{ORIG}/blockstates/taint_fibre.json"))
 blockstate("taint_fibre", {"multipart": [
     {"when": {k: str(v).lower() for k, v in p["when"].items()}, "apply": dict(p["apply"], model=model_ref(p["apply"]["model"]))}

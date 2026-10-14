@@ -1,7 +1,8 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "cross": "thaumcraft:blocks/taint_growth_2"
+    "cross": "thaumcraft:blocks/taint_growth_2",
+    "particle": "thaumcraft:blocks/taint_growth_2"
   },
   "elements": [
     {

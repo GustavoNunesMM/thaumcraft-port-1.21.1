@@ -4,7 +4,8 @@
   "textures": {
     "side": "thaumcraft:blocks/infernal_furnace",
     "core": "minecraft:block/lava_still",
-    "fire": "minecraft:block/fire_0"
+    "fire": "minecraft:block/fire_0",
+    "particle": "thaumcraft:blocks/infernal_furnace"
   },
   "elements": [
     {
