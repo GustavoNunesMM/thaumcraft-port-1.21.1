@@ -3,7 +3,6 @@ package thaumcraft.common.items;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -32,7 +31,7 @@ import thaumcraft.common.world.aura.AuraHandler;
 
 /**
  * Port of ItemThaumometer: right-click to scan the entity or block you are looking at; while held, it reads the
- * aura of the chunk you stand in (shown by the HUD). Not yet ported: the scan-highlight particles.
+ * aura of the chunk you stand in (shown by the HUD); high flux there starts the FLUX research.
  */
 public class ThaumometerItem extends Item {
    private static final double ENTITY_RANGE = 9.0;
@@ -81,28 +80,23 @@ public class ThaumometerItem extends Item {
       }
    }
 
+   /** The scan highlight: runes rising around the creature or on the block being scanned. */
    private void drawFX(Level level, Player player) {
       RandomSource rand = level.random;
       Entity target = getPointedEntity(level, player, ENTITY_RANGE);
-      Vec3 center;
-      double spread;
       if (target != null) {
-         center = target.position().add(0, target.getBbHeight() / 2.0, 0);
-         spread = Math.max(target.getBbWidth(), 0.5);
+         for (int a = 0; a < 10; a++) {
+            thaumcraft.client.fx.DeviceFX.blockRunes(target.getX() - 0.5, target.getY() + target.getEyeHeight() / 2.0F, target.getZ() - 0.5,
+               0.3F + rand.nextFloat() * 0.7F, 0.0F, 0.3F + rand.nextFloat() * 0.7F, (int) (target.getBbHeight() * 15.0F), 0.03F);
+         }
       } else {
          BlockHitResult hit = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
          if (hit.getType() != HitResult.Type.BLOCK) return;
          BlockPos pos = hit.getBlockPos();
-         center = Vec3.atCenterOf(pos);
-         spread = 1.0;
-      }
-      // Stand-in for the original "block runes" FX until the custom particle system is ported.
-      for (int i = 0; i < 20; i++) {
-         level.addParticle(
-            ParticleTypes.ENCHANT,
-            center.x + (rand.nextDouble() - 0.5) * spread, center.y + (rand.nextDouble() - 0.5) * spread, center.z + (rand.nextDouble() - 0.5) * spread,
-            (rand.nextDouble() - 0.5) * 0.5, rand.nextDouble() * 0.5, (rand.nextDouble() - 0.5) * 0.5
-         );
+         for (int a = 0; a < 10; a++) {
+            thaumcraft.client.fx.DeviceFX.blockRunes(pos.getX(), pos.getY() + 0.25, pos.getZ(), 0.3F + rand.nextFloat() * 0.7F, 0.0F,
+               0.3F + rand.nextFloat() * 0.7F, 15, 0.03F);
+         }
       }
    }
 
