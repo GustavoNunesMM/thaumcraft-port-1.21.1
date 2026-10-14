@@ -32,7 +32,7 @@ public final class CasterManager {
 
    /**
     * Total vis discount (fraction) of the curios and armor worn, less 10% per level of vis exhaustion (the
-    * thaumcraft:vis_exhaust / infectious_vis_exhaust effects, looked up by id until the warp milestone registers them).
+    * vis exhaust / infectious vis exhaust effects).
     */
    public static float getTotalVisDiscount(Player player) {
       if (player == null) return 0.0F;
@@ -45,10 +45,8 @@ public final class CasterManager {
          if (s.getItem() instanceof IVisDiscountGear g) total += g.getVisDiscount(s, player);
       }
       int exhaust = -1;
-      for (String id : new String[]{"vis_exhaust", "infectious_vis_exhaust"}) {
-         var effect = net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT.getHolder(
-            net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(thaumcraft.Thaumcraft.MODID, id));
-         if (effect.isPresent() && player.hasEffect(effect.get())) exhaust = Math.max(exhaust, player.getEffect(effect.get()).getAmplifier());
+      for (var effect : java.util.List.of(thaumcraft.common.registers.ModFlux.VIS_EXHAUST, thaumcraft.common.registers.ModFlux.INFECTIOUS_VIS_EXHAUST)) {
+         if (player.hasEffect(effect)) exhaust = Math.max(exhaust, player.getEffect(effect).getAmplifier());
       }
       if (exhaust >= 0) total -= (exhaust + 1) * 10;
       return total / 100.0F;

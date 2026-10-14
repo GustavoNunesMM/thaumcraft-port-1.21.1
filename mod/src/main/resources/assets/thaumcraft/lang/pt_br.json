@@ -1875,5 +1875,10 @@
  "item.thaumcraft.bucket_death": "Balde de Morte Líquida",
  "item.thaumcraft.bucket_pure": "Balde de Fluido Purificador",
  "item.thaumcraft.bucket_goo": "Balde de Gosma de Fluxo",
- "container.thaumcraft.void_siphon": "Sifão do Vazio"
+ "container.thaumcraft.void_siphon": "Sifão do Vazio",
+ "item.thaumcraft.taint_crawler_spawn_egg": "Ovo Gerador de Rastejante Maculado",
+ "item.thaumcraft.taintacle_spawn_egg": "Ovo Gerador de Tentáculo da Mácula",
+ "item.thaumcraft.taint_swarm_spawn_egg": "Ovo Gerador de Enxame da Mácula",
+ "item.thaumcraft.taint_seed_spawn_egg": "Ovo Gerador de Semente da Mácula",
+ "item.thaumcraft.taint_seed_prime_spawn_egg": "Ovo Gerador de Semente da Mácula Gigante"
 }

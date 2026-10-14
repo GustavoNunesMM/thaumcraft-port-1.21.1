@@ -1873,5 +1873,10 @@
  "item.thaumcraft.bucket_death": "Bucket of Liquid Death",
  "item.thaumcraft.bucket_pure": "Bucket of Purifying Fluid",
  "item.thaumcraft.bucket_goo": "Bucket of Flux Goo",
- "container.thaumcraft.void_siphon": "Void Siphon"
+ "container.thaumcraft.void_siphon": "Void Siphon",
+ "item.thaumcraft.taint_crawler_spawn_egg": "Tainted Crawler Spawn Egg",
+ "item.thaumcraft.taintacle_spawn_egg": "Taintacle Spawn Egg",
+ "item.thaumcraft.taint_swarm_spawn_egg": "Taint Swarm Spawn Egg",
+ "item.thaumcraft.taint_seed_spawn_egg": "Taint Seed Spawn Egg",
+ "item.thaumcraft.taint_seed_prime_spawn_egg": "Giant Taint Seed Spawn Egg"
 }

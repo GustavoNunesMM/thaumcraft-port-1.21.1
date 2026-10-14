@@ -248,6 +248,170 @@ write(f"{D}/{NS}/{NS}/aspects/entities/flux.json", {"entries": [
     {"entity": tc("taint_crawler"), "aspects": {"vitium": 5, "bestia": 5}},
 ]})
 
+# ====================================================================== spawn eggs
+EGGS = ["taint_crawler", "taintacle", "taint_swarm", "taint_seed", "taint_seed_prime"]
+for e in EGGS:
+    model(f"{e}_spawn_egg", {"parent": "minecraft:item/template_spawn_egg"}, "item")
+
+# ItemPrimalCrusher.isEffective lists the taint blocks too.
+add_tag("block", NS, "mineable/primal_crusher", [tc(n) for n in ["taint_crust", "taint_rock", "taint_soil", "taint_feature", "taint_log",
+                                                                 "taint_fibre"]])
+
+# ====================================================================== warp potion shaders (ShaderHandler), GLSL 150
+SH = f"{A}/shaders"
+UNI_BASE = [
+    {"name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0]},
+    {"name": "InSize", "type": "float", "count": 2, "values": [1.0, 1.0]},
+    {"name": "OutSize", "type": "float", "count": 2, "values": [1.0, 1.0]}]
+BLEND = {"func": "add", "srcrgb": "one", "dstrgb": "zero"}
+
+
+def program(name):
+    write(f"{SH}/program/{name}.json", {"blend": BLEND, "vertex": "sobel", "fragment": tc(name), "attributes": ["Position"],
+                                        "samplers": [{"name": "DiffuseSampler"}], "uniforms": UNI_BASE})
+
+
+def text(path, body):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(body)
+
+
+def two_pass(first, second=None):
+    return {"targets": ["swap"], "passes": [dict({"intarget": "minecraft:main", "outtarget": "swap"}, **first),
+                                            dict({"intarget": "swap", "outtarget": "minecraft:main"}, **(second or {"name": "blit"}))]}
+
+
+write(f"{SH}/post/desaturatetc.json", two_pass({"name": "color_convolve", "uniforms": [{"name": "Saturation", "values": [0.8]}]}))
+write(f"{SH}/post/hunger.json", two_pass({"name": "color_convolve", "uniforms": [{"name": "ColorScale", "values": [1.0, 0.8, 0.8]},
+                                                                                   {"name": "Saturation", "values": [1.1]}]}))
+write(f"{SH}/post/blurtc.json", two_pass({"name": "box_blur", "use_linear_filter": True, "uniforms": [{"name": "BlurDir", "values": [1.0, 0.0]},
+                                                                                                      {"name": "Radius", "values": [10.0]}]},
+                                         {"name": "box_blur", "use_linear_filter": True, "uniforms": [{"name": "BlurDir", "values": [0.0, 1.0]},
+                                                                                                      {"name": "Radius", "values": [10.0]}]}))
+write(f"{SH}/post/sunscorned.json", two_pass({"name": tc("bloomcolor")}, {"name": tc("bloom2")}))
+program("bloomcolor")
+program("bloom2")
+text(f"{SH}/program/bloom2.fsh", """#version 150
+
+uniform sampler2D DiffuseSampler;
+
+in vec2 texCoord;
+in vec2 oneTexel;
+
+out vec4 fragColor;
+
+// width of steps, number of steps and bloom brightness (bloom2.fsh)
+const float blurWidth = 0.002;
+const float blurSteps = 0.1;
+const float amount = 5.0;
+
+void main() {
+    vec4 color = texture(DiffuseSampler, texCoord);
+    float brightness = (color.r + color.g + color.b) / 3.0;
+    vec4 sum = vec4(0.0);
+    const float foo = 10.0 / (((blurSteps * 2.0) + 1.0) * 4.0);
+    for (float i = -blurSteps; i < blurSteps; i++) {
+        sum += texture(DiffuseSampler, texCoord + vec2(i, i) * blurWidth * 0.7);
+        sum += texture(DiffuseSampler, texCoord + vec2(i, -i) * blurWidth * 0.7);
+        sum += texture(DiffuseSampler, texCoord + vec2(0.0, i) * blurWidth);
+        sum += texture(DiffuseSampler, texCoord + vec2(i, 0.0) * blurWidth);
+    }
+    sum *= foo;
+    vec4 modifier = sum * sum * (0.015 - (brightness * 0.01));
+    vec4 outputColor = modifier * amount + color;
+    fragColor = vec4((outputColor * 0.9).rgb, 1.0);
+}
+""")
+text(f"{SH}/program/bloomcolor.fsh", """#version 150
+
+uniform sampler2D DiffuseSampler;
+
+in vec2 texCoord;
+in vec2 oneTexel;
+
+out vec4 fragColor;
+
+vec4 RGBtoHSL(vec4 col) {
+    float red = col.r;
+    float green = col.g;
+    float blue = col.b;
+    float minc = min(min(col.r, col.g), col.b);
+    float maxc = max(max(col.r, col.g), col.b);
+    float delta = maxc - minc;
+    float lum = (minc + maxc) * 0.5;
+    float sat = 0.0;
+    float hue = 0.0;
+    if (lum > 0.0 && lum < 1.0) {
+        float mul = (lum < 0.5) ? (lum) : (1.0 - lum);
+        sat = delta / (mul * 2.0);
+    }
+    vec3 masks = vec3(
+        (maxc == red && maxc != green) ? 1.0 : 0.0,
+        (maxc == green && maxc != blue) ? 1.0 : 0.0,
+        (maxc == blue && maxc != red) ? 1.0 : 0.0);
+    vec3 adds = vec3((green - blue) / delta, 2.0 + ((blue - red) / delta), 4.0 + ((red - green) / delta));
+    float deltaGtz = (delta > 0.0) ? 1.0 : 0.0;
+    hue += dot(adds, masks);
+    hue *= deltaGtz;
+    hue /= 6.0;
+    if (hue < 0.0) hue += 1.0;
+    return vec4(hue, sat, lum, col.a);
+}
+
+vec4 HSLtoRGB(vec4 col) {
+    const float onethird = 1.0 / 3.0;
+    const float twothird = 2.0 / 3.0;
+    const float rcpsixth = 6.0;
+    float hue = col.x;
+    float sat = col.y;
+    float lum = col.z;
+    vec3 xt = vec3(rcpsixth * (hue - twothird), 0.0, rcpsixth * (1.0 - hue));
+    if (hue < twothird) {
+        xt.r = 0.0;
+        xt.g = rcpsixth * (twothird - hue);
+        xt.b = rcpsixth * (hue - onethird);
+    }
+    if (hue < onethird) {
+        xt.r = rcpsixth * (onethird - hue);
+        xt.g = rcpsixth * hue;
+        xt.b = 0.0;
+    }
+    xt = min(xt, 1.0);
+    float sat2 = 2.0 * sat;
+    float satinv = 1.0 - sat;
+    float luminv = 1.0 - lum;
+    float lum2m1 = (2.0 * lum) - 1.0;
+    vec3 ct = (sat2 * xt) + satinv;
+    vec3 rgb;
+    if (lum >= 0.5) rgb = (luminv * ct) + lum2m1;
+    else rgb = lum * ct;
+    return vec4(rgb, col.a);
+}
+
+void main() {
+    // the colour averaged over 81 points of the screen
+    vec4 averageColor = vec4(0.0);
+    for (int x = 1; x <= 9; x++) {
+        for (int y = 1; y <= 9; y++) {
+            averageColor += texture(DiffuseSampler, vec2(float(x) * 0.1, float(y) * 0.1));
+        }
+    }
+    averageColor /= 81.0;
+
+    vec4 inputColor = texture(DiffuseSampler, texCoord);
+    vec4 inputHSL = RGBtoHSL(inputColor);
+    // desaturate dark things
+    float brightness = min(0.2, inputHSL.b) * 5.0;
+    vec4 finalHSL = inputHSL * vec4(1.0, 0.5 + (brightness * 0.5), 1.0, 1.0);
+    vec4 satAjustedColor = HSLtoRGB(finalHSL);
+    // HDR
+    float averageBrightness = RGBtoHSL(averageColor).b;
+    vec4 averagedColor = satAjustedColor * min(max(0.3 / averageBrightness, 0.7), 4.0);
+    fragColor = vec4((averagedColor * 0.4 + satAjustedColor * 0.6).rgb, 1.0);
+}
+""")
+
 # ====================================================================== lang
 L = f"{A}/lang/en_us.json"
 L2 = f"{A}/lang/pt_br.json"
@@ -278,6 +442,9 @@ BUCKETS = {"bucket_death": "liquid_death", "bucket_pure": "purifying_fluid", "bu
 for item, fluid in BUCKETS.items():
     en.setdefault(f"item.thaumcraft.{item}", "Bucket of " + en[f"block.thaumcraft.{fluid}"])
     pt.setdefault(f"item.thaumcraft.{item}", "Balde de " + pt[f"block.thaumcraft.{fluid}"])
+for e in EGGS:
+    en.setdefault(f"item.thaumcraft.{e}_spawn_egg", en[f"entity.thaumcraft.{e}"] + " Spawn Egg")
+    pt.setdefault(f"item.thaumcraft.{e}_spawn_egg", "Ovo Gerador de " + pt[f"entity.thaumcraft.{e}"])
 en.setdefault("container.thaumcraft.void_siphon", en["block.thaumcraft.void_siphon"])
 pt.setdefault("container.thaumcraft.void_siphon", pt["block.thaumcraft.void_siphon"])
 json.dump(en, open(L, "w", encoding="utf-8"), indent=1, ensure_ascii=False)

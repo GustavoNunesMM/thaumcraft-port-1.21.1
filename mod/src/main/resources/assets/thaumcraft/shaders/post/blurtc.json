@@ -1,0 +1,49 @@
+{
+  "targets": [
+    "swap"
+  ],
+  "passes": [
+    {
+      "intarget": "minecraft:main",
+      "outtarget": "swap",
+      "name": "box_blur",
+      "use_linear_filter": true,
+      "uniforms": [
+        {
+          "name": "BlurDir",
+          "values": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "name": "Radius",
+          "values": [
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "intarget": "swap",
+      "outtarget": "minecraft:main",
+      "name": "box_blur",
+      "use_linear_filter": true,
+      "uniforms": [
+        {
+          "name": "BlurDir",
+          "values": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "name": "Radius",
+          "values": [
+            10.0
+          ]
+        }
+      ]
+    }
+  ]
+}

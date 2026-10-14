@@ -1,0 +1,17 @@
+{
+  "targets": [
+    "swap"
+  ],
+  "passes": [
+    {
+      "intarget": "minecraft:main",
+      "outtarget": "swap",
+      "name": "thaumcraft:bloomcolor"
+    },
+    {
+      "intarget": "swap",
+      "outtarget": "minecraft:main",
+      "name": "thaumcraft:bloom2"
+    }
+  ]
+}

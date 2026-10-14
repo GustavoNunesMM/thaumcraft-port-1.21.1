@@ -195,7 +195,7 @@ public class FluxGameTests {
       h.setBlock(p, ModFlux.FLUX_GOO.get());
       h.succeedWhen(() -> {
          int cells = 0;
-         for (BlockPos q : BlockPos.betweenClosed(h.absolutePos(new BlockPos(0, 1, 0)), h.absolutePos(new BlockPos(4, 1, 4)))) {
+         for (BlockPos q : BlockPos.betweenClosed(h.absolutePos(new BlockPos(0, 1, 0)), h.absolutePos(new BlockPos(4, 2, 4)))) {
             if (h.getLevel().getBlockState(q).getBlock() instanceof FluxGooBlock) cells++;
          }
          h.assertBlockNotPresent(ModFlux.FLUX_GOO.get(), p);
@@ -244,5 +244,50 @@ public class FluxGameTests {
             h.assertTrue(be.getEssentia() < 100, "essentia spent");
          });
       });
+   }
+
+   // ------------------------------------------------------------------ warp potions
+
+   @GameTest(template = "empty", timeoutTicks = 20)
+   public static void deathGazeWithersWhatIsSeen(GameTestHelper h) {
+      Pig seen = h.spawn(EntityType.PIG, new BlockPos(2, 2, 4));
+      seen.setNoAi(true);
+      Pig behind = h.spawn(EntityType.PIG, new BlockPos(2, 2, 0));
+      behind.setNoAi(true);
+      net.minecraft.world.entity.player.Player player = h.makeMockPlayer(net.minecraft.world.level.GameType.SURVIVAL);
+      Vec3 at = h.absoluteVec(new Vec3(2.5, 2.0, 1.5));
+      Vec3 target = seen.position().add(0.0, seen.getBbHeight() / 2.0, 0.0);
+      player.moveTo(at.x, at.y, at.z, 0.0F, 0.0F);
+      player.lookAt(net.minecraft.commands.arguments.EntityAnchorArgument.Anchor.EYES, target);
+      player.addEffect(new MobEffectInstance(ModFlux.DEATH_GAZE, 200, 0));
+      thaumcraft.common.events.FluxEvents.checkDeathGaze(player);
+      h.assertTrue(seen.hasEffect(net.minecraft.world.effect.MobEffects.WITHER), "the gazed pig withers");
+      h.assertFalse(behind.hasEffect(net.minecraft.world.effect.MobEffects.WITHER), "the pig behind is spared");
+      h.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 20)
+   public static void unnaturalHungerEasedByRottenFlesh(GameTestHelper h) {
+      net.minecraft.world.entity.player.Player player = h.makeMockPlayer(net.minecraft.world.level.GameType.SURVIVAL);
+      player.addEffect(new MobEffectInstance(ModFlux.UNNATURAL_HUNGER, 2000, 1));
+      net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent.Finish(player,
+         new ItemStack(net.minecraft.world.item.Items.BREAD), 0, ItemStack.EMPTY));
+      h.assertTrue(player.getEffect(ModFlux.UNNATURAL_HUNGER).getAmplifier() == 1, "bread doesn't help");
+      net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent.Finish(player,
+         new ItemStack(net.minecraft.world.item.Items.ROTTEN_FLESH), 0, ItemStack.EMPTY));
+      MobEffectInstance pe = player.getEffect(ModFlux.UNNATURAL_HUNGER);
+      h.assertTrue(pe != null && pe.getAmplifier() == 0 && pe.getDuration() <= 1400, "rotten flesh eases the hunger: " + pe);
+      net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(new net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent.Finish(player,
+         new ItemStack(thaumcraft.common.registers.ModDevices.BRAIN.get()), 0, ItemStack.EMPTY));
+      h.assertFalse(player.hasEffect(ModFlux.UNNATURAL_HUNGER), "a brain ends it");
+      h.succeed();
+   }
+
+   @GameTest(template = "empty", timeoutTicks = 20)
+   public static void spaUsesPurifyingFluidAndBathSalts(GameTestHelper h) {
+      h.assertTrue(thaumcraft.common.blocks.devices.DeviceStubs.purifyingFluid() == ModFlux.PURIFYING_FLUID.get(), "spa mixes purifying fluid");
+      h.assertTrue(thaumcraft.common.blocks.devices.DeviceStubs.isBathSalts(new ItemStack(ModFlux.BATH_SALTS.get())), "spa takes bath salts");
+      h.assertTrue(new ItemStack(ModFlux.BUCKET_PURE.get()).getItem() instanceof net.minecraft.world.item.BucketItem, "bucket of purifying fluid");
+      h.succeed();
    }
 }

@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "#minecraft:mineable/pickaxe",
-    "#minecraft:mineable/shovel"
+    "#minecraft:mineable/shovel",
+    "thaumcraft:taint_crust",
+    "thaumcraft:taint_rock",
+    "thaumcraft:taint_soil",
+    "thaumcraft:taint_feature",
+    "thaumcraft:taint_log",
+    "thaumcraft:taint_fibre"
   ]
 }

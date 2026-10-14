@@ -1,14 +1,9 @@
 package thaumcraft.common.items.baubles;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -36,10 +31,7 @@ public class VerdantCharmItem extends Item implements ICurioItem, IRechargable, 
       return stack.getOrDefault(ModGear.VERDANT_TYPE.get(), 0);
    }
 
-   /** PotionFluxTaint arrives with the taint milestone; until then the lookup finds nothing. */
-   static Optional<Holder.Reference<MobEffect>> fluxTaint() {
-      return BuiltInRegistries.MOB_EFFECT.getHolder(ResourceLocation.fromNamespaceAndPath(Thaumcraft.MODID, "flux_taint"));
-   }
+
 
    @Override
    public void addCreativeStacks(Consumer<ItemStack> output) {
@@ -68,9 +60,8 @@ public class VerdantCharmItem extends Item implements ICurioItem, IRechargable, 
          player.removeEffect(MobEffects.POISON);
          return;
       }
-      var taint = fluxTaint();
-      if (taint.isPresent() && player.hasEffect(taint.get()) && RechargeHelper.consumeCharge(stack, player, 5)) {
-         player.removeEffect(taint.get());
+      if (player.hasEffect(thaumcraft.common.registers.ModFlux.FLUX_TAINT) && RechargeHelper.consumeCharge(stack, player, 5)) {
+         player.removeEffect(thaumcraft.common.registers.ModFlux.FLUX_TAINT);
          return;
       }
       int type = getType(stack);

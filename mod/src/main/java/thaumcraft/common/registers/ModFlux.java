@@ -33,6 +33,7 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.SoundActions;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.common.util.DeferredSoundType;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
@@ -242,6 +243,18 @@ public final class ModFlux {
       EntityType.Builder.of(TaintSeedPrimeEntity::new, MobCategory.MONSTER).sized(2.0F, 2.0F).clientTrackingRange(8));
    public static final Supplier<EntityType<TaintSwarmEntity>> TAINT_SWARM = entity("taint_swarm",
       EntityType.Builder.of(TaintSwarmEntity::new, MobCategory.MONSTER).sized(2.0F, 2.0F).clientTrackingRange(8));
+
+   // ------------------------------------------------------------------ spawn eggs (ConfigEntities egg colours)
+   public static final DeferredItem<DeferredSpawnEggItem> TAINT_CRAWLER_EGG = egg("taint_crawler", TAINT_CRAWLER, 10618530, 3158064);
+   public static final DeferredItem<DeferredSpawnEggItem> TAINTACLE_EGG = egg("taintacle", TAINTACLE, 10618530, 4469572);
+   public static final DeferredItem<DeferredSpawnEggItem> TAINT_SWARM_EGG = egg("taint_swarm", TAINT_SWARM, 10618530, 16744576);
+   public static final DeferredItem<DeferredSpawnEggItem> TAINT_SEED_EGG = egg("taint_seed", TAINT_SEED, 10618530, 4465237);
+   public static final DeferredItem<DeferredSpawnEggItem> TAINT_SEED_PRIME_EGG = egg("taint_seed_prime", TAINT_SEED_PRIME, 10618530, 5583718);
+
+   private static DeferredItem<DeferredSpawnEggItem> egg(String name, Supplier<? extends EntityType<? extends net.minecraft.world.entity.Mob>> type,
+      int bg, int fg) {
+      return ITEMS.register(name + "_spawn_egg", () -> new DeferredSpawnEggItem(type, bg, fg, new Item.Properties()));
+   }
 
    private ModFlux() {
    }
