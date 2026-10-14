@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "thaumcraft:taint_crawler",
-    "thaumcraft:mind_spider"
+    "thaumcraft:mind_spider",
+    "thaumcraft:eldritch_crab"
   ]
 }

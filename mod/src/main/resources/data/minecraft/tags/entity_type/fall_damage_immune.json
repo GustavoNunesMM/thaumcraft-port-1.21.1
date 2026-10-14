@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "thaumcraft:taint_swarm"
+    "thaumcraft:taint_swarm",
+    "thaumcraft:eldritch_golem"
   ]
 }

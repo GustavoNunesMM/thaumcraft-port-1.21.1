@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "thaumcraft:cultist_leader",
-    "thaumcraft:cultist_portal_greater"
+    "thaumcraft:cultist_portal_greater",
+    "thaumcraft:eldritch_warden",
+    "thaumcraft:eldritch_golem",
+    "thaumcraft:taintacle_giant"
   ]
 }

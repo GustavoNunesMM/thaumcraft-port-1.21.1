@@ -42,6 +42,7 @@ public final class ModNetwork {
       CloudJumpPayload.register(registrar);
       DeviceNetwork.register(registrar);
       FluxFXPayload.register(registrar);
+      EldritchPayload.register(registrar);
       registrar.playToClient(SyncAspectsPayload.TYPE, SyncAspectsPayload.STREAM_CODEC,
          (payload, ctx) -> {
             AspectManager.CLIENT.acceptSync(payload);

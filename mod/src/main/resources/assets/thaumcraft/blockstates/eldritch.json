@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "eyes=0": {
+      "model": "thaumcraft:block/eldritch_altar"
+    },
+    "eyes=1": {
+      "model": "thaumcraft:block/eldritch_altar"
+    },
+    "eyes=2": {
+      "model": "thaumcraft:block/eldritch_altar"
+    },
+    "eyes=3": {
+      "model": "thaumcraft:block/eldritch_altar"
+    },
+    "eyes=4": {
+      "model": "thaumcraft:block/eldritch_altar"
+    }
+  }
+}

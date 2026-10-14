@@ -43,7 +43,7 @@ public class CultistKnightEntity extends CultistEntity {
       goalSelector.addGoal(8, new RandomLookAroundGoal(this));
       targetSelector.addGoal(1, new CultGoals.HurtByTarget(this, true));
       targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-      // STUB: the eldritch guardian (eldritch milestone) was also a target.
+      targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, thaumcraft.common.entities.monster.eldritch.EldritchGuardianEntity.class, true));
       targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractIllager.class, true));
    }
 

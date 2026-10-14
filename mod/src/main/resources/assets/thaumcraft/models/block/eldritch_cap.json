@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "thaumcraft:models/obelisk_cap",
+    "bottom": "thaumcraft:blocks/ancient_tile",
+    "side": "thaumcraft:models/obelisk_cap"
+  }
+}

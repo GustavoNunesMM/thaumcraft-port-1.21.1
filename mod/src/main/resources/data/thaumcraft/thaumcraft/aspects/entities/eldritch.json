@@ -1,0 +1,52 @@
+{
+  "entries": [
+    {
+      "entity": "thaumcraft:eldritch_guardian",
+      "aspects": {
+        "alienis": 20,
+        "mortuus": 20,
+        "exanimis": 20
+      }
+    },
+    {
+      "entity": "thaumcraft:eldritch_crab",
+      "aspects": {
+        "alienis": 10,
+        "bestia": 10,
+        "vinculum": 10
+      }
+    },
+    {
+      "entity": "thaumcraft:inhabited_zombie",
+      "aspects": {
+        "alienis": 10,
+        "exanimis": 10,
+        "humanus": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:eldritch_warden",
+      "aspects": {
+        "alienis": 40,
+        "mortuus": 40,
+        "exanimis": 40
+      }
+    },
+    {
+      "entity": "thaumcraft:eldritch_golem",
+      "aspects": {
+        "alienis": 40,
+        "potentia": 40,
+        "machina": 40
+      }
+    },
+    {
+      "entity": "thaumcraft:taintacle_giant",
+      "aspects": {
+        "alienis": 40,
+        "bestia": 40,
+        "vitium": 40
+      }
+    }
+  ]
+}

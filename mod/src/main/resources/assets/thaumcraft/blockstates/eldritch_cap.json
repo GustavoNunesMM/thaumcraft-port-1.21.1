@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "thaumcraft:block/eldritch_cap"
+    },
+    "lit=true": {
+      "model": "thaumcraft:block/eldritch_cap_lit"
+    }
+  }
+}

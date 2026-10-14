@@ -24,9 +24,7 @@ import thaumcraft.common.world.aura.AuraHandler;
  * BlockTaint: crusted taint (falls like sand when nothing holds it), tainted soil, tainted rock (spreads fibres) and
  * the taint geyser (spawns swarms, pollutes the aura). They decay without a nearby taint seed. Drops come from the loot
  * tables (silk touch only; tainted rock may drop a vitium crystal).
- *
- * <p>Port note: 1.12 tainted rock reverted to porous stone, which isn't ported yet (eldritch milestone): it reverts to
- * cobblestone for now.
+ * Dying tainted rock leaves porous stone behind.
  */
 public class TaintBlock extends Block implements ITaintBlock {
    public TaintBlock(Properties properties) {
@@ -36,7 +34,7 @@ public class TaintBlock extends Block implements ITaintBlock {
    @Override
    public void die(Level level, BlockPos pos, BlockState state) {
       if (state.is(ModFlux.TAINT_ROCK.get())) {
-         level.setBlockAndUpdate(pos, Blocks.COBBLESTONE.defaultBlockState()); // stonePorous (not ported yet)
+         level.setBlockAndUpdate(pos, thaumcraft.common.registers.ModEldritch.STONE_POROUS.get().defaultBlockState());
       } else if (state.is(ModFlux.TAINT_SOIL.get())) {
          level.setBlockAndUpdate(pos, Blocks.DIRT.defaultBlockState());
       } else if (state.is(ModFlux.TAINT_CRUST.get()) || state.is(ModFlux.TAINT_GEYSER.get())) {

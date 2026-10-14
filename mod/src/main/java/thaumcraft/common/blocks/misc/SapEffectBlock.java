@@ -37,8 +37,7 @@ public class SapEffectBlock extends Block {
 
    @Override
    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-      // TODO(eldritch milestone): IEldritchMob creatures are immune.
-      if (!level.isClientSide && entity instanceof LivingEntity le && !le.hasEffect(MobEffects.WITHER)) {
+      if (!level.isClientSide && !thaumcraft.common.entities.monster.eldritch.EldritchHelper.isEldritch(entity) && entity instanceof LivingEntity le && !le.hasEffect(MobEffects.WITHER)) {
          ServerTasks.schedule(0, () -> {
             le.addEffect(new MobEffectInstance(MobEffects.WITHER, 40, 0, true, true));
             le.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 1, true, true));

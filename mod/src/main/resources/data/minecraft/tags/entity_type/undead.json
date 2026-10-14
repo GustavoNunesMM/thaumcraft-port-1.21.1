@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "thaumcraft:brainy_zombie",
-    "thaumcraft:giant_brainy_zombie"
+    "thaumcraft:giant_brainy_zombie",
+    "thaumcraft:eldritch_guardian",
+    "thaumcraft:eldritch_warden",
+    "thaumcraft:inhabited_zombie"
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "priority": 1,
+  "entries": [
+    {
+      "item": "thaumcraft:stone_porous",
+      "aspects": {
+        "terra": 5,
+        "vacuos": 5
+      }
+    },
+    {
+      "item": "thaumcraft:eldritch",
+      "aspects": {
+        "vacuos": 10,
+        "alienis": 10
+      }
+    },
+    {
+      "item": "thaumcraft:eldritch_obelisk",
+      "aspects": {
+        "vacuos": 10,
+        "alienis": 10
+      }
+    },
+    {
+      "item": "thaumcraft:eldritch_cap",
+      "aspects": {
+        "vacuos": 10,
+        "alienis": 10
+      }
+    },
+    {
+      "item": "thaumcraft:eldritch_lock",
+      "aspects": {
+        "vacuos": 10,
+        "alienis": 10,
+        "machina": 10
+      }
+    },
+    {
+      "item": "thaumcraft:eldritch_crab_spawner",
+      "aspects": {
+        "vacuos": 10,
+        "alienis": 10,
+        "bestia": 15
+      }
+    },
+    {
+      "item": "thaumcraft:eldritch_eye",
+      "aspects": {
+        "alienis": 10,
+        "sensus": 10,
+        "vacuos": 5
+      }
+    },
+    {
+      "item": "thaumcraft:runed_tablet",
+      "aspects": {
+        "alienis": 10,
+        "terra": 5,
+        "cognitio": 5
+      }
+    }
+  ]
+}

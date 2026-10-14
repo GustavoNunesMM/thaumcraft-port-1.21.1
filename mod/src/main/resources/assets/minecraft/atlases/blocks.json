@@ -18,6 +18,34 @@
     {
       "type": "single",
       "resource": "thaumcraft:entity/armor/caster_basic"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/obelisk_side"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/obelisk_side_2"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/obelisk_cap"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/obelisk_cap_2"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/obelisk_cap_altar"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/crabvent"
+    },
+    {
+      "type": "single",
+      "resource": "thaumcraft:models/eldritch_lock"
     }
   ]
 }

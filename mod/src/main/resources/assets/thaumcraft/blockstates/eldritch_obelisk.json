@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "lit=false,part=top": {
+      "model": "thaumcraft:block/eldritch_obelisk_top"
+    },
+    "lit=true,part=top": {
+      "model": "thaumcraft:block/eldritch_obelisk_top_lit"
+    },
+    "lit=false,part=middle": {
+      "model": "thaumcraft:block/eldritch_obelisk_middle"
+    },
+    "lit=true,part=middle": {
+      "model": "thaumcraft:block/eldritch_obelisk_middle_lit"
+    },
+    "lit=false,part=bottom": {
+      "model": "thaumcraft:block/eldritch_obelisk_bottom"
+    },
+    "lit=true,part=bottom": {
+      "model": "thaumcraft:block/eldritch_obelisk_bottom_lit"
+    }
+  }
+}

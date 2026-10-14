@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing=north,opening=false": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 180
+    },
+    "facing=north,opening=true": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 180
+    },
+    "facing=east,opening=false": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 270
+    },
+    "facing=east,opening=true": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 270
+    },
+    "facing=south,opening=false": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 0
+    },
+    "facing=south,opening=true": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 0
+    },
+    "facing=west,opening=false": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 90
+    },
+    "facing=west,opening=true": {
+      "model": "thaumcraft:block/eldritch_lock",
+      "y": 90
+    }
+  }
+}
