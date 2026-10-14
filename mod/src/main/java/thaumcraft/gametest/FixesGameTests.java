@@ -15,6 +15,7 @@ import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import thaumcraft.Thaumcraft;
 import thaumcraft.common.entities.monster.ThaumicSlimeEntity;
+import thaumcraft.common.entities.monster.mods.ChampionModifier;
 import thaumcraft.common.registers.ModDevices;
 import thaumcraft.common.registers.ModExtras;
 import thaumcraft.common.registers.ModFlux;
@@ -118,5 +119,49 @@ public class FixesGameTests {
       h.assertTrue(slime.getSize() > 1, "slime should have grown, size " + slime.getSize());
       slime.discard();
       h.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void championCreationAndDrops(GameTestHelper h) {
+      var zombie = h.spawn(net.minecraft.world.entity.EntityType.ZOMBIE, new BlockPos(2, 2, 2));
+      h.assertTrue(ChampionModifier.getChampionValue(zombie) >= -1, "the spawn roll should have run");
+      // force a fresh roll into a specific modifier
+      var z2 = new net.minecraft.world.entity.monster.Zombie(h.getLevel());
+      z2.moveTo(h.absoluteVec(new net.minecraft.world.phys.Vec3(3, 2, 3)));
+      double hp = z2.getMaxHealth();
+      ChampionModifier.makeChampion(z2, false, 11);
+      h.assertTrue(ChampionModifier.getChampionValue(z2) == 11 && ChampionModifier.get(z2).name.equals("vampiric"), "vampiric champion");
+      h.assertTrue(z2.getMaxHealth() == hp + 100.0, "champion health +100: " + z2.getMaxHealth());
+      h.assertTrue(z2.hasCustomName(), "champions are named");
+      ChampionModifier.makeChampion(z2, false, 3);
+      h.assertTrue(ChampionModifier.getChampionValue(z2) == 11, "a champion is never re-rolled");
+      h.getLevel().addFreshEntity(z2);
+      h.assertTrue(ChampionModifier.getChampionValue(z2) == 11, "joining the world keeps the modifier");
+      // slain by a player: a loot bag
+      ServerPlayer player = h.makeMockServerPlayerInLevel();
+      z2.setLastHurtByPlayer(player);
+      z2.hurt(h.getLevel().damageSources().playerAttack(player), 10000.0F);
+      var bags = h.getLevel().getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class, z2.getBoundingBox().inflate(3),
+         e -> e.getItem().getItem() instanceof thaumcraft.common.items.mobs.LootBagItem);
+      h.assertTrue(!bags.isEmpty(), "a slain champion drops a loot bag");
+      bags.forEach(Entity::discard);
+      zombie.discard();
+      h.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void taintedChampions(GameTestHelper h) {
+      var cow = h.spawn(net.minecraft.world.entity.EntityType.COW, new BlockPos(2, 2, 2));
+      ChampionModifier.makeTainted(cow);
+      h.assertTrue(ChampionModifier.getChampionValue(cow) == ChampionModifier.TAINTED, "tainted champion: " + ChampionModifier.getChampionValue(cow));
+      h.assertTrue(cow.getMaxHealth() == 35.0F, "tainted health buff: " + cow.getMaxHealth());
+      // its AI turns hostile on the next tick (type 0 modifier)
+      h.runAfterDelay(2, () -> {
+         boolean melee = cow.goalSelector.getAvailableGoals().stream().anyMatch(g -> g.getGoal() instanceof net.minecraft.world.entity.ai.goal.MeleeAttackGoal);
+         h.assertTrue(melee, "a tainted cow attacks");
+         h.assertTrue(cow.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE) > 0, "and bites");
+         cow.discard();
+         h.succeed();
+      });
    }
 }

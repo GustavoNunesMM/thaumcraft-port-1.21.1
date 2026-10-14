@@ -77,13 +77,12 @@ public class CultistLeaderEntity extends ThaumcraftBossEntity implements RangedA
       builder.define(NAME, (byte) 0);
    }
 
-   /**
-    * generateName: "Praetor <title>". STUB: the 1.12 name also carried the boss's champion modifier ("the Mighty"...);
-    * champion modifiers are not ported yet.
-    */
+   /** generateName: "Praetor <title>", plus its champion modifier if it is one ("Praetor X the Mighty"). */
    @Override
    public void generateName() {
-      setCustomName(Component.translatable("entity.thaumcraft.cultist_leader.custom", getTitle()));
+      var mod = thaumcraft.common.entities.monster.mods.ChampionModifier.get(this);
+      setCustomName(mod == null ? Component.translatable("entity.thaumcraft.cultist_leader.custom", getTitle())
+         : Component.translatable("entity.thaumcraft.cultist_leader.champion", getTitle(), mod.localizedName()));
    }
 
    public String getTitle() {

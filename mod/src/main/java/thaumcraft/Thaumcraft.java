@@ -35,6 +35,7 @@ public class Thaumcraft {
       thaumcraft.common.registers.ModMobs.init(modBus);
       thaumcraft.common.registers.ModEldritch.init(modBus);
       thaumcraft.common.registers.ModExtras.init();
+      thaumcraft.common.registers.ModChampions.init(modBus);
       ModBlocks.BLOCKS.register(modBus);
       ModItems.ITEMS.register(modBus);
       ModDataComponents.COMPONENTS.register(modBus);

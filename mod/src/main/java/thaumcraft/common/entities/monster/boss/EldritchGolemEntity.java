@@ -271,4 +271,11 @@ public class EldritchGolemEntity extends ThaumcraftBossEntity implements IEldrit
    public boolean isAlliedTo(net.minecraft.world.entity.Entity e) {
       return EldritchHelper.isEldritch(e) || super.isAlliedTo(e);
    }
+
+   /** generateName: "<champion> Eldritch Construct" when it is a champion. */
+   @Override
+   public void generateName() {
+      var mod = thaumcraft.common.entities.monster.mods.ChampionModifier.get(this);
+      if (mod != null) setCustomName(net.minecraft.network.chat.Component.translatable("entity.thaumcraft.eldritch_golem.champion", mod.localizedName()));
+   }
 }

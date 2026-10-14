@@ -34,8 +34,7 @@ import thaumcraft.common.registers.ModMobs;
 /**
  * EntityTaintacleGiant: a six block taintacle with a boss bar. It never spawns naturally; it regenerates, enrages
  * like the other bosses, and the last one alive within 48 blocks drops a primordial pearl.
- *
- * <p>STUB: 1.12 made it a champion (EntityUtils.makeChampion); champion modifiers aren't ported.
+ * It is always a champion (EntityUtils.makeChampion).
  */
 public class TaintacleGiantEntity extends TaintacleEntity implements IEldritchMob {
    private static final EntityDataAccessor<Integer> AGGRO = SynchedEntityData.defineId(TaintacleGiantEntity.class, EntityDataSerializers.INT);
@@ -68,6 +67,7 @@ public class TaintacleGiantEntity extends TaintacleEntity implements IEldritchMo
    @Nullable
    @Override
    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance diff, MobSpawnType reason, @Nullable SpawnGroupData data) {
+      thaumcraft.common.entities.monster.mods.ChampionModifier.makeChampion(this, true);
       bossInfo.setName(getDisplayName());
       return data;
    }

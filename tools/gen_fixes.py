@@ -187,7 +187,14 @@ NEW = {
     "item.thaumcraft.creative_flux_sponge.drained": ("%s flux drained from 81 chunks.", "%s de fluxo drenado de 81 chunks."),
     "item.thaumcraft.creative_flux_sponge.rifts": ("%s flux rifts removed.", "%s fendas de fluxo removidas."),
 }
-EXTRA_LANG = {}
+EXTRA_LANG = {
+    "attribute.name.thaumcraft.champion_mod": ("Champion Modifier", "Modificador de Campeão"),
+    "attribute.name.thaumcraft.tainted_mod": ("Tainted Modifier", "Modificador de Corrupção"),
+    "champion.mod.tainted": ("Tainted", "Corrompido"),
+    "entity.thaumcraft.cultist_leader.champion": ("Praetor %s the %s", "Pretor %s, o %s"),
+    "entity.thaumcraft.eldritch_warden.champion": ("%s the %s", "%s, o %s"),
+    "entity.thaumcraft.eldritch_golem.champion": ("%s Eldritch Construct", "Construto Sobrenatural %s"),
+}
 NEW.update(EXTRA_LANG)
 for metal in ("tin", "silver", "lead"):
     for kind in ("nugget", "cluster"):

@@ -1987,5 +1987,11 @@
  "item.thaumcraft.nugget_silver": "Silver Nugget",
  "item.thaumcraft.cluster_silver": "Native Silver Cluster",
  "item.thaumcraft.nugget_lead": "Lead Nugget",
- "item.thaumcraft.cluster_lead": "Native Lead Cluster"
+ "item.thaumcraft.cluster_lead": "Native Lead Cluster",
+ "attribute.name.thaumcraft.champion_mod": "Champion Modifier",
+ "attribute.name.thaumcraft.tainted_mod": "Tainted Modifier",
+ "champion.mod.tainted": "Tainted",
+ "entity.thaumcraft.cultist_leader.champion": "Praetor %s the %s",
+ "entity.thaumcraft.eldritch_warden.champion": "%s the %s",
+ "entity.thaumcraft.eldritch_golem.champion": "%s Eldritch Construct"
 }

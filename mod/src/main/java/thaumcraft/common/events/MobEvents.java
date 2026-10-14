@@ -24,6 +24,8 @@ import thaumcraft.common.entities.monster.PechEntity;
 import thaumcraft.common.entities.monster.ThaumicSlimeEntity;
 import thaumcraft.common.entities.monster.WispEntity;
 import thaumcraft.common.entities.monster.cult.CultistEntity;
+import thaumcraft.common.entities.monster.cult.ThaumcraftBossEntity;
+import thaumcraft.common.entities.monster.mods.ChampionModifier;
 import thaumcraft.common.entities.FluxRiftEntity;
 import thaumcraft.common.entities.monster.tainted.TaintCrawlerEntity;
 import thaumcraft.common.entities.monster.tainted.TaintSeedEntity;
@@ -36,9 +38,8 @@ import thaumcraft.common.research.ResearchManager;
 import thaumcraft.common.research.ScanningManager;
 
 /**
- * Milestone 13 parts of EntityEvents.livingDrops: brains from zombies and the Crimson Rites from cultists.
- * STUB: the loot bags (and bonus experience) dropped by champion mobs wait for the champion modifiers, which are not
- * ported; bosses drop their bags themselves.
+ * EntityEvents.livingDrops: loot bags and bonus experience from champions (bosses drop their bags themselves), brains
+ * from zombies and the Crimson Rites from cultists.
  */
 @EventBusSubscriber(modid = Thaumcraft.MODID)
 public final class MobEvents {
@@ -63,6 +64,14 @@ public final class MobEvents {
       LivingEntity dead = event.getEntity();
       if (dead.level().isClientSide) return;
       boolean fakeplayer = event.getSource().getEntity() instanceof FakePlayer;
+      if (event.isRecentlyHit() && !fakeplayer && dead instanceof net.minecraft.world.entity.monster.Monster && !(dead instanceof ThaumcraftBossEntity)
+         && ChampionModifier.isChampion(dead) && ChampionModifier.getChampionValue(dead) != ChampionModifier.TAINTED) {
+         if (dead.level() instanceof net.minecraft.server.level.ServerLevel sl) {
+            net.minecraft.world.entity.ExperienceOrb.award(sl, dead.position(), 5 + dead.getRandom().nextInt(3));
+         }
+         int lb = ChampionEvents.bagRarity(dead, looting(event));
+         drop(event, new ItemStack(lb == 0 ? ModMobs.LOOT_BAG_COMMON.get() : lb == 1 ? ModMobs.LOOT_BAG_UNCOMMON.get() : ModMobs.LOOT_BAG_RARE.get()));
+      }
       if (dead instanceof Zombie && !(dead instanceof BrainyZombieEntity) && event.isRecentlyHit()
          && dead.getRandom().nextInt(10) - looting(event) < 1) {
          drop(event, new ItemStack(ModDevices.BRAIN.get()));

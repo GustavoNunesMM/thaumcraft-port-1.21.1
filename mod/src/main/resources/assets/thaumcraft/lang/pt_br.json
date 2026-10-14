@@ -1987,5 +1987,11 @@
  "item.thaumcraft.nugget_silver": "Pepita de Prata",
  "item.thaumcraft.cluster_silver": "Aglomerado Nativo de Prata",
  "item.thaumcraft.nugget_lead": "Pepita de Chumbo",
- "item.thaumcraft.cluster_lead": "Aglomerado Nativo de Chumbo"
+ "item.thaumcraft.cluster_lead": "Aglomerado Nativo de Chumbo",
+ "attribute.name.thaumcraft.champion_mod": "Modificador de Campeão",
+ "attribute.name.thaumcraft.tainted_mod": "Modificador de Corrupção",
+ "champion.mod.tainted": "Corrompido",
+ "entity.thaumcraft.cultist_leader.champion": "Pretor %s, o %s",
+ "entity.thaumcraft.eldritch_warden.champion": "%s, o %s",
+ "entity.thaumcraft.eldritch_golem.champion": "Construto Sobrenatural %s"
 }

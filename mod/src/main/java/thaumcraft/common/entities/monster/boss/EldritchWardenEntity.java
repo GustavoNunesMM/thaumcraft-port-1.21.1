@@ -108,13 +108,12 @@ public class EldritchWardenEntity extends ThaumcraftBossEntity implements Ranged
       targetSelector.addGoal(3, EldritchGuardianEntity.cultistTarget(this));
    }
 
-   /**
-    * generateName: "Title the champion" in 1.12 (champion modifiers aren't ported); here the warden is simply named
-    * after its title.
-    */
+   /** generateName: its title, plus its champion modifier if it is one ("Title the Mighty"). */
    @Override
    public void generateName() {
-      setCustomName(Component.literal(getTitle()));
+      var mod = thaumcraft.common.entities.monster.mods.ChampionModifier.get(this);
+      setCustomName(mod == null ? Component.literal(getTitle())
+         : Component.translatable("entity.thaumcraft.eldritch_warden.champion", getTitle(), mod.localizedName()));
    }
 
    public String getTitle() {

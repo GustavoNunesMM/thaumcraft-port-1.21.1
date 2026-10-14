@@ -8,6 +8,7 @@ public final class ModConfig {
    private static final ModConfigSpec.BooleanValue WUSS_MODE;
    private static final ModConfigSpec.BooleanValue NO_SLEEP;
    private static final ModConfigSpec.BooleanValue ALLOW_CHEAT_SHEET;
+   private static final ModConfigSpec.BooleanValue ALLOW_CHAMPION_MOBS;
 
    static {
       ModConfigSpec.Builder b = new ModConfigSpec.Builder();
@@ -18,6 +19,10 @@ public final class ModConfig {
          .define("noSleep", false);
       ALLOW_CHEAT_SHEET = b.comment("Allows the creative-only cheating Thaumonomicon that grants all research.")
          .define("allowCheatSheet", false);
+      b.pop();
+      b.push("world");
+      ALLOW_CHAMPION_MOBS = b.comment("Setting this to false will disable spawning champion mobs. Even when false they will still",
+         "have a greatly reduced chance of spawning in certain dangerous places.").define("allowChampionMobs", true);
       b.pop();
       SPEC = b.build();
    }
@@ -39,5 +44,9 @@ public final class ModConfig {
 
    public static boolean allowCheatSheet() {
       return get(ALLOW_CHEAT_SHEET, false);
+   }
+
+   public static boolean allowChampionMobs() {
+      return get(ALLOW_CHAMPION_MOBS, true);
    }
 }

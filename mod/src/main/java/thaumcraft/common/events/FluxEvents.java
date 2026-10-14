@@ -40,8 +40,7 @@ import thaumcraft.common.world.aura.AuraHandler;
  * condenser's cost and speed (ItemResonator). Also the server side of the warp potions: death gaze withers whatever the
  * player looks at (PlayerEvents.handleWarp / WarpEvents.checkDeathGaze) and unnatural hunger only lets rotten flesh and
  * brains through (PlayerEvents.finishedUsingItem).
- *
- * <p>Not ported (champions milestone): mobs dying of flux taint becoming tainted champions (EntityUtils.makeTainted).
+ * (Creatures dying of flux taint becoming tainted champions: ChampionEvents.)
  */
 @EventBusSubscriber(modid = Thaumcraft.MODID)
 public final class FluxEvents {

@@ -7,8 +7,8 @@ import thaumcraft.api.entities.ITaintedMob;
 import thaumcraft.common.lib.damage.DamageSourceThaumcraft;
 
 /**
- * PotionFluxTaint: hurts the living (1 taint damage every 40 &gt;&gt; amplifier ticks) and heals tainted creatures.
- * (Tainted champions - champion modifier 13 - are healed as well in 1.12; champions are not ported yet.)
+ * PotionFluxTaint: hurts the living (1 taint damage every 40 &gt;&gt; amplifier ticks) and heals tainted creatures and
+ * tainted champions.
  */
 public class FluxTaintEffect extends TCMobEffect {
    public FluxTaintEffect() {
@@ -18,7 +18,8 @@ public class FluxTaintEffect extends TCMobEffect {
    @Override
    public boolean applyEffectTick(LivingEntity target, int amplifier) {
       if (target.level().isClientSide) return true;
-      if (target instanceof ITaintedMob) {
+      if (target instanceof ITaintedMob
+         || thaumcraft.common.entities.monster.mods.ChampionModifier.getChampionValue(target) == thaumcraft.common.entities.monster.mods.ChampionModifier.TAINTED) {
          target.heal(1.0F);
       } else if (!target.getType().is(EntityTypeTags.UNDEAD)) {
          target.hurt(DamageSourceThaumcraft.taint(target.level()), 1.0F);
