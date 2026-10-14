@@ -44,6 +44,16 @@ public final class EssentiaRenderers {
    public static final ModelLayerLocation VALVE = new ModelLayerLocation(tc("tube_valve"), "main");
    public static final ModelLayerLocation CENTRIFUGE = new ModelLayerLocation(tc("centrifuge"), "main");
    public static final ModelLayerLocation BELLOWS = new ModelLayerLocation(tc("bellows"), "main");
+   public static final ModelLayerLocation BORE_NOZZLE = new ModelLayerLocation(tc("bore_nozzle"), "main");
+
+   /** ModelBoreBase's nozzle (the alembic's spouts into neighbouring essentia blocks). */
+   public static LayerDefinition nozzleLayer() {
+      MeshDefinition mesh = new MeshDefinition();
+      PartDefinition root = mesh.getRoot();
+      root.addOrReplaceChild("nozzle1", CubeListBuilder.create().texOffs(106, 42).mirror().addBox(2.5F, -2.0F, -2.0F, 5, 4, 4), PartPose.offset(0, 8, 0));
+      root.addOrReplaceChild("nozzle2", CubeListBuilder.create().texOffs(106, 51).mirror().addBox(7.0F, -2.5F, -2.5F, 1, 5, 5), PartPose.offset(0, 8, 0));
+      return LayerDefinition.create(mesh, 128, 64);
+   }
    static final ResourceLocation TEX_LABEL = tc("textures/models/label.png");
    static final ResourceLocation TEX_BRINE = tc("textures/models/jarbrine.png");
    static final ResourceLocation TEX_VALVE = tc("textures/models/valve.png");
@@ -264,11 +274,34 @@ public final class EssentiaRenderers {
    }
 
    public static class Alembic implements BlockEntityRenderer<AlembicBlockEntity> {
+      private static final ResourceLocation TEX_BORE = tc("textures/models/bore.png");
+      private final ModelPart nozzle;
+
       public Alembic(BlockEntityRendererProvider.Context ctx) {
+         nozzle = ctx.bakeLayer(BORE_NOZZLE);
       }
 
       @Override
       public void render(AlembicBlockEntity tile, float partialTick, PoseStack pose, MultiBufferSource buffers, int light, int overlay) {
+         if (tile.getLevel() != null) {
+            // a spout into every neighbour that takes essentia from it
+            for (Direction dir : Direction.Plane.HORIZONTAL) {
+               if (!tile.canOutputTo(dir)) continue;
+               var te = thaumcraft.api.ThaumcraftApiHelper.getConnectableTile(tile.getLevel(), tile.getBlockPos(), dir);
+               if (te == null || !te.canInputFrom(dir.getOpposite())) continue;
+               pose.pushPose();
+               pose.translate(0.5, 0.0, 0.5);
+               float rot = switch (dir) {
+                  case NORTH -> 90.0F;
+                  case SOUTH -> 270.0F;
+                  case WEST -> 180.0F;
+                  default -> 0.0F;
+               };
+               RenderUtil.rot(pose, rot, 0, 1, 0);
+               nozzle.render(pose, buffers.getBuffer(RenderType.entityCutoutNoCull(TEX_BORE)), light, overlay);
+               pose.popPose();
+            }
+         }
          if (tile.aspectFilter == null || !tile.facing.getAxis().isHorizontal()) return;
          pose.pushPose();
          pose.translate(0.5, 0.5, 0.5);

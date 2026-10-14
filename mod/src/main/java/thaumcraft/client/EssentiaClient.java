@@ -68,6 +68,7 @@ public final class EssentiaClient {
       event.registerLayerDefinition(EssentiaRenderers.VALVE, EssentiaRenderers::valveLayer);
       event.registerLayerDefinition(EssentiaRenderers.CENTRIFUGE, EssentiaRenderers::centrifugeLayer);
       event.registerLayerDefinition(EssentiaRenderers.BELLOWS, EssentiaRenderers::bellowsLayer);
+      event.registerLayerDefinition(EssentiaRenderers.BORE_NOZZLE, EssentiaRenderers::nozzleLayer);
    }
 
    private static int essentiaColor(net.minecraft.world.item.ItemStack stack) {
