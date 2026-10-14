@@ -1,6 +1,8 @@
 package thaumcraft.common.items;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
@@ -23,6 +25,7 @@ import net.minecraft.world.phys.Vec3;
 import thaumcraft.common.network.ModNetwork;
 import thaumcraft.common.network.SyncAuraPayload;
 import thaumcraft.common.registers.ModSounds;
+import thaumcraft.common.research.ResearchManager;
 import thaumcraft.common.research.ScanningManager;
 import thaumcraft.common.world.aura.AuraChunk;
 import thaumcraft.common.world.aura.AuraHandler;
@@ -54,7 +57,13 @@ public class ThaumometerItem extends Item {
       if (level.isClientSide || !(entity instanceof ServerPlayer player) || player.tickCount % 20 != 0) return;
       if (selected || player.getOffhandItem() == stack) {
          AuraChunk ac = AuraHandler.getAuraChunk(level, player.blockPosition());
-         if (ac != null) ModNetwork.sendTo(player, SyncAuraPayload.of(ac));
+         if (ac != null) {
+            if ((ac.getFlux() > ac.getVis() || ac.getFlux() > ac.getBase() / 3) && !ResearchManager.knowsResearch(player, "FLUX")) {
+               ResearchManager.startResearchWithPopup(player, "FLUX");
+               player.displayClientMessage(Component.translatable("research.FLUX.warn").withStyle(ChatFormatting.DARK_PURPLE), true);
+            }
+            ModNetwork.sendTo(player, SyncAuraPayload.of(ac));
+         }
       }
    }
 

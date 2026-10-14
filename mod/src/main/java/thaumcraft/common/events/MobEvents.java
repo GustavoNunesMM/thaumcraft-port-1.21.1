@@ -24,7 +24,14 @@ import thaumcraft.common.entities.monster.PechEntity;
 import thaumcraft.common.entities.monster.ThaumicSlimeEntity;
 import thaumcraft.common.entities.monster.WispEntity;
 import thaumcraft.common.entities.monster.cult.CultistEntity;
+import thaumcraft.common.entities.FluxRiftEntity;
+import thaumcraft.common.entities.monster.tainted.TaintCrawlerEntity;
+import thaumcraft.common.entities.monster.tainted.TaintSeedEntity;
+import thaumcraft.common.entities.monster.tainted.TaintSwarmEntity;
+import thaumcraft.common.entities.monster.tainted.TaintacleEntity;
 import thaumcraft.common.registers.ModDevices;
+import thaumcraft.common.registers.ModItems;
+import thaumcraft.common.registers.ModMobs;
 import thaumcraft.common.research.ResearchManager;
 import thaumcraft.common.research.ScanningManager;
 
@@ -85,6 +92,21 @@ public final class MobEvents {
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!BrainyZombie", BrainyZombieEntity.class));
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!CrimsonCultist", CultistEntity.class));
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_golem", OwnedConstructEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_BAT", FireBatEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_FLY", FireBatEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_FLY", TaintSwarmEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_FLY", WispEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!TaintCrawler", TaintCrawlerEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!Taintacle", TaintacleEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!TaintSeed", TaintSeedEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!TaintSwarm", TaintSwarmEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_toomuchflux", FluxRiftEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!FluxRift", FluxRiftEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_BRAIN", BrainyZombieEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanItem.of("f_BRAIN", ModDevices.BRAIN));
+            ScanningManager.addScannableThing(ScanningManager.ScanItem.of("PRIMPEARL", ModMobs.PRIMORDIAL_PEARL));
+            ScanningManager.addScannableThing(ScanningManager.ScanItem.of("!Pechwand", ModMobs.PECH_WAND));
+            ScanningManager.addScannableThing(ScanningManager.ScanItem.of("f_VOIDSEED", ModItems.VOID_SEED));
          });
       }
    }
