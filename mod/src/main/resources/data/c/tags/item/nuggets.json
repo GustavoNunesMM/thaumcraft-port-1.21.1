@@ -6,6 +6,9 @@
     "#c:nuggets/brass",
     "#c:nuggets/quicksilver",
     "#c:nuggets/quartz",
-    "#c:nuggets/copper"
+    "#c:nuggets/copper",
+    "thaumcraft:nugget_tin",
+    "thaumcraft:nugget_silver",
+    "thaumcraft:nugget_lead"
   ]
 }

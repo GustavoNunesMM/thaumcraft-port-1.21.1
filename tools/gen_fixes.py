@@ -130,6 +130,11 @@ model("grapple_gun", {"parent": f"{NS}:item/grapple_gun_1",
 generated("grapple_gun_tip", f"{NS}:items/grapple_gun_tip")
 generated("grapple_gun_spool", f"{NS}:items/grapple_gun_spool")
 generated("creative_flux_sponge", f"{NS}:items/flux_sponge")
+for metal in ("tin", "silver", "lead"):
+    generated(f"nugget_{metal}", f"{NS}:items/nugget_{metal}")
+    generated(f"cluster_{metal}", f"{NS}:items/cluster_{metal}")
+    add_tag("item", "c", f"nuggets/{metal}", [f"{NS}:nugget_{metal}"])
+    add_tag("item", "c", "nuggets", [f"{NS}:nugget_{metal}"])
 
 # Arcane activator rail (a powered rail with its own texture).
 for powered, tex in ((False, "rail_activator"), (True, "rail_activator_powered")):
@@ -184,6 +189,10 @@ NEW = {
 }
 EXTRA_LANG = {}
 NEW.update(EXTRA_LANG)
+for metal in ("tin", "silver", "lead"):
+    for kind in ("nugget", "cluster"):
+        for dct in (en, pt):
+            dct[f"item.thaumcraft.{kind}_{metal}"] = dct[f"item.{kind}.{metal}.name"]
 for k, (e_, p_) in NEW.items():
     en[k] = e_
     pt[k] = p_

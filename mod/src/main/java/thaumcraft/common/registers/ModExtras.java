@@ -19,7 +19,8 @@ import thaumcraft.common.items.tools.GrappleGunItem;
 
 /**
  * Late additions found missing by the audit: the arcane grappler (gun, head, spool and its grapple entity), the arcane
- * activator rail (BlockRailPowered named activator_rail: powered constructs stop on it) and the creative flux sponge.
+ * activator rail (BlockRailPowered named activator_rail: powered constructs stop on it), the creative flux sponge and the
+ * tin/silver/lead nuggets and clusters.
  */
 public final class ModExtras {
    /** ItemGrappleGun's "loaded" tag: a grapple is out (the model without its head). */
@@ -40,6 +41,17 @@ public final class ModExtras {
    public static final DeferredBlock<PoweredRailBlock> ACTIVATOR_RAIL = ModBlocks.BLOCKS.registerBlock("activator_rail",
       p -> new PoweredRailBlock(p, true), BlockBehaviour.Properties.of().noCollission().strength(0.7F).sound(SoundType.METAL));
    public static final DeferredItem<BlockItem> ACTIVATOR_RAIL_ITEM = ModItems.ITEMS.registerSimpleBlockItem(ACTIVATOR_RAIL);
+
+   /**
+    * The ItemsTC.nuggets / clusters variants for tin, silver and lead (always registered in 1.12): the infernal furnace's
+    * bonus nuggets and the purification of those ores when some mod adds them.
+    */
+   public static final DeferredItem<Item> NUGGET_TIN = ModItems.ITEMS.registerSimpleItem("nugget_tin");
+   public static final DeferredItem<Item> NUGGET_SILVER = ModItems.ITEMS.registerSimpleItem("nugget_silver");
+   public static final DeferredItem<Item> NUGGET_LEAD = ModItems.ITEMS.registerSimpleItem("nugget_lead");
+   public static final DeferredItem<Item> CLUSTER_TIN = ModItems.ITEMS.registerSimpleItem("cluster_tin");
+   public static final DeferredItem<Item> CLUSTER_SILVER = ModItems.ITEMS.registerSimpleItem("cluster_silver");
+   public static final DeferredItem<Item> CLUSTER_LEAD = ModItems.ITEMS.registerSimpleItem("cluster_lead");
 
    private ModExtras() {
    }

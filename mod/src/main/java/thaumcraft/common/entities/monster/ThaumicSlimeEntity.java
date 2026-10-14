@@ -24,9 +24,9 @@ import thaumcraft.common.registers.ModSounds;
 
 /**
  * EntityThaumicSlime: a flux slime that spits pieces of itself at players and bursts into tiny slimes when it dies.
- * STUB: ITaintedMob (taint milestone) is not ported; the slime does not spawn naturally (as in the original).
+ * It is a tainted creature (ITaintedMob); it doesn't spawn naturally but rises from flux goo, and grows by eating it.
  */
-public class ThaumicSlimeEntity extends Slime {
+public class ThaumicSlimeEntity extends Slime implements thaumcraft.api.entities.ITaintedMob {
    int launched = 10;
    int spitCounter = 100;
 

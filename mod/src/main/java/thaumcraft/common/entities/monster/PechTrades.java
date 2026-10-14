@@ -124,7 +124,6 @@ public final class PechTrades {
       forArc.add(t(3, Items.EXPERIENCE_BOTTLE));
       forArc.add(t(3, Items.EXPERIENCE_BOTTLE));
       forArc.add(t(3, Items.GOLDEN_APPLE));
-      // STUB: the eldritch eye belongs to the eldritch milestone; it is skipped while it does not exist.
       forArc.add(tc(4, "eldritch_eye"));
       forArc.add(t(4, Items.ENCHANTED_GOLDEN_APPLE));
       forArc.add(t(5, ModGear.RING_APPRENTICE.get()));

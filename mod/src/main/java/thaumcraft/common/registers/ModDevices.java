@@ -253,7 +253,7 @@ public final class ModDevices {
 
    public static final DeferredItem<HandMirrorItem> HAND_MIRROR = ModItems.ITEMS.registerItem("hand_mirror", HandMirrorItem::new,
       new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
-   /** STUB: the zombie brain (dropped by brainy zombies, a later milestone); here only as the jar of brain's ingredient. */
+   /** The zombie brain: dropped by zombies and brainy zombies (MobEvents), the jar of brain's ingredient. */
    public static final DeferredItem<Item> BRAIN = ModItems.ITEMS.registerSimpleItem("brain",
       new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).alwaysEdible().build()));
 

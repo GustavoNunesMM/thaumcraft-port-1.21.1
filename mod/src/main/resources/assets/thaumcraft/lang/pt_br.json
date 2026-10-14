@@ -1981,5 +1981,11 @@
  "item.thaumcraft.creative_flux_sponge.tip4": "se usada agachado.",
  "item.thaumcraft.creative_flux_sponge.tip5": "Somente no criativo",
  "item.thaumcraft.creative_flux_sponge.drained": "%s de fluxo drenado de 81 chunks.",
- "item.thaumcraft.creative_flux_sponge.rifts": "%s fendas de fluxo removidas."
+ "item.thaumcraft.creative_flux_sponge.rifts": "%s fendas de fluxo removidas.",
+ "item.thaumcraft.nugget_tin": "Pepita de Estanho",
+ "item.thaumcraft.cluster_tin": "Aglomerado Nativo de Estanho",
+ "item.thaumcraft.nugget_silver": "Pepita de Prata",
+ "item.thaumcraft.cluster_silver": "Aglomerado Nativo de Prata",
+ "item.thaumcraft.nugget_lead": "Pepita de Chumbo",
+ "item.thaumcraft.cluster_lead": "Aglomerado Nativo de Chumbo"
 }

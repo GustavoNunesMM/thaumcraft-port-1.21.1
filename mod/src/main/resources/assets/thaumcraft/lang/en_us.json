@@ -1981,5 +1981,11 @@
  "item.thaumcraft.creative_flux_sponge.tip4": "if used while sneaking.",
  "item.thaumcraft.creative_flux_sponge.tip5": "Creative only",
  "item.thaumcraft.creative_flux_sponge.drained": "%s flux drained from 81 chunks.",
- "item.thaumcraft.creative_flux_sponge.rifts": "%s flux rifts removed."
+ "item.thaumcraft.creative_flux_sponge.rifts": "%s flux rifts removed.",
+ "item.thaumcraft.nugget_tin": "Tin Nugget",
+ "item.thaumcraft.cluster_tin": "Native Tin Cluster",
+ "item.thaumcraft.nugget_silver": "Silver Nugget",
+ "item.thaumcraft.cluster_silver": "Native Silver Cluster",
+ "item.thaumcraft.nugget_lead": "Lead Nugget",
+ "item.thaumcraft.cluster_lead": "Native Lead Cluster"
 }

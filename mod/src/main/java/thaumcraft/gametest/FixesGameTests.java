@@ -1,5 +1,6 @@
 package thaumcraft.gametest;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 import thaumcraft.Thaumcraft;
+import thaumcraft.common.entities.monster.ThaumicSlimeEntity;
 import thaumcraft.common.registers.ModDevices;
 import thaumcraft.common.registers.ModExtras;
 import thaumcraft.common.registers.ModFlux;
@@ -87,6 +89,34 @@ public class FixesGameTests {
       // OwnedConstructEntity looks the rail up by id and reads its POWERED state
       h.assertTrue(BuiltInRegistries.BLOCK.getKey(ModExtras.ACTIVATOR_RAIL.get()).equals(tc("activator_rail"))
          && ModExtras.ACTIVATOR_RAIL.get().defaultBlockState().hasProperty(BlockStateProperties.POWERED), "activator rail block");
+      h.succeed();
+   }
+
+   @GameTest(template = "empty")
+   public static void fluxGooSpawnsAndFeedsThaumicSlimes(GameTestHelper h) {
+      BlockPos rel = new BlockPos(2, 2, 2);
+      BlockPos pos = h.absolutePos(rel);
+      var goo = ModFlux.FLUX_GOO.get().defaultBlockState().setValue(thaumcraft.common.blocks.world.taint.FluxGooBlock.LEVEL, 6);
+      h.setBlock(rel, goo);
+      // the 1-in-50 roll comes up: a size 2 thaumic slime rises from the deep goo
+      net.minecraft.util.RandomSource zero = new net.minecraft.world.level.levelgen.LegacyRandomSource(0) {
+         @Override
+         public int nextInt(int bound) {
+            return 0;
+         }
+      };
+      h.getBlockState(rel).tick(h.getLevel(), pos, zero);
+      var slimes = h.getLevel().getEntitiesOfClass(ThaumicSlimeEntity.class, new net.minecraft.world.phys.AABB(pos).inflate(2));
+      h.assertTrue(slimes.size() == 1 && slimes.get(0).getSize() == 2, "goo should spawn one size 2 slime: " + slimes);
+      h.assertTrue(h.getBlockState(rel).isAir(), "the goo is used up");
+      ThaumicSlimeEntity slime = slimes.get(0);
+      h.assertTrue(slime instanceof thaumcraft.api.entities.ITaintedMob, "thaumic slimes are tainted mobs");
+      // a slime in goo deeper than its size grows by eating it
+      slime.setSize(1, true);
+      h.setBlock(rel, goo.setValue(thaumcraft.common.blocks.world.taint.FluxGooBlock.LEVEL, 5));
+      for (int i = 0; i < 40 && h.getBlockState(rel).is(ModFlux.FLUX_GOO.get()); i++) h.getBlockState(rel).entityInside(h.getLevel(), pos, slime);
+      h.assertTrue(slime.getSize() > 1, "slime should have grown, size " + slime.getSize());
+      slime.discard();
       h.succeed();
    }
 }

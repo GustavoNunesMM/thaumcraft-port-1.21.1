@@ -37,7 +37,7 @@ public class OwnedConstructEntity extends PathfinderMob implements OwnableEntity
    protected static final EntityDataAccessor<Byte> TAMED = SynchedEntityData.defineId(OwnedConstructEntity.class, EntityDataSerializers.BYTE);
    protected static final EntityDataAccessor<Optional<UUID>> OWNER_UNIQUE_ID = SynchedEntityData.defineId(OwnedConstructEntity.class,
       EntityDataSerializers.OPTIONAL_UUID);
-   /** BlocksTC.activatorRail. STUB: that rail is not registered yet by its milestone; it is looked up by id. */
+   /** BlocksTC.activatorRail (ModExtras.ACTIVATOR_RAIL), looked up by id. */
    private static final ResourceLocation ACTIVATOR_RAIL = ResourceLocation.fromNamespaceAndPath(Thaumcraft.MODID, "activator_rail");
    boolean validSpawn = false;
 

@@ -75,7 +75,7 @@ public final class CultGoals {
 
    /**
     * AIAltarFocus: a ritualist cleric stays focused on its altar until it is hurt, wanders off or the altar goes.
-    * STUB: the eldritch altar block belongs to the eldritch milestone; it is looked up by id.
+    * (The eldritch altar block is looked up by id.)
     */
    public static class AltarFocus extends Goal {
       private static final ResourceLocation ALTAR = ResourceLocation.fromNamespaceAndPath(Thaumcraft.MODID, "eldritch");

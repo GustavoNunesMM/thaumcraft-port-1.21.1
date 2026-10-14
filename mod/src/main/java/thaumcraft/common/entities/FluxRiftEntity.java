@@ -1,5 +1,9 @@
 package thaumcraft.common.entities;
 
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.common.entities.monster.WispEntity;
+import thaumcraft.common.registers.ModMobs;
+import net.minecraft.world.entity.MobSpawnType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -57,8 +61,7 @@ import thaumcraft.common.world.aura.AuraHandler;
  * releases chaotic events (which restore some stability). Infusion stabilizers nearby calm it; a causality collapser
  * (or too little substance) makes it collapse, dropping void seeds and hurting those nearby depending on its stability.
  *
- * <p>Port notes: event 0 spawned a wisp (monster milestone, not ported yet: the event does nothing), the primordial
- * pearl it may drop is looked up by id (pearls aren't ported yet either).
+ * <p>Port note: the primordial pearl it may drop is looked up by id.
  */
 public class FluxRiftEntity extends Entity {
    private static final EntityDataAccessor<Integer> SEED = SynchedEntityData.defineId(FluxRiftEntity.class, EntityDataSerializers.INT);
@@ -314,7 +317,14 @@ public class FluxRiftEntity extends Entity {
       boolean didit = false;
       switch (ei[0]) {
          case 0 -> {
-            // EntityWisp (monster milestone, not ported yet).
+            WispEntity wisp = new WispEntity(ModMobs.WISP.get(), level());
+            wisp.moveTo(getX() + random.nextGaussian() * 5.0, getY() + random.nextGaussian() * 5.0, getZ() + random.nextGaussian() * 5.0, 0.0F, 0.0F);
+            if (level().random.nextInt(5) == 0) wisp.setWispType(Aspect.FLUX.getTag());
+            if (level() instanceof ServerLevel sl
+               && WispEntity.checkSpawnRules(ModMobs.WISP.get(), sl, MobSpawnType.EVENT, wisp.blockPosition(), random)
+               && sl.noCollision(wisp) && !sl.containsAnyLiquid(wisp.getBoundingBox()) && sl.addFreshEntity(wisp)) {
+               didit = true;
+            }
          }
          case 1 -> {
             TaintSeedPrimeEntity seed = new TaintSeedPrimeEntity(ModFlux.TAINT_SEED_PRIME.get(), level());

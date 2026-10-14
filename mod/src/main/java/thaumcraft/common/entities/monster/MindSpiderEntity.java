@@ -18,9 +18,9 @@ import net.minecraft.world.level.ServerLevelAccessor;
 
 /**
  * EntityMindSpider: a tiny phantom spider. Harmless ones are hallucinations seen only by their "viewer" (the warp
- * events that spawn them belong to another milestone). STUB: IEldritchMob is not ported.
+ * events that spawn them are in WarpEvents).
  */
-public class MindSpiderEntity extends Spider {
+public class MindSpiderEntity extends Spider implements thaumcraft.api.entities.IEldritchMob {
    private static final EntityDataAccessor<Boolean> HARMLESS = SynchedEntityData.defineId(MindSpiderEntity.class, EntityDataSerializers.BOOLEAN);
    private static final EntityDataAccessor<String> VIEWER = SynchedEntityData.defineId(MindSpiderEntity.class, EntityDataSerializers.STRING);
    private int lifeSpan = Integer.MAX_VALUE;

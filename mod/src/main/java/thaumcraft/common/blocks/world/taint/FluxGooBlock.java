@@ -22,7 +22,9 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import thaumcraft.common.entities.monster.ThaumicSlimeEntity;
 import thaumcraft.common.registers.ModFlux;
+import thaumcraft.common.registers.ModMobs;
 import thaumcraft.common.registers.ModSounds;
 
 import java.util.Optional;
@@ -87,7 +89,15 @@ public class FluxGooBlock extends Block implements BucketPickup {
    @Override
    protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
       int md = state.getValue(LEVEL);
-      // (EntityThaumicSlime grows by eating goo: the slime isn't ported yet.)
+      if (entity instanceof ThaumicSlimeEntity slime) {
+         // thaumic slimes grow by eating the goo
+         if (!level.isClientSide && slime.getSize() < md && level.random.nextBoolean()) {
+            slime.setSize(slime.getSize() + 1, true);
+            if (md > 1) level.setBlock(pos, state.setValue(LEVEL, md - 1), 2);
+            else level.removeBlock(pos, false);
+         }
+         return;
+      }
       float q = quantaPercentage(state);
       Vec3 m = entity.getDeltaMovement();
       entity.setDeltaMovement(m.x * (1.0F - q), m.y, m.z * (1.0F - q));
@@ -121,10 +131,13 @@ public class FluxGooBlock extends Block implements BucketPickup {
    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource rand) {
       int meta = state.getValue(LEVEL);
       if (meta >= 2 && level.isEmptyBlock(pos.above()) && rand.nextInt(50) == 0) {
-         // Spawns a thaumic slime (size 1 below level 6, else 2) - monster not ported yet: pollute instead.
+         // a thaumic slime rises from the goo (size 1 below level 6, else 2)
          level.removeBlock(pos, false);
-         FluxEffects.pollute(level, pos, meta >= 6 ? 2.0F : 1.0F, true);
-         level.playSound(null, pos, ModSounds.GORE.get(), net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
+         ThaumicSlimeEntity slime = new ThaumicSlimeEntity(ModMobs.THAUMIC_SLIME.get(), level);
+         slime.moveTo(pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F, 0.0F, 0.0F);
+         slime.setSize(meta >= 6 ? 2 : 1, true);
+         level.addFreshEntity(slime);
+         slime.playSound(ModSounds.GORE.get(), 1.0F, 1.0F);
       } else if (rand.nextInt(4) == 0) {
          if (meta == 0) {
             if (rand.nextBoolean()) {
