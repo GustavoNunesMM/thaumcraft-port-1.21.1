@@ -89,6 +89,11 @@
     "thaumcraft:condenser_lattice_dirty",
     "thaumcraft:void_siphon",
     "thaumcraft:taint_rock",
-    "thaumcraft:taint_crust"
+    "thaumcraft:taint_crust",
+    "thaumcraft:golem_builder",
+    "thaumcraft:placeholder_bars",
+    "thaumcraft:placeholder_anvil",
+    "thaumcraft:placeholder_cauldron",
+    "thaumcraft:placeholder_table"
   ]
 }

@@ -73,7 +73,8 @@ public class DeviceGameTests {
    public static void lampOfGrowthGrowsCrops(GameTestHelper h) {
       for (int x = 1; x <= 3; x++) {
          for (int z = 1; z <= 3; z++) {
-            h.setBlock(new BlockPos(x, 0, z), x == 2 && z == 2 ? Blocks.WATER : Blocks.FARMLAND);
+            h.setBlock(new BlockPos(x, 0, z), x == 2 && z == 2 ? Blocks.WATER.defaultBlockState()
+               : Blocks.FARMLAND.defaultBlockState().setValue(net.minecraft.world.level.block.FarmBlock.MOISTURE, 7)); // wet farmland: dry crops grow too slowly to test reliably
             if (x != 2 || z != 2) h.setBlock(new BlockPos(x, 1, z), Blocks.WHEAT);
          }
       }

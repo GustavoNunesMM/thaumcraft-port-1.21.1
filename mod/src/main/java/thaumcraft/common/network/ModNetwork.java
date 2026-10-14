@@ -38,6 +38,7 @@ public final class ModNetwork {
    public static void register(RegisterPayloadHandlersEvent event) {
       PayloadRegistrar registrar = event.registrar("1");
       CasterPayloads.register(registrar);
+      thaumcraft.common.golems.GolemPayloads.register(registrar);
       CloudJumpPayload.register(registrar);
       DeviceNetwork.register(registrar);
       FluxFXPayload.register(registrar);
