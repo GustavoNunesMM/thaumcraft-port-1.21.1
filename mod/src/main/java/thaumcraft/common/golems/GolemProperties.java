@@ -204,7 +204,7 @@ public class GolemProperties implements IGolemProperties {
       return stack(item, 1);
    }
 
-   /** BlocksTC.levitator: the arcane levitator belongs to a later milestone; the flyer legs skip it until it exists. */
+   /** BlocksTC.levitator (registered by the devices milestone), looked up by id; skipped if it is ever missing. */
    private static Supplier<ItemStack> optional(String id) {
       return () -> {
          var item = BuiltInRegistries.ITEM.get(rl(id));

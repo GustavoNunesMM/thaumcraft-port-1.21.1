@@ -1,0 +1,12 @@
+{
+ "entries": [
+  {
+   "entity": "thaumcraft:golem",
+   "aspects": {
+    "machina": 10,
+    "humanus": 10,
+    "motus": 10
+   }
+  }
+ ]
+}
