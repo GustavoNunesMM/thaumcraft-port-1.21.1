@@ -1973,5 +1973,13 @@
  "biome.thaumcraft.eldritch": "Outer Lands",
  "dimension.thaumcraft.outer_lands": "Outer Lands",
  "entity.thaumcraft.alumentum": "Alumentum",
- "entity.thaumcraft.special_item": "Item"
+ "entity.thaumcraft.special_item": "Item",
+ "entity.thaumcraft.grapple": "Grapple",
+ "item.thaumcraft.creative_flux_sponge.tip1": "Right-click to drain all",
+ "item.thaumcraft.creative_flux_sponge.tip2": "flux from 9x9 chunk area",
+ "item.thaumcraft.creative_flux_sponge.tip3": "Also removes flux rifts",
+ "item.thaumcraft.creative_flux_sponge.tip4": "if used while sneaking.",
+ "item.thaumcraft.creative_flux_sponge.tip5": "Creative only",
+ "item.thaumcraft.creative_flux_sponge.drained": "%s flux drained from 81 chunks.",
+ "item.thaumcraft.creative_flux_sponge.rifts": "%s flux rifts removed."
 }

@@ -186,6 +186,8 @@ public final class ModDevices {
       props(MapColor.METAL, 4.0F, 10.0F, SoundType.METAL).requiresCorrectToolForDrops());
    public static final DeferredBlock<ThaumatoriumBlock> THAUMATORIUM = blockNoItem("thaumatorium", p -> new ThaumatoriumBlock(false, p),
       props(MapColor.METAL, 1.5F, 2.0F, SoundType.METAL).noOcclusion());
+   /** BlockThaumatorium's item block: the THAUMATORIUM research icon and its multiblock's display (not in the creative tab). */
+   public static final DeferredItem<Item> THAUMATORIUM_ITEM = ModItems.ITEMS.register("thaumatorium", () -> new HiddenBlockItem(THAUMATORIUM.get()));
    public static final DeferredBlock<ThaumatoriumBlock> THAUMATORIUM_TOP = blockNoItem("thaumatorium_top", p -> new ThaumatoriumBlock(true, p),
       props(MapColor.METAL, 1.5F, 2.0F, SoundType.METAL).noOcclusion());
    public static final DeferredBlock<BrainBoxBlock> BRAIN_BOX = block("brain_box", BrainBoxBlock::new,

@@ -1973,5 +1973,13 @@
  "item.eldritch_eye.text": "Ele te encara de volta. Em algum lugar, um altar o aguarda.",
  "tc.eldritch.portal_open": "Os obeliscos ardem e um portal se rasga acima do altar.",
  "biome.thaumcraft.eldritch": "Terras Exteriores",
- "dimension.thaumcraft.outer_lands": "Terras Exteriores"
+ "dimension.thaumcraft.outer_lands": "Terras Exteriores",
+ "entity.thaumcraft.grapple": "Gancho",
+ "item.thaumcraft.creative_flux_sponge.tip1": "Clique direito para drenar todo o",
+ "item.thaumcraft.creative_flux_sponge.tip2": "fluxo de uma área de 9x9 chunks",
+ "item.thaumcraft.creative_flux_sponge.tip3": "Também remove fendas de fluxo",
+ "item.thaumcraft.creative_flux_sponge.tip4": "se usada agachado.",
+ "item.thaumcraft.creative_flux_sponge.tip5": "Somente no criativo",
+ "item.thaumcraft.creative_flux_sponge.drained": "%s de fluxo drenado de 81 chunks.",
+ "item.thaumcraft.creative_flux_sponge.rifts": "%s fendas de fluxo removidas."
 }
