@@ -114,6 +114,20 @@ public class OwnedConstructEntity extends PathfinderMob implements OwnableEntity
       validSpawn = true;
    }
 
+   /**
+    * A construct summoned by command (/summon, no NBT) is valid too: in 1.12 it vanished on its first tick, as only
+    * the placer items mark their constructs valid.
+    */
+   @Nullable
+   @Override
+   public net.minecraft.world.entity.SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level,
+                                                               net.minecraft.world.DifficultyInstance diff,
+                                                               net.minecraft.world.entity.MobSpawnType reason,
+                                                               @Nullable net.minecraft.world.entity.SpawnGroupData data) {
+      if (reason == net.minecraft.world.entity.MobSpawnType.COMMAND) setValidSpawn();
+      return super.finalizeSpawn(level, diff, reason, data);
+   }
+
    @Override
    public void addAdditionalSaveData(CompoundTag tag) {
       super.addAdditionalSaveData(tag);

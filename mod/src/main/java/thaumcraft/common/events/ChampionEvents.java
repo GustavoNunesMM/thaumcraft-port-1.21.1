@@ -71,6 +71,7 @@ public final class ChampionEvents {
       if (hurt.level().isClientSide) return;
       // a creature about to die of flux taint may turn instead
       if (hurt.getHealth() < 2.0F && !hurt.getType().is(EntityTypeTags.UNDEAD) && hurt.isAlive() && !(hurt instanceof OwnedConstructEntity)
+         && !(hurt instanceof thaumcraft.common.golems.OwnedConstructEntity)
          && !(hurt instanceof ITaintedMob) && hurt instanceof PathfinderMob && hurt.hasEffect(ModFlux.FLUX_TAINT) && hurt.getRandom().nextBoolean()) {
          ChampionModifier.makeTainted(hurt);
          return;

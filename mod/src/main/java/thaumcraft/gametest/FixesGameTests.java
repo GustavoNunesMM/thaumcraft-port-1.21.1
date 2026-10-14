@@ -164,4 +164,22 @@ public class FixesGameTests {
          h.succeed();
       });
    }
+
+   @GameTest(template = "empty")
+   public static void summonedGolemIsSane(GameTestHelper h) {
+      // what /summon thaumcraft:golem does without NBT
+      var golem = thaumcraft.common.registers.ModGolems.GOLEM.get().create(h.getLevel());
+      golem.moveTo(h.absoluteVec(new net.minecraft.world.phys.Vec3(2.5, 2, 2.5)));
+      net.neoforged.neoforge.event.EventHooks.finalizeMobSpawn(golem, h.getLevel(), h.getLevel().getCurrentDifficultyAt(golem.blockPosition()),
+         net.minecraft.world.entity.MobSpawnType.COMMAND, null);
+      h.getLevel().addFreshEntity(golem);
+      h.runAfterDelay(5, () -> {
+         h.assertTrue(golem.isAlive(), "a summoned golem should not vanish");
+         h.assertTrue(golem.getMaxHealth() >= 10.0F && golem.getHealth() == golem.getMaxHealth(), "default golem health " + golem.getHealth());
+         h.assertTrue(!golem.goalSelector.getAvailableGoals().isEmpty(), "default golem has its AI");
+         h.assertTrue(golem.getProperties().getMaterial() != null && golem.getProperties().getHead() != null, "default parts");
+         golem.discard();
+         h.succeed();
+      });
+   }
 }

@@ -197,6 +197,21 @@ public class GolemEntity extends OwnedConstructEntity implements IGolemAPI, Rang
       updateEntityAttributes();
    }
 
+   /** /summon without NBT: a default golem (wood, basic head, arms and legs) set up like a placed one. */
+   @Nullable
+   @Override
+   public net.minecraft.world.entity.SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level,
+                                                               net.minecraft.world.DifficultyInstance diff,
+                                                               net.minecraft.world.entity.MobSpawnType reason,
+                                                               @Nullable net.minecraft.world.entity.SpawnGroupData data) {
+      net.minecraft.world.entity.SpawnGroupData out = super.finalizeSpawn(level, diff, reason, data);
+      if (reason == net.minecraft.world.entity.MobSpawnType.COMMAND) {
+         initialSpawn();
+         setHealth(getMaxHealth());
+      }
+      return out;
+   }
+
    @Override
    public int getArmorValue() {
       int armor = getProperties().getMaterial().armor;

@@ -101,6 +101,7 @@ public final class MobEvents {
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!BrainyZombie", BrainyZombieEntity.class));
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("!CrimsonCultist", CultistEntity.class));
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_golem", OwnedConstructEntity.class));
+            ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_golem", thaumcraft.common.golems.OwnedConstructEntity.class));
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_BAT", FireBatEntity.class));
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_FLY", FireBatEntity.class));
             ScanningManager.addScannableThing(ScanningManager.ScanEntity.of("f_FLY", TaintSwarmEntity.class));
