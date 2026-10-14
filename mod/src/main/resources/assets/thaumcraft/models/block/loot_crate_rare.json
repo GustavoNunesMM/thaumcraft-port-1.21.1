@@ -1,0 +1,8 @@
+{
+  "parent": "thaumcraft:block/loot_crate_common",
+  "textures": {
+    "side": "thaumcraft:blocks/loot_crate_side_2",
+    "particle": "thaumcraft:blocks/loot_crate_side_2"
+  },
+  "render_type": "minecraft:cutout"
+}

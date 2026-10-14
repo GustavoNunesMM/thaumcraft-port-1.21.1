@@ -29,6 +29,7 @@ public class Thaumcraft {
    public Thaumcraft(IEventBus modBus, ModContainer container) {
       thaumcraft.common.registers.ModCasters.init();
       thaumcraft.common.registers.ModGear.init(modBus);
+      thaumcraft.common.registers.ModDevices.init(modBus);
       thaumcraft.common.registers.ModGolems.init(modBus);
       ModBlocks.BLOCKS.register(modBus);
       ModItems.ITEMS.register(modBus);

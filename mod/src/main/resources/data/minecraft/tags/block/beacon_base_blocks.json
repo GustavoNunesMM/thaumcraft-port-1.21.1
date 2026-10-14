@@ -11,6 +11,8 @@
     "thaumcraft:stone_ancient",
     "thaumcraft:stone_ancient_tile",
     "thaumcraft:stone_ancient_glyphed",
-    "thaumcraft:stone_eldritch_tile"
+    "thaumcraft:stone_eldritch_tile",
+    "thaumcraft:metal_alchemical",
+    "thaumcraft:metal_alchemical_advanced"
   ]
 }

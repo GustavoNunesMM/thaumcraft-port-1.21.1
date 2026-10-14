@@ -40,6 +40,7 @@ public final class ModNetwork {
       CasterPayloads.register(registrar);
       thaumcraft.common.golems.GolemPayloads.register(registrar);
       CloudJumpPayload.register(registrar);
+      DeviceNetwork.register(registrar);
       registrar.playToClient(SyncAspectsPayload.TYPE, SyncAspectsPayload.STREAM_CODEC,
          (payload, ctx) -> {
             AspectManager.CLIENT.acceptSync(payload);
