@@ -46,11 +46,25 @@ public final class RecipeCatalog {
       }
 
       void render(ResearchPageScreen screen, GuiGraphics g, int x, int y, int mx, int my);
+
+      /** A click on the shown recipe page (x, y: the page centre); true if handled. */
+      default boolean mouseClicked(ResearchPageScreen screen, int x, int y, int mx, int my) {
+         return false;
+      }
    }
 
    /** Converters from recipe types to views; later milestones add arcane, crucible, infusion... */
    private static final List<Function<Recipe<?>, RecipeView>> CONVERTERS = new ArrayList<>();
    private static final Map<ResourceLocation, List<RecipeView>> FAKE = new LinkedHashMap<>();
+   /**
+    * Ids the 1.12 research json names but no recipe ever had (the original book showed nothing for them), pointed at
+    * the recipes they obviously meant.
+    */
+   private static final Map<ResourceLocation, ResourceLocation> ALIAS = Map.of(
+      id("arcane_stone"), id("stonearcane"),
+      id("arcane_brick"), id("brickarcane"),
+      id("nitorcolor"), id("nitorgroup"),
+      id("jarlabelessence"), id("jarlabelaspect"));
 
    static {
       CONVERTERS.add(r -> r instanceof IArcaneRecipe ar ? new ArcaneView(ar) : null);
@@ -89,6 +103,7 @@ public final class RecipeCatalog {
 
    /** Every view an id stands for (empty if unknown). */
    public static List<RecipeView> lookup(ResourceLocation id) {
+      id = ALIAS.getOrDefault(id, id);
       List<RecipeView> out = new ArrayList<>();
       if (FAKE.containsKey(id)) out.addAll(FAKE.get(id));
       var level = Minecraft.getInstance().level;

@@ -878,6 +878,14 @@ public class ResearchPageScreen extends Screen {
             aa++;
          }
       }
+      if (shownRecipe != null) {
+         List<RecipeCatalog.RecipeView> list = recipeLists.get(shownRecipe);
+         if (list == null || list.isEmpty()) list = drilldownLists.get(shownRecipe);
+         if (list != null && !list.isEmpty()
+            && list.get(recipePage % list.size()).mouseClicked(this, (width - 256) / 2 + 128, (height - 256) / 2 + 128, px, py)) {
+            return true;
+         }
+      }
       if (hasRecipePages && recipePage < recipePageMax && mouseInside(sw + 205, sh + 192, 14, 14, px, py)) {
          recipePage++;
          sound(ModSounds.PAGE.get(), 0.7F, 0.9F);

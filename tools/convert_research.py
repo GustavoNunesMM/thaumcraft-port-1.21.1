@@ -26,8 +26,8 @@ META = {
                          "curio_rites"],
     "thaumcraft:mind": ["mind_clockwork", "mind_biothaumic"],
     "thaumcraft:module": ["module_vision", "module_aggression"],
-    "thaumcraft:turret": ["turret_crossbow", "turret_crossbow_advanced", "arcane_bore"],
-    "thaumcraft:amulet_vis": ["amulet_vis_found", "amulet_vis"],
+    "thaumcraft:turret": ["turret_basic", "turret_advanced", "turret_bore"],
+    "thaumcraft:amulet_vis": ["amulet_vis_found", "amulet_vis_crafted"],
     "thaumcraft:nitor": [f"nitor_{c}" for c in ["white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray",
                                                 "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"]],
     "minecraft:dye": ["minecraft:ink_sac"] + [None] * 14 + ["minecraft:bone_meal"],
@@ -35,6 +35,8 @@ META = {
 RENAME = {
     "minecraft:hardened_clay": "minecraft:terracotta", "minecraft:noteblock": "minecraft:note_block", "minecraft:web": "minecraft:cobweb",
     "thaumcraft:leather": "minecraft:leather", "thaumcraft:seal": "thaumcraft:seal_blank",
+    # the 1.12 json named arcane stone "arcane_stone" (unresolvable there too); the block is stone_arcane
+    "thaumcraft:arcane_stone": "thaumcraft:stone_arcane",
 }
 ORE = {"chest": "#c:chests"}
 ENCH = {0: "minecraft:protection", 16: "minecraft:sharpness", 33: "minecraft:silk_touch", 35: "minecraft:fortune"}

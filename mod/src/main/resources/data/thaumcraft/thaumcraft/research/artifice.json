@@ -523,7 +523,7 @@
    "key": "BASICTURRET",
    "name": "research.BASICTURRET.title",
    "icons": [
-    "thaumcraft:turret_crossbow"
+    "thaumcraft:turret_basic"
    ],
    "category": "ARTIFICE",
    "location": [
@@ -558,7 +558,7 @@
    "key": "ADVANCEDTURRET",
    "name": "research.ADVANCEDTURRET.title",
    "icons": [
-    "thaumcraft:turret_crossbow_advanced"
+    "thaumcraft:turret_advanced"
    ],
    "category": "ARTIFICE",
    "location": [
@@ -589,7 +589,7 @@
    "key": "ARCANEBORE",
    "name": "research.ARCANEBORE.title",
    "icons": [
-    "thaumcraft:arcane_bore"
+    "thaumcraft:turret_bore"
    ],
    "category": "ARTIFICE",
    "location": [
