@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "thaumcraft:taint_soil"
+    "thaumcraft:taint_soil",
+    "thaumcraft:grass_ambient"
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "thaumcraft:block/grass_ambient"
+      },
+      {
+        "model": "thaumcraft:block/grass_ambient",
+        "y": 90
+      },
+      {
+        "model": "thaumcraft:block/grass_ambient",
+        "y": 180
+      },
+      {
+        "model": "thaumcraft:block/grass_ambient",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "thaumcraft:block/grass_ambient_snow"
+    }
+  }
+}

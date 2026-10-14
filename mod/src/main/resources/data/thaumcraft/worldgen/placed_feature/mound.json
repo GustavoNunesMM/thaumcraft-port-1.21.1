@@ -1,0 +1,9 @@
+{
+  "feature": "thaumcraft:mound",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 100
+    }
+  ]
+}

@@ -2,11 +2,7 @@
   "type": "minecraft:generic",
   "pools": [
     {
-      "rolls": {
-        "type": "minecraft:uniform",
-        "min": 1,
-        "max": 3
-      },
+      "rolls": 1,
       "bonus_rolls": 0,
       "entries": [
         {
@@ -36,6 +32,17 @@
         },
         {
           "type": "minecraft:item",
+          "name": "thaumcraft:primordial_pearl",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_damage",
+              "damage": 0.125
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:diamond",
           "weight": 10
         },
@@ -53,6 +60,21 @@
           "type": "minecraft:item",
           "name": "minecraft:ender_pearl",
           "weight": 100
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:amulet_mundane",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:ring_mundane",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:girdle_mundane",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -86,18 +108,91 @@
         },
         {
           "type": "minecraft:item",
-          "name": "thaumcraft:amulet_mundane",
-          "weight": 10
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:water"
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "thaumcraft:ring_mundane",
-          "weight": 10
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:water"
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "thaumcraft:girdle_mundane",
-          "weight": 10
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:mundane"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:mundane"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:thick"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:thick"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:awkward"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:awkward"
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -382,28 +477,6 @@
             {
               "function": "minecraft:set_potion",
               "id": "minecraft:slowness"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:potion",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_slowness"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:splash_potion",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_slowness"
             }
           ]
         },

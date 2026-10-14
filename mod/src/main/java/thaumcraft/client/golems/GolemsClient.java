@@ -3,7 +3,6 @@ package thaumcraft.client.golems;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
@@ -21,7 +20,6 @@ import thaumcraft.client.fx.EssentiaFX;
 import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.client.fx.FXGeneric;
 import thaumcraft.common.golems.GolemClientHooks;
-import thaumcraft.common.golems.GolemDartEntity;
 import thaumcraft.common.golems.GolemProperties;
 import thaumcraft.common.registers.ModGolems;
 
@@ -56,7 +54,6 @@ public final class GolemsClient {
    @SubscribeEvent
    public static void renderers(EntityRenderersEvent.RegisterRenderers event) {
       event.registerEntityRenderer(ModGolems.GOLEM.get(), GolemRenderer::new);
-      event.registerEntityRenderer(ModGolems.GOLEM_DART.get(), DartRenderer::new);
       event.registerBlockEntityRenderer(ModGolems.GOLEM_BUILDER_BE.get(), GolemBuilderRenderer::new);
    }
 
@@ -105,28 +102,6 @@ public final class GolemsClient {
          }
          default -> {
          }
-      }
-   }
-
-   /** RenderDart: a vanilla arrow at the dart's smaller scale (0.033 instead of 0.05625). */
-   public static class DartRenderer extends ArrowRenderer<GolemDartEntity> {
-      private static final ResourceLocation TEX = ResourceLocation.withDefaultNamespace("textures/entity/projectiles/arrow.png");
-
-      public DartRenderer(EntityRendererProvider.Context ctx) {
-         super(ctx);
-      }
-
-      @Override
-      public void render(GolemDartEntity entity, float yaw, float pt, PoseStack pose, MultiBufferSource buffers, int light) {
-         pose.pushPose();
-         pose.scale(0.033F / 0.05625F, 0.033F / 0.05625F, 0.033F / 0.05625F);
-         super.render(entity, yaw, pt, pose, buffers, light);
-         pose.popPose();
-      }
-
-      @Override
-      public ResourceLocation getTextureLocation(GolemDartEntity entity) {
-         return TEX;
       }
    }
 

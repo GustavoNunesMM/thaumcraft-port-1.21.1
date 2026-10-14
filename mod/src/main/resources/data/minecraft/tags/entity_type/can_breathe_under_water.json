@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "thaumcraft:taint_seed",
-    "thaumcraft:taint_seed_prime"
+    "thaumcraft:taint_seed_prime",
+    "thaumcraft:cultist_leader",
+    "thaumcraft:turret_crossbow",
+    "thaumcraft:turret_crossbow_advanced",
+    "thaumcraft:arcane_bore"
   ]
 }

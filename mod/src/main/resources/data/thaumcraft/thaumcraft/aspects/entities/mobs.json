@@ -1,0 +1,86 @@
+{
+  "entries": [
+    {
+      "entity": "thaumcraft:firebat",
+      "aspects": {
+        "bestia": 5,
+        "volatus": 5,
+        "ignis": 10
+      }
+    },
+    {
+      "entity": "thaumcraft:pech",
+      "aspects": {
+        "humanus": 10,
+        "auram": 5,
+        "permutatio": 10,
+        "desiderium": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:wisp",
+      "aspects": {
+        "auram": 5,
+        "volatus": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:thaumic_slime",
+      "aspects": {
+        "victus": 5,
+        "aqua": 5,
+        "vitium": 5,
+        "alkimia": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:brainy_zombie",
+      "aspects": {
+        "exanimis": 20,
+        "humanus": 10,
+        "cognitio": 5,
+        "aversio": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:giant_brainy_zombie",
+      "aspects": {
+        "exanimis": 25,
+        "humanus": 15,
+        "cognitio": 5,
+        "aversio": 10
+      }
+    },
+    {
+      "entity": "thaumcraft:mind_spider",
+      "aspects": {
+        "vitium": 5,
+        "ignis": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:cultist_knight",
+      "aspects": {
+        "alienis": 5,
+        "humanus": 15,
+        "aversio": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:cultist_cleric",
+      "aspects": {
+        "alienis": 5,
+        "humanus": 15,
+        "aversio": 5
+      }
+    },
+    {
+      "entity": "thaumcraft:cultist_leader",
+      "aspects": {
+        "alienis": 40,
+        "aversio": 40,
+        "humanus": 40
+      }
+    }
+  ]
+}

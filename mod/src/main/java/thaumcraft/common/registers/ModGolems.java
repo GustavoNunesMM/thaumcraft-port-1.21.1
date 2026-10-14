@@ -39,7 +39,6 @@ import thaumcraft.common.crafting.dust.DustTriggerMultiblock;
 import thaumcraft.common.golems.GolemBellItem;
 import thaumcraft.common.golems.GolemBuilderBlock;
 import thaumcraft.common.golems.GolemBuilderBlockEntity;
-import thaumcraft.common.golems.GolemDartEntity;
 import thaumcraft.common.golems.GolemEntity;
 import thaumcraft.common.golems.GolemPlacerItem;
 import thaumcraft.common.golems.GolemProperties;
@@ -81,9 +80,7 @@ public final class ModGolems {
    public static final Supplier<EntityType<GolemEntity>> GOLEM = ModEntities.ENTITIES.register("golem",
       () -> EntityType.Builder.<GolemEntity>of(GolemEntity::new, MobCategory.MISC).sized(0.4F, 0.9F).eyeHeight(0.7F).clientTrackingRange(10)
          .build("golem"));
-   public static final Supplier<EntityType<GolemDartEntity>> GOLEM_DART = ModEntities.ENTITIES.register("golem_dart",
-      () -> EntityType.Builder.<GolemDartEntity>of(GolemDartEntity::new, MobCategory.MISC).sized(0.2F, 0.2F).clientTrackingRange(4).updateInterval(20)
-         .build("golem_dart"));
+   // golem_dart is registered by ModMobs (common/entities/projectile/GolemDartEntity)
 
    public static final DeferredItem<GolemPlacerItem> GOLEM_PLACER = ModItems.ITEMS.registerItem("golem", GolemPlacerItem::new, new Item.Properties());
    public static final DeferredItem<GolemBellItem> GOLEM_BELL = ModItems.ITEMS.registerItem("golem_bell", GolemBellItem::new,

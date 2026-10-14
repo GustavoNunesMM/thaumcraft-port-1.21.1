@@ -5,42 +5,61 @@
     {
       "rolls": 1,
       "bonus_rolls": 0,
-      "entries": [
+      "conditions": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
-            {
-              "type": "minecraft:item",
-              "name": "thaumcraft:loot_crate_rare",
-              "conditions": [
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "predicates": {
+              "minecraft:enchantments": [
                 {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "predicates": {
-                      "minecraft:enchantments": [
-                        {
-                          "enchantments": "minecraft:silk_touch",
-                          "levels": {
-                            "min": 1
-                          }
-                        }
-                      ]
-                    }
+                  "enchantments": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
                   }
                 }
               ]
-            },
-            {
-              "type": "minecraft:loot_table",
-              "value": "thaumcraft:loot_bag/rare",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": 1
-                }
-              ]
             }
-          ]
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:loot_crate_rare"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 3,
+        "max": 5
+      },
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:silk_touch",
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "thaumcraft:loot_bag/rare"
         }
       ]
     }

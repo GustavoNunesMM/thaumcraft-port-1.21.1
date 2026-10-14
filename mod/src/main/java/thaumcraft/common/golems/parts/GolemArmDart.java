@@ -8,7 +8,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import thaumcraft.api.golems.IGolemAPI;
 import thaumcraft.api.golems.parts.GolemArm;
-import thaumcraft.common.golems.GolemDartEntity;
+import thaumcraft.common.entities.projectile.GolemDartEntity;
 import thaumcraft.common.golems.ai.AIArrowAttack;
 
 /** The dart launchers: fire a dart at the target. */

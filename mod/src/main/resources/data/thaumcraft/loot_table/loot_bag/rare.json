@@ -2,11 +2,7 @@
   "type": "minecraft:generic",
   "pools": [
     {
-      "rolls": {
-        "type": "minecraft:uniform",
-        "min": 3,
-        "max": 5
-      },
+      "rolls": 1,
       "bonus_rolls": 0,
       "entries": [
         {
@@ -42,6 +38,38 @@
         },
         {
           "type": "minecraft:item",
+          "name": "thaumcraft:primordial_pearl",
+          "weight": 9,
+          "functions": [
+            {
+              "function": "minecraft:set_damage",
+              "damage": 0.375
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:primordial_pearl",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_damage",
+              "damage": 0.625
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:primordial_pearl",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_star",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:diamond",
           "weight": 50
         },
@@ -59,6 +87,16 @@
           "type": "minecraft:item",
           "name": "minecraft:ender_pearl",
           "weight": 100
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:amulet_vis_found",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "thaumcraft:ring_apprentice",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -92,18 +130,135 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:nether_star",
-          "weight": 1
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:water"
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "thaumcraft:amulet_vis_found",
-          "weight": 6
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:water"
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "thaumcraft:ring_apprentice",
-          "weight": 5
+          "name": "minecraft:lingering_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:water"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:mundane"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:mundane"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lingering_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:mundane"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:thick"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:thick"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lingering_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:thick"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:awkward"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:awkward"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lingering_potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:awkward"
+            }
+          ]
         },
         {
           "type": "minecraft:item",
@@ -531,39 +686,6 @@
             {
               "function": "minecraft:set_potion",
               "id": "minecraft:slowness"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:potion",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_slowness"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:splash_potion",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_slowness"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:lingering_potion",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:strong_slowness"
             }
           ]
         },
@@ -1261,6 +1383,12 @@
           ]
         }
       ]
+    }
+  ],
+  "functions": [
+    {
+      "function": "thaumcraft:gear_roll",
+      "rarity": 2
     }
   ]
 }
