@@ -10,6 +10,7 @@
     }
   ],
   "type": "minecraft:crafting_shapeless",
+  "group": "thaumcraft:inkwell",
   "category": "misc",
   "ingredients": [
     {

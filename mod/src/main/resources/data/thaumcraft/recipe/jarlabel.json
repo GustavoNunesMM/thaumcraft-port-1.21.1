@@ -6,6 +6,7 @@
     }
   ],
   "type": "minecraft:crafting_shapeless",
+  "group": "thaumcraft:jarlabels",
   "category": "misc",
   "ingredients": [
     {

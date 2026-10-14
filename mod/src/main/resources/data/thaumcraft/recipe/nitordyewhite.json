@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:nitor_white"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "group": "thaumcraft:nitorgroup",
+  "category": "building",
+  "ingredients": [
+    {
+      "tag": "c:dyes/white"
+    },
+    {
+      "tag": "thaumcraft:nitor"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:nitor_white"
+  }
+}

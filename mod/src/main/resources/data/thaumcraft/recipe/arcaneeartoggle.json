@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:arcane_ear"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "thaumcraft:arcane_ear_toggle"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "thaumcraft:arcane_ear"
+    },
+    {
+      "item": "minecraft:lever"
+    }
+  ],
+  "result": {
+    "id": "thaumcraft:arcane_ear_toggle"
+  }
+}
