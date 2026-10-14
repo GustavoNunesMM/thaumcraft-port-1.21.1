@@ -67,6 +67,24 @@ public final class ExtrasClient {
          return BEAM;
       }
 
+      /** Light from just in front of where it stuck, not from inside the block it hit. */
+      @Override
+      protected int getBlockLightLevel(GrappleEntity e, net.minecraft.core.BlockPos pos) {
+         return super.getBlockLightLevel(e, lightPos(e));
+      }
+
+      @Override
+      protected int getSkyLightLevel(GrappleEntity e, net.minecraft.core.BlockPos pos) {
+         return super.getSkyLightLevel(e, lightPos(e));
+      }
+
+      private static net.minecraft.core.BlockPos lightPos(GrappleEntity e) {
+         LivingEntity t = e.getThrower();
+         Vec3 p = e.position();
+         if (t != null && t.distanceToSqr(e) > 0.01) p = p.add(t.getEyePosition().subtract(p).normalize().scale(0.5));
+         return net.minecraft.core.BlockPos.containing(p);
+      }
+
       @Override
       public boolean shouldRender(GrappleEntity e, net.minecraft.client.renderer.culling.Frustum frustum, double x, double y, double z) {
          return true;

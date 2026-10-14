@@ -310,9 +310,11 @@ public final class BookRecipeViews {
          }
       }
 
-      /** Lava/water: a full cube with the fluid's still texture (renderBlock drew nothing for liquids in 1.12 either). */
+      /** Lava/water: a full cube with the fluid's still texture (1.12 drew it with the world fluid renderer). */
       private static void fluidCube(Minecraft mc, PoseStack ps, MultiBufferSource buf, BlockState state) {
-         TextureAtlasSprite sp = mc.getBlockRenderer().getBlockModelShaper().getParticleIcon(state);
+         var fluid = state.getFluidState().getType();
+         ResourceLocation still = net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions.of(fluid).getStillTexture();
+         TextureAtlasSprite sp = mc.getTextureAtlas(net.minecraft.world.inventory.InventoryMenu.BLOCK_ATLAS).apply(still);
          VertexConsumer vc = buf.getBuffer(RenderType.entityTranslucent(sp.atlasLocation()));
          PoseStack.Pose pose = ps.last();
          float u0 = sp.getU0(), u1 = sp.getU1(), v0 = sp.getV0(), v1 = sp.getV1();
