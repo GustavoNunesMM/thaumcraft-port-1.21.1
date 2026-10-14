@@ -1,20 +1,14 @@
 package thaumcraft.client;
 
-import com.mojang.blaze3d.platform.GlStateManager;
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.BufferBuilder;
-import com.mojang.blaze3d.vertex.BufferUploader;
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.Tesselator;
-import com.mojang.blaze3d.vertex.VertexFormat;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -28,6 +22,7 @@ import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 import org.joml.Matrix4f;
 import thaumcraft.Thaumcraft;
 import thaumcraft.api.items.IArchitect;
+import thaumcraft.client.compat.OverlayRenderTypes;
 import thaumcraft.client.renderers.RenderUtil;
 
 /** WandRenderingHandler.handleArchitectOverlay: outlines the blocks a plan focus will affect and the axes G resizes. */
@@ -41,6 +36,8 @@ public final class ArchitectOverlay {
    private static int lastArcHash;
    private static Set<BlockPos> architectBlocks = new HashSet<>();
    private static final Map<BlockPos, boolean[]> bmCache = new HashMap<>();
+   /** The frame's buffer source while render() runs (batched so shader packs can capture the overlay). */
+   private static MultiBufferSource.BufferSource buffers;
 
    private ArchitectOverlay() {
    }
@@ -64,20 +61,14 @@ public final class ArchitectOverlay {
       PoseStack pose = event.getPoseStack();
       Vec3 cam = event.getCamera().getPosition();
       float pt = event.getPartialTick().getGameTimeDeltaPartialTick(false);
-      RenderSystem.enableBlend();
-      RenderSystem.disableDepthTest();
-      RenderSystem.depthMask(false);
-      RenderSystem.disableCull();
+      // Additive, no depth test/write, no culling: see OverlayRenderTypes.overlay(tex, true, false, false).
+      buffers = mc.renderBuffers().bufferSource();
       drawArchitectAxis(pose, cam, target.getBlockPos(), player, pt, af.showAxis(stack, mc.level, player, target.getDirection(), IArchitect.EnumAxis.X),
          af.showAxis(stack, mc.level, player, target.getDirection(), IArchitect.EnumAxis.Y),
          af.showAxis(stack, mc.level, player, target.getDirection(), IArchitect.EnumAxis.Z));
       for (BlockPos cc : architectBlocks) drawOverlayBlock(pose, cam, cc);
-      RenderSystem.enableCull();
-      RenderSystem.depthMask(true);
-      RenderSystem.enableDepthTest();
-      RenderSystem.defaultBlendFunc();
-      RenderSystem.disableBlend();
-      RenderSystem.setShaderColor(1, 1, 1, 1);
+      buffers.endBatch();
+      buffers = null;
    }
 
    private static boolean conn(BlockPos p) {
@@ -98,18 +89,13 @@ public final class ArchitectOverlay {
 
    /** renderQuadCentered: a size x size textured quad in the XY plane. */
    private static void quad(PoseStack pose, ResourceLocation tex, float size, float r, float g, float b, float a, boolean additive) {
-      RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
-      RenderSystem.setShaderTexture(0, tex);
-      if (additive) RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
-      else RenderSystem.defaultBlendFunc();
       Matrix4f m = pose.last().pose();
       float h = size / 2.0F;
-      BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
+      VertexConsumer bb = buffers.getBuffer(OverlayRenderTypes.overlay(tex, additive, false, false));
       bb.addVertex(m, -h, h, 0).setUv(1, 1).setColor(r, g, b, a);
       bb.addVertex(m, h, h, 0).setUv(1, 0).setColor(r, g, b, a);
       bb.addVertex(m, h, -h, 0).setUv(0, 0).setColor(r, g, b, a);
       bb.addVertex(m, -h, -h, 0).setUv(0, 1).setColor(r, g, b, a);
-      BufferUploader.drawWithShader(bb.buildOrThrow());
    }
 
    private static void drawOverlayBlock(PoseStack pose, Vec3 cam, BlockPos pos) {

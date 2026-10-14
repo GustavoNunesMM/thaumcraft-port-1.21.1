@@ -29,6 +29,11 @@ sourceSets.main.resources {
 repositories {
     // Curios (accessory slots: the 1.12 Baubles amulets, rings, belts and charms)
     maven { url = "https://maven.theillusivec4.top/" }
+    // Modrinth maven: Iris + Sodium, only for shader-pack testing in dev (see dependencies, -PtcIris)
+    exclusiveContent {
+        forRepository { maven { url = "https://api.modrinth.com/maven" } }
+        filter { includeGroup "maven.modrinth" }
+    }
 }
 
 base {
@@ -132,6 +137,15 @@ configurations {
 
 dependencies {
     implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+
+    // Shader-pack testing only: ./gradlew runClient -PtcIris adds Iris (+ Sodium, which it requires) to the dev
+    // runtime. localRuntime is never published, and the mod only talks to Iris reflectively (client/compat/ShaderCompat).
+    if (project.hasProperty('tcIris')) {
+        // Sodium 0.6 / Iris 1.8.12: the Sodium 0.8 Modrinth jar is a service wrapper around the real mod jar that
+        // doesn't load from the dev classpath.
+        localRuntime "maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge"
+        localRuntime "maven.modrinth:iris:1.8.12+1.21.1-neoforge"
+    }
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime

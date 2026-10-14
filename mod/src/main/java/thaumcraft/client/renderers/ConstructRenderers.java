@@ -361,7 +361,7 @@ public final class ConstructRenderers {
          int frame = 96 + part;
          float f1 = (frame % 32) / 32.0F, f2 = f1 + 1.0F / 32.0F, f3 = (frame / 32) / 32.0F, f4 = f3 + 1.0F / 32.0F;
          int nc = 0xCC00FF66;
-         VertexConsumer nv = buffers.getBuffer(RenderType.eyes(NODES));
+         VertexConsumer nv = buffers.getBuffer(thaumcraft.client.compat.OverlayRenderTypes.glow(NODES));
          vtx(nv, pose, -0.5F, -0.5F, 0, f2, f4, nc);
          vtx(nv, pose, -0.5F, 0.5F, 0, f2, f3, nc);
          vtx(nv, pose, 0.5F, 0.5F, 0, f1, f3, nc);
@@ -377,7 +377,7 @@ public final class ConstructRenderers {
          RenderUtil.rot(pose, 180.0F + ry, 0.0F, 0.0F, -1.0F);
          RenderUtil.rot(pose, rp, -1.0F, 0.0F, 0.0F);
          RenderUtil.rot(pose, rot, 0.0F, 1.0F, 0.0F);
-         VertexConsumer bv = buffers.getBuffer(RenderType.eyes(BEAM));
+         VertexConsumer bv = buffers.getBuffer(thaumcraft.client.compat.OverlayRenderTypes.glow(BEAM));
          float len = 5.0F;
          int bc = 0x6600FF66;
          for (int t = 0; t < 3; t++) {

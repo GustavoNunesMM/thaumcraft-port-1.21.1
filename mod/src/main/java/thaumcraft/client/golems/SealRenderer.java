@@ -1,14 +1,9 @@
 package thaumcraft.client.golems;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.BufferBuilder;
-import com.mojang.blaze3d.vertex.BufferUploader;
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.Tesselator;
-import com.mojang.blaze3d.vertex.VertexFormat;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -25,6 +20,7 @@ import thaumcraft.Thaumcraft;
 import thaumcraft.api.golems.ISealDisplayer;
 import thaumcraft.api.golems.seals.ISealConfigArea;
 import thaumcraft.api.golems.seals.ISealEntity;
+import thaumcraft.client.compat.OverlayRenderTypes;
 import thaumcraft.client.fx.DeviceFX;
 import thaumcraft.client.renderers.RenderUtil;
 import thaumcraft.common.golems.seals.SealEntity;
@@ -48,6 +44,10 @@ public final class SealRenderer {
       {Direction.UP, Direction.SOUTH, Direction.WEST}};
    private static final int[][] ROTMAT = {{0, 270, 0}, {270, 180, 270}, {90, 0, 90}, {180, 90, 180}, {180, 180, 0}, {90, 270, 270}, {270, 90, 90},
       {0, 0, 180}};
+   /** The frame's buffer source while render() runs (batched so shader packs can capture the seals). */
+   private static MultiBufferSource.BufferSource buffers;
+   /** Sneaking draws the seals through walls (the original disabled the depth test). */
+   private static boolean depthTest;
 
    private SealRenderer() {
    }
@@ -63,10 +63,8 @@ public final class SealRenderer {
       Vec3 cam = event.getCamera().getPosition();
       pose.pushPose();
       pose.translate(-cam.x, -cam.y, -cam.z);
-      if (player.isShiftKeyDown()) RenderSystem.disableDepthTest();
-      RenderSystem.enableBlend();
-      RenderSystem.defaultBlendFunc();
-      RenderSystem.disableCull();
+      buffers = mc.renderBuffers().bufferSource();
+      depthTest = !player.isShiftKeyDown();
       for (SealEntity seal : seals.values()) {
          if (seal.getSeal() == null || seal.getSealPos() == null) continue;
          BlockPos pos = seal.getSealPos().pos;
@@ -86,27 +84,20 @@ public final class SealRenderer {
          renderSeal(pose, pos, alpha, seal.getSealPos().face, seal.getSeal().getSealIcon(), ia, player.isShiftKeyDown());
          drawSealArea(pose, player, seal, alpha, pt);
       }
-      RenderSystem.enableCull();
-      RenderSystem.depthMask(true);
-      RenderSystem.enableDepthTest();
-      RenderSystem.disableBlend();
-      RenderSystem.setShaderColor(1, 1, 1, 1);
+      buffers.endBatch();
+      buffers = null;
       pose.popPose();
    }
 
    /** renderQuadCentered: a size x size textured quad in the XY plane. */
-   private static void quad(PoseStack pose, ResourceLocation tex, float size, float r, float g, float b, float a) {
-      RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
-      RenderSystem.setShaderTexture(0, tex);
-      RenderSystem.defaultBlendFunc();
+   private static void quad(PoseStack pose, ResourceLocation tex, float size, float r, float g, float b, float a, boolean depthWrite) {
       Matrix4f m = pose.last().pose();
       float h = size / 2.0F;
-      BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
+      VertexConsumer bb = buffers.getBuffer(OverlayRenderTypes.overlay(tex, false, depthTest, depthWrite));
       bb.addVertex(m, -h, h, 0).setUv(1, 1).setColor(r, g, b, a);
       bb.addVertex(m, h, h, 0).setUv(1, 0).setColor(r, g, b, a);
       bb.addVertex(m, h, -h, 0).setUv(0, 0).setColor(r, g, b, a);
       bb.addVertex(m, -h, -h, 0).setUv(0, 1).setColor(r, g, b, a);
-      BufferUploader.drawWithShader(bb.buildOrThrow());
    }
 
    private static void drawSealArea(PoseStack pose, Player player, ISealEntity seal, float alpha, float pt) {
@@ -129,10 +120,9 @@ public final class SealRenderer {
       RenderUtil.rot(pose, 90.0F, -face.getStepY(), face.getStepX(), -face.getStepZ());
       pose.translate(0.0, 0.0, face.getStepZ() < 0 ? -0.51F : 0.51F);
       RenderUtil.rot(pose, player.tickCount % 360 + pt, 0.0F, 0.0F, 1.0F);
-      quad(pose, MIDDLE, 0.9F, r, g, b, alpha * 0.8F);
+      quad(pose, MIDDLE, 0.9F, r, g, b, alpha * 0.8F, true);
       pose.popPose();
       if (seal.getSeal() instanceof ISealConfigArea) {
-         RenderSystem.depthMask(false);
          BlockPos ar = seal.getArea();
          AABB area = new AABB(pos).move(face.getStepX(), face.getStepY(), face.getStepZ())
             .expandTowards(face.getStepX() != 0 ? (ar.getX() - 1) * face.getStepX() : 0.0, face.getStepY() != 0 ? (ar.getY() - 1) * face.getStepY() : 0.0,
@@ -157,12 +147,11 @@ public final class SealRenderer {
                pose.translate(0.0, 0.0, f.getStepZ() < 0 ? -0.49F : 0.49F);
                RenderUtil.rot(pose, 90.0F, 0.0F, 0.0F, -1.0F);
                RenderUtil.rot(pose, ROTMAT[q][w], 0.0F, 0.0F, 1.0F);
-               quad(pose, CFRAME, 1.0F, r, g, b, alpha * 0.7F);
+               quad(pose, CFRAME, 1.0F, r, g, b, alpha * 0.7F, false);
                pose.popPose();
             }
             pose.popPose();
          }
-         RenderSystem.depthMask(true);
       }
       pose.popPose();
    }
@@ -174,12 +163,9 @@ public final class SealRenderer {
       translateSeal(pose, pos.getX(), pos.getY(), pos.getZ(), face.get3DDataValue(), -0.05F);
       pose.scale(0.5F, 0.5F, 0.5F);
       TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(icon);
-      RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
-      RenderSystem.setShaderTexture(0, InventoryMenu.BLOCK_ATLAS);
-      RenderSystem.defaultBlendFunc();
       float thick = sneaking ? 0.0F : 0.1F;
       Matrix4f m = pose.last().pose();
-      BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
+      VertexConsumer bb = buffers.getBuffer(OverlayRenderTypes.overlay(InventoryMenu.BLOCK_ATLAS, false, depthTest, true));
       float u0 = sprite.getU0(), u1 = sprite.getU1(), v0 = sprite.getV0(), v1 = sprite.getV1();
       for (float z : thick > 0 ? new float[]{0.0F, -thick} : new float[]{0.0F}) {
          bb.addVertex(m, 0, 0, z).setUv(u0, v1).setColor(c, c, c, alpha);
@@ -187,7 +173,6 @@ public final class SealRenderer {
          bb.addVertex(m, 1, 1, z).setUv(u1, v0).setColor(c, c, c, alpha);
          bb.addVertex(m, 0, 1, z).setUv(u0, v0).setColor(c, c, c, alpha);
       }
-      BufferUploader.drawWithShader(bb.buildOrThrow());
       pose.popPose();
    }
 

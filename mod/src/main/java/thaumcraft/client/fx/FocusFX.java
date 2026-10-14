@@ -17,6 +17,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleRenderType;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -265,15 +266,20 @@ public final class FocusFX {
 
    // ------------------------------------------------------------------ arc bolt (FXBolt)
 
+   /**
+    * Additive bolt ribbons. Shader-pack friendly: the vanilla particle shader and PARTICLE vertex format are used (the
+    * ribbons sample a fully white texel of the particle sheet at full brightness, which equals the old untextured
+    * position_color draw), and both windings are emitted instead of disabling face culling.
+    */
    private static final ParticleRenderType BOLT_TYPE = new ParticleRenderType() {
       @Override
       public BufferBuilder begin(Tesselator tesselator, TextureManager textureManager) {
-         RenderSystem.setShader(GameRenderer::getPositionColorShader);
+         RenderSystem.setShader(GameRenderer::getParticleShader);
+         RenderSystem.setShaderTexture(0, FXGeneric.TEXTURE);
          RenderSystem.enableBlend();
          RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
          RenderSystem.depthMask(false);
-         RenderSystem.disableCull();
-         return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+         return tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.PARTICLE);
       }
 
       @Override
@@ -349,16 +355,26 @@ public final class FocusFX {
                Vec3 dir = a1.subtract(a0);
                Vec3 side = dir.cross(a0.subtract(cam)).normalize();
                Vec3 s0 = side.scale(widths.get(i) / div), s1 = side.scale(widths.get(i + 1) / div);
-               vtx(buffer, a0.subtract(s0), cam, alpha);
-               vtx(buffer, a0.add(s0), cam, alpha);
-               vtx(buffer, a1.add(s1), cam, alpha);
-               vtx(buffer, a1.subtract(s1), cam, alpha);
+               Vec3 p0 = a0.subtract(s0), p1 = a0.add(s0), p2 = a1.add(s1), p3 = a1.subtract(s1);
+               vtx(buffer, p0, cam, alpha);
+               vtx(buffer, p1, cam, alpha);
+               vtx(buffer, p2, cam, alpha);
+               vtx(buffer, p3, cam, alpha);
+               // back face (culling stays on; exactly one of the two windings is visible)
+               vtx(buffer, p3, cam, alpha);
+               vtx(buffer, p2, cam, alpha);
+               vtx(buffer, p1, cam, alpha);
+               vtx(buffer, p0, cam, alpha);
             }
          }
       }
 
+      /** A fully opaque white texel of textures/misc/particles.png (1024x1024). */
+      private static final float WHITE_U = 16.5F / 1024.0F, WHITE_V = 240.5F / 1024.0F;
+
       private void vtx(VertexConsumer b, Vec3 p, Vec3 cam, float alpha) {
-         b.addVertex((float) (p.x - cam.x), (float) (p.y - cam.y), (float) (p.z - cam.z)).setColor(rCol, gCol, bCol, alpha);
+         b.addVertex((float) (p.x - cam.x), (float) (p.y - cam.y), (float) (p.z - cam.z)).setUv(WHITE_U, WHITE_V).setColor(rCol, gCol, bCol, alpha)
+            .setLight(LightTexture.FULL_BRIGHT);
       }
    }
 }

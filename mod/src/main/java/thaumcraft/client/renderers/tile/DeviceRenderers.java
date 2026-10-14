@@ -190,8 +190,8 @@ public final class DeviceRenderers {
          pose.pushPose();
          pose.translate(-0.495, 0.501, -0.495);
          pose.scale(0.99F, 1.0F, 0.99F);
-         // GL_ONE blending: additive, so the colour is premultiplied by the 0.9 alpha.
-         VertexConsumer vc = buffers.getBuffer(RenderType.eyes(TEX_GRID));
+         // GL_SRC_ALPHA, GL_ONE blending (additive); the 0.9 alpha of the original is premultiplied into the colour.
+         VertexConsumer vc = buffers.getBuffer(thaumcraft.client.compat.OverlayRenderTypes.glow(TEX_GRID));
          int c = argb(1.0F, rc * 0.8F * 0.9F, gc * 0.9F, bc * 0.9F);
          int fl = 0xF000F0;
          for (int a = 0; a < 12; a++) {
@@ -224,7 +224,7 @@ public final class DeviceRenderers {
          pose.pushPose();
          pose.translate(0.0, 1.0, 0.0);
          RenderUtil.rot(pose, 270.0F, 0, 0, 1);
-         VertexConsumer side = buffers.getBuffer(RenderType.eyes(TEX_DIOPTRA_SIDE));
+         VertexConsumer side = buffers.getBuffer(thaumcraft.client.compat.OverlayRenderTypes.glow(TEX_DIOPTRA_SIDE));
          int sc = argb(1.0F, rc * 0.8F, gc * 0.8F, bc * 0.8F);
          for (int q = 0; q < 4; q++) {
             pose.pushPose();
