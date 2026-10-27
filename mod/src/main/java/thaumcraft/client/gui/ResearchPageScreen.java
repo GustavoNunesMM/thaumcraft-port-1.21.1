@@ -341,6 +341,10 @@ public class ResearchPageScreen extends Screen {
    }
 
    private void drawRequirements(GuiGraphics g, int x, int mx, int my, ResearchStage stage) {
+      if (hasResearch == null || hasResearch.length != stage.research().size() || hasItem.length != stage.obtain().size()
+            || hasCraft.length != stage.craft().size() || hasKnow.length != stage.know().size()) {
+         checkRequisites();
+      }
       int y = (height - paneHeight) / 2 - 16 + 210;
       boolean b = false;
       if (!stage.research().isEmpty()) {
@@ -959,7 +963,6 @@ public class ResearchPageScreen extends Screen {
    }
 
    private void parsePages() {
-      checkRequisites();
       pages.clear();
       if (research.getStages().isEmpty()) return;
       boolean complete = false;
@@ -969,6 +972,8 @@ public class ResearchPageScreen extends Screen {
          complete = true;
       }
       if (currentStage < 0) currentStage = 0;
+      // requisites must be computed for the stage being shown, after currentStage advances
+      checkRequisites();
       ResearchStage stage = research.getStages().get(currentStage);
       List<ResearchAddendum> addenda = complete && !research.getAddenda().isEmpty() ? research.getAddenda() : null;
       generateRecipesLists(stage, addenda);
